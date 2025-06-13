@@ -4,33 +4,26 @@ substitutions:
   warning_beep_shared: 'false'
   warning_beep_internal_only: 'false'
 
-output:
-  - id: buzzer_out_${warning_beep_index}
-    platform: gpio
-    pin:
-      number: ${warning_beep_pin}
-      allow_other_uses: ${warning_beep_shared}
-
 script:
   - id: error_tone_${warning_beep_index}
     then:
-      - output.turn_on: buzzer_out_${warning_beep_index}
+      - output.turn_on: buzzer_output
       - delay: 60ms
-      - output.turn_off: buzzer_out_${warning_beep_index}
+      - output.turn_off: buzzer_output
       - delay: 50ms
-      - output.turn_on: buzzer_out_${warning_beep_index}
+      - output.turn_on: buzzer_output
       - delay: 60ms
-      - output.turn_off: buzzer_out_${warning_beep_index}
+      - output.turn_off: buzzer_output
       - delay: 50ms
-      - output.turn_on: buzzer_out_${warning_beep_index}
+      - output.turn_on: buzzer_output
       - delay: 60ms
-      - output.turn_off: buzzer_out_${warning_beep_index}
+      - output.turn_off: buzzer_output
 
 light: 
   - id: warning_beep_${warning_beep_index}
     name: ${warning_beep_name}
     platform: binary
-    output: buzzer_out_${warning_beep_index}
+    output: buzzer_output
     effects:
       - strobe:
           colors:
