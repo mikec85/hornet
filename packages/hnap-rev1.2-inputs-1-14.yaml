@@ -18,6 +18,7 @@ binary_sensor:
   # Zone 02 Input
   - platform: gpio
     name: Zone 02
+    id: zone2
     pin:
       mcp23xxx: mcp23017_1
       number: 9
@@ -31,6 +32,7 @@ binary_sensor:
   # Zone 03 Input
   - platform: gpio
     name: Zone 03
+    id: zone3
     pin:
       mcp23xxx: mcp23017_1
       number: 10
@@ -44,6 +46,7 @@ binary_sensor:
   # Zone 04 Input
   - platform: gpio
     name: Zone 04
+    id: zone4
     pin:
       mcp23xxx: mcp23017_1
       number: 11
@@ -57,6 +60,7 @@ binary_sensor:
   # Zone 05 Input
   - platform: gpio
     name: Zone 05
+    id: zone5
     pin:
       mcp23xxx: mcp23017_1
       number: 12
@@ -70,6 +74,7 @@ binary_sensor:
   # Zone 06 Input
   - platform: gpio
     name: Zone 06
+    id: zone6
     pin:
       mcp23xxx: mcp23017_1
       number: 13
@@ -83,6 +88,7 @@ binary_sensor:
   # Zone 07 Input
   - platform: gpio
     name: Zone 07
+    id: zone7
     pin:
       mcp23xxx: mcp23017_1
       number: 14
@@ -96,6 +102,7 @@ binary_sensor:
   # Zone 08 Input
   - platform: gpio
     name: Zone 08
+    id: zone8
     pin:
       mcp23xxx: mcp23017_1
       number: 0
@@ -109,6 +116,7 @@ binary_sensor:
   # Zone 09 Input
   - platform: gpio
     name: Zone 09
+    id: zone9
     pin:
       mcp23xxx: mcp23017_1
       number: 1
