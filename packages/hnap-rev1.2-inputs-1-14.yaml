@@ -4,6 +4,7 @@ binary_sensor:
   # Zone 01 Input
   - platform: gpio
     name: Zone 01 - Test
+    id: zone1
     pin:
       mcp23xxx: mcp23017_1
       number: 8
