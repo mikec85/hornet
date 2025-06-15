@@ -32,7 +32,7 @@ light:
       - strobe:
           colors:
             - state: true
-              duration: ${warning_beep_pulse_time}
+              duration: 100ms
             - state: false
-              duration: ${warning_beep_pause_time}
+              duration: 130ms
     internal: ${warning_beep_internal_only}
