@@ -55,11 +55,11 @@ lvgl:
         - led:
             id: lvgl_led
             x: 30
-            y: 47
+            y: 10
             color: 0xFF0000
             brightness: 70%
         - obj:
-            width: 400
+            width: 375
             height: 50
             align_to:
               id: lvgl_led
