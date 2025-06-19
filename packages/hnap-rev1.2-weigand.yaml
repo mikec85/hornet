@@ -28,6 +28,7 @@ sensor:
                 id: acp1
                 code: "1234"
             - lambda: 'id(acp1).arm_away();'
+            - logger.log: "Tag 1 scanned"
             - text_sensor.template.publish:
                 id: last_user
                 state: "User 1 Tag"
