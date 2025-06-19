@@ -21,7 +21,7 @@ sensor:
     on_value:
       - if:
           condition:
-            - lambda: 'return id(keyCode).state == 11305112;' 
+            - lambda: 'return id(keyCode).state == 9040467;' 
           then:  
             - switch.toggle: output_6
             - text_sensor.template.publish:
