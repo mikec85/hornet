@@ -34,7 +34,7 @@ sensor:
             - rtttl.play: "beep:d=16,o=5,b=100:b"
             - if:
                 condition:
-                  alarm_control_panel.is_armed: acp1
+                  alarm_control_panel.is_armed: ACP1
                 then:
                   - alarm_control_panel.disarm:
                       id: ACP1
