@@ -32,6 +32,13 @@ sensor:
                 id: last_user
                 state: "User 1 Tag"
             - rtttl.play: "beep:d=16,o=5,b=100:b"
+            - if:
+                condition:
+                  alarm_control_panel.is_armed: acp1
+                then:
+                  - alarm_control_panel.disarm:
+                      id: acp1
+                      code: "1234"
       - if:
           condition:
             - lambda: 'return id(keyCode).state == 9832658;' 
