@@ -25,7 +25,7 @@ sensor:
           then:  
             - switch.toggle: output_6
             - alarm_control_panel.arm_home:
-                id: acp1
+                id: ACP1
                 code: "1234"
             - logger.log: "Tag 1 scanned"
             - text_sensor.template.publish:
@@ -37,7 +37,7 @@ sensor:
                   alarm_control_panel.is_armed: acp1
                 then:
                   - alarm_control_panel.disarm:
-                      id: acp1
+                      id: ACP1
                       code: "1234"
       - if:
           condition:
