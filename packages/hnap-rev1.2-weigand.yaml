@@ -24,6 +24,9 @@ sensor:
             - lambda: 'return id(keyCode).state == 9040467;' 
           then:  
             - switch.toggle: output_6
+            - alarm_control_panel.arm_home:
+                id: acp1
+                code: "1234"
             - text_sensor.template.publish:
                 id: last_user
                 state: "User 1 Tag"
