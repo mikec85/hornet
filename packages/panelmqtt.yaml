@@ -1,0 +1,25 @@
+# MQTT
+mqtt:
+  id: mqtt_client
+  broker: mqtt.coffeys.net
+  on_message:
+    - topic: hornet-nest-3cc06c/alarm_control_panel/acp1/state
+      qos: 0
+      payload: "armed_home"
+      then:
+        - lvgl.led.update:
+            id: lvgl_led
+            color: 0x00FF00
+        - logger.log: "MQTT armed_home"
+    - topic: hornet-nest-3cc06c/alarm_control_panel/acp1/state
+      qos: 0
+      payload: "disarmed"
+      then:
+        - lvgl.led.update:
+            id: lvgl_led
+            color: 0xFF0000
+        - logger.log: "MQTT disarmed"
+    - topic: hornet-nest-3cc06c/alarm_control_panel/acp1/state
+      qos: 0
+      then:
+        - logger.log: "MQTT EVENT"
