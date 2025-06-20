@@ -163,7 +163,7 @@ lvgl:
               widgets:
                 - label:
                     align: CENTER
-                    text: 'DISARM'
+                    text: 'ARM NIGHT'
                     styles: my_button_style 
               on_click:
                 - http_request.get: http://192.168.1.111/alarm_control_panel/acp1/arm_night        
