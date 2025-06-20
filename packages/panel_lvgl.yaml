@@ -213,6 +213,9 @@ key_collector:
           then:
             - lambda: 'id(my_code_int) = x;'
             - logger.log: x
+            - logger.log:
+                format: "my_code_int value %d. "
+                args: ['id(my_code_int)']
             - lvgl.led.update:
                 id: lvgl_led
                 color: 0x00FF00
