@@ -13,7 +13,7 @@ number:
 
 globals:
  - id: my_code_int
-   type: int
+   type: str
    restore_value: no
    initial_value: '0'
 
