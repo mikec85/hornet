@@ -211,8 +211,7 @@ key_collector:
           condition:
             lambda: return (0 == x.compare(std::string{"1234"}));
           then:
-            - lambda: 'id(my_code_int) = x;'
-            - logger.log: x
+            - lambda: 'id(my_code_int) = x.c_str();'
             - logger.log:
                 format: "my_code_int value %d. "
                 args: ['id(my_code_int)']
