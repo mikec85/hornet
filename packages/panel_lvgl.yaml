@@ -13,9 +13,9 @@ number:
 
 globals:
  - id: my_code_int
-   type: string
+   type: char[6]
    restore_value: no
-   initial_value: '0'
+   initial_value: “{‘1’,‘1’,‘1’,‘1’}”
 
 font:
   - file: "gfonts://Roboto"  # Example using Google Fonts
