@@ -10,7 +10,12 @@ number:
     max_value: 180
     step: 5
     mode: box
- 
+
+globals:
+ - id: my_code_int
+   type: int
+   restore_value: no
+   initial_value: '0'
 
 font:
   - file: "gfonts://Roboto"  # Example using Google Fonts
@@ -206,6 +211,8 @@ key_collector:
           condition:
             lambda: return (0 == x.compare(std::string{"1234"}));
           then:
+            - lambda: 'id(my_global_var) = x;'
+            - logger.log: x
             - lvgl.led.update:
                 id: lvgl_led
                 color: 0x00FF00
