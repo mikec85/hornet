@@ -55,7 +55,7 @@ lvgl:
         - led:
             id: lvgl_led
             x: 30
-            y: 20
+            y: 25
             color: 0xFF0000
             brightness: 70%
         - obj:
