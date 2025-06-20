@@ -217,7 +217,7 @@ key_collector:
           ESP_LOGD("main", "Global string updated to: %s", id(my_code_int).c_str());
       - http_request.get: 
           url: !lambda |- 
-            std::string url = "http://192.168.1.111/alarm_control_panel/acp1/disarm?code=";
+            std::string url = "http://192.168.1.111/alarm_control_panel/acp1/disarm?code=" + id(my_code_int);
             return url;
       - logger.log: "Sent HTTP"
       - logger.log:
