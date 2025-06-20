@@ -213,7 +213,7 @@ key_collector:
           then:
             - globals.set:
                 id: my_code_int
-                value: "1234"
+                value: '1234'
             - logger.log:
                 format: "my_code_int value %d. "
                 args: ['id(my_code_int)']
