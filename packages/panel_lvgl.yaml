@@ -15,7 +15,7 @@ globals:
  - id: my_code_int
    type: std::string
    restore_value: no
-   #initial_value: "0"
+   initial_value: '"0"'
 
 font:
   - file: "gfonts://Roboto"  # Example using Google Fonts
@@ -213,7 +213,7 @@ key_collector:
           then:
             - globals.set:
                 id: my_code_int
-                value: '1234'
+                value: '"1234"'
             - logger.log:
                 format: "my_code_int value %d. "
                 args: ['id(my_code_int)']
