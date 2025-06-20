@@ -13,7 +13,7 @@ number:
 
 globals:
  - id: my_code_int
-   type: char[6]
+   type: std::string
    restore_value: no
    #initial_value: “{‘1’,‘1’,‘1’,‘1’}”
 
