@@ -10,7 +10,7 @@ number:
     max_value: 180
     step: 5
     mode: box
-
+ 
 globals:
  - id: my_code_int
    type: std::string
