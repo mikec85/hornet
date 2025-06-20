@@ -214,9 +214,6 @@ key_collector:
             - globals.set:
                 id: my_code_int
                 value: !lambda 'return x.c_str();'
-#            - logger.log:
-#                format: "my_code_int value %d. "
-#                args: ['id(my_code_int)']
             - lvgl.led.update:
                 id: lvgl_led
                 color: 0x00FF00
