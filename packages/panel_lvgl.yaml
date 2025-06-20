@@ -219,6 +219,7 @@ key_collector:
                 args: ['id(my_code_int)']
             - lambda: |-
                 id(my_code_int) = "Another String Value";
+                ESP_LOGD("main", "Global string updated to: %s", id(my_code_int).c_str());
             - logger.log:
                 format: "my_code_int value %d. "
                 args: ['id(my_code_int)']
