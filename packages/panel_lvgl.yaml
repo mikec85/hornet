@@ -149,7 +149,7 @@ lvgl:
               on_click:
                 - http_request.get: http://192.168.1.111/alarm_control_panel/acp1/arm_home
         - button:
-              id: disarm_btn
+              id: arm_night_btn
               x: 480
               y: 200
               width: 240
@@ -162,7 +162,21 @@ lvgl:
                     styles: my_button_style 
               on_click:
                 - http_request.get: http://192.168.1.111/alarm_control_panel/acp1/disarm?code=1234        
-
+        - button:
+              id: disarm_btn
+              x: 480
+              y: 325
+              width: 240
+              height: 100
+              #checkable: true
+              widgets:
+                - label:
+                    align: CENTER
+                    text: 'DISARM'
+                    styles: my_button_style 
+              on_click:
+                - http_request.get: http://192.168.1.111/alarm_control_panel/acp1/disarm?code=1234    
+                
 key_collector:
   - source_id: lvgl_keypad
     min_length: 4
