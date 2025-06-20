@@ -215,13 +215,13 @@ key_collector:
                 id: my_code_int
                 value: '"1234"'
             - logger.log:
-                format: "my_code_int value %d. "
+                format: "my_code_int value %s. "
                 args: ['id(my_code_int)']
             - lambda: |-
-                id(my_code_int) = "Another String Value";
+                id(my_code_int) = x.c_str();
                 ESP_LOGD("main", "Global string updated to: %s", id(my_code_int).c_str());
             - logger.log:
-                format: "my_code_int value %d. "
+                format: "my_code_int value %s. "
                 args: ['id(my_code_int)']
             - lvgl.led.update:
                 id: lvgl_led
