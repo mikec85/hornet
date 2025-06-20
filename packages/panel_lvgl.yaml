@@ -215,7 +215,7 @@ key_collector:
       - lambda: |-
           id(my_code_int) = x.c_str();
           ESP_LOGD("main", "Global string updated to: %s", id(my_code_int).c_str());
-      - http_request.get: "http://192.168.1.111/alarm_control_panel/acp1/disarm?code=" + id(my_code_int)
+      - http_request.get: url: !lambda |- 'return "http://192.168.1.111/alarm_control_panel/acp1/disarm?code=" + id(my_code_int)'
       - logger.log: "Sent HTTP"
       - logger.log:
           format: "input result: '%s', started by '%c', ended by '%c'"
