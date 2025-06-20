@@ -55,7 +55,7 @@ lvgl:
         - led:
             id: lvgl_led
             x: 30
-            y: 15
+            y: 20
             color: 0xFF0000
             brightness: 70%
         - obj:
@@ -86,7 +86,7 @@ lvgl:
             id: lvgl_keypad
             x: 30
             y: 85
-            width: 400
+            width: 420
             height: 390
             items:
               pressed:
@@ -136,7 +136,7 @@ lvgl:
                       no_repeat: true
         - button:
               id: arm_home_btn
-              x: 460
+              x: 480
               y: 75
               width: 240
               height: 100
@@ -150,7 +150,7 @@ lvgl:
                 - http_request.get: http://192.168.1.111/alarm_control_panel/acp1/arm_home
         - button:
               id: disarm_btn
-              x: 460
+              x: 480
               y: 200
               width: 240
               height: 100
