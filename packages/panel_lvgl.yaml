@@ -14,7 +14,7 @@ number:
 globals:
  - id: my_code_int
    type: std::string
-   restore_value: no
+   #restore_value: no
    initial_value: '"0"'
 
 font:
