@@ -217,6 +217,11 @@ key_collector:
             - logger.log:
                 format: "my_code_int value %d. "
                 args: ['id(my_code_int)']
+            - lambda: |-
+                id(my_code_int) = "Another String Value";
+            - logger.log:
+                format: "my_code_int value %d. "
+                args: ['id(my_code_int)']
             - lvgl.led.update:
                 id: lvgl_led
                 color: 0x00FF00
