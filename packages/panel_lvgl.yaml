@@ -154,7 +154,7 @@ lvgl:
               on_click:
                 - http_request.get: http://192.168.1.111/alarm_control_panel/acp1/arm_home
         - button:
-              id: arm_night_btn
+              id: arm_away_btn
               x: 490
               y: 200
               width: 240
@@ -163,10 +163,10 @@ lvgl:
               widgets:
                 - label:
                     align: CENTER
-                    text: 'ARM NIGHT'
+                    text: 'ARM AWAY'
                     styles: my_button_style 
               on_click:
-                - http_request.get: http://192.168.1.111/alarm_control_panel/acp1/arm_night        
+                - http_request.get: http://192.168.1.111/alarm_control_panel/acp1/arm_away        
         - button:
               id: disarm_btn
               x: 490
