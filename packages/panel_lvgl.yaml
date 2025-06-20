@@ -135,7 +135,7 @@ lvgl:
                   - text: 0
                     control:
                       no_repeat: true
-                  - text: "\uF00C"
+                  - text: "OFF"
                     key_code: "#"
                     control:
                       no_repeat: true
@@ -168,7 +168,7 @@ lvgl:
               on_click:
                 - http_request.get: http://192.168.1.111/alarm_control_panel/acp1/arm_away        
         - button:
-              id: disarm_btn
+              id: arm_night_btn
               x: 490
               y: 325
               width: 240
@@ -177,10 +177,10 @@ lvgl:
               widgets:
                 - label:
                     align: CENTER
-                    text: 'DISARM'
+                    text: 'ARM NIGHT'
                     styles: my_button_style 
               on_click:
-                - http_request.get: http://192.168.1.111/alarm_control_panel/acp1/disarm?code=1234    
+                - http_request.get: http://192.168.1.111/alarm_control_panel/acp1/arm_night    
                 
 key_collector:
   - source_id: lvgl_keypad
