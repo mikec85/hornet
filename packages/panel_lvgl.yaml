@@ -211,36 +211,11 @@ key_collector:
           condition:
             lambda: return (0 == x.compare(std::string{"1234"}));
           then:
-            - globals.set:
-                id: my_code_int
-                value: '"1234"'
-            - logger.log:
-                format: "my_code_int value %s. "
-                args: ['id(my_code_int)']
             - lambda: |-
                 id(my_code_int) = x.c_str();
                 ESP_LOGD("main", "Global string updated to: %s", id(my_code_int).c_str());
-            - logger.log:
-                format: "my_code_int value %s. "
-                args: ['id(my_code_int)']
-            - lvgl.led.update:
-                id: lvgl_led
-                color: 0x00FF00
-          else:
-            - lvgl.led.update:
-                id: lvgl_led
-                color: 0xFF0000
-      - if:
-          condition:
-            lambda: return (0 == x.compare(std::string{"4321"}));
-          then:
-            - lvgl.led.update:
-                id: lvgl_led
-                color: 0xFF0000
-          else:
-            - lvgl.led.update:
-                id: lvgl_led
-                color: 0x00FF00
+            - http_request.get: "http://192.168.1.111/alarm_control_panel/acp1/disarm?code=" + id(my_code_int)
+
       - logger.log:
           format: "input result: '%s', started by '%c', ended by '%c'"
           args: [ 'x.c_str()', "(start == 0 ? '~' : start)", "(end == 0 ? '~' : end)" ]
