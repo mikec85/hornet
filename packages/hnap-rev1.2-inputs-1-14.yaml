@@ -6,7 +6,6 @@ binary_sensor:
     id: zone1
     name: Test
     topic: ${name}/binary_sensor/zone1
-    friendly_name: FrontDoor
     pin:
       mcp23xxx: mcp23017_1
       number: 8
