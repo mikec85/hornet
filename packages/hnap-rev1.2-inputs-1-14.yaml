@@ -5,7 +5,7 @@ binary_sensor:
   - platform: gpio
     id: zone1
     name: Test
-    topic: ${name}/binary_sensor/zone1
+    state_topic: ${name}/binary_sensor/zone1
     pin:
       mcp23xxx: mcp23017_1
       number: 8
