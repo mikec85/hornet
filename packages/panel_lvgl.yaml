@@ -186,8 +186,8 @@ lvgl:
              height: 50
              align_to:
                id: lvgl_label
-               align: OUT_TOP_RIGHT
-               x: 17
+               align: TOP_RIGHT
+               #x: 17
              border_width: 1
              border_color: 0
              border_opa: 50%
