@@ -181,30 +181,30 @@ lvgl:
                     styles: my_button_style 
               on_click:
                 - http_request.get: http://192.168.1.111/alarm_control_panel/acp1/arm_night
-          - obj:
-            width: 300
-            height: 50
-            align_to:
-              id: lvgl_label
-              align: OUT_RIGHT_MID
-              x: 17
-            border_width: 1
-            border_color: 0
-            border_opa: 50%
-            pad_all: 0
-            bg_opa: 80%
-            bg_color: 0xFFFFFF
-            shadow_color: 0
-            shadow_opa: 50%
-            shadow_width: 10
-            shadow_spread: 3
-            radius: 5
-            widgets:
-              - label:
-                  id: lvgl_label2
-                  align: CENTER
-                  text: "Test"
-                  text_align: CENTER
+        - obj:
+             width: 300
+             height: 50
+             align_to:
+               id: lvgl_label
+               align: OUT_RIGHT_MID
+               x: 17
+             border_width: 1
+             border_color: 0
+             border_opa: 50%
+             pad_all: 0
+             bg_opa: 80%
+             bg_color: 0xFFFFFF
+             shadow_color: 0
+             shadow_opa: 50%
+             shadow_width: 10
+             shadow_spread: 3
+             radius: 5
+             widgets:
+               - label:
+                   id: lvgl_label2
+                   align: CENTER
+                   text: "Test"
+                   text_align: CENTER
                 
 key_collector:
   - source_id: lvgl_keypad
