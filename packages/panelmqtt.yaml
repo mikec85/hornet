@@ -23,7 +23,7 @@ mqtt:
       qos: 0
       then:
         - logger.log: "MQTT EVENT"
-    - topic: hornet-nest-3cc06c/binary_sensor/zone_01/state
+    - topic: hornet-nest-3cc06c/binary_sensor/zone_01_-_test/state
       qos: 0
       then:
         - logger.log: "MQTT EVENT"
