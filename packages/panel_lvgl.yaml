@@ -184,8 +184,8 @@ lvgl:
         - obj:
              width: 300
              height: 50
-             x: 17
-             y: 420
+             x: 420
+             y: 20
              #align_to:
                #id: lvgl_label
                #align: TOP_RIGHT
