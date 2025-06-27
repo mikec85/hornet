@@ -3,8 +3,8 @@ binary_sensor:
   # Start MCP23017 Chip number 1 - 14 zones
   # Zone 01 Input
   - platform: gpio
-    name: Zone 01 - Test
     id: zone1
+    name: Test
     pin:
       mcp23xxx: mcp23017_1
       number: 8
