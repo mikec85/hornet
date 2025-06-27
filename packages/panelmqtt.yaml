@@ -25,6 +25,7 @@ mqtt:
         - logger.log: "MQTT EVENT"
     - topic: hornet-nest-3cc06c/binary_sensor/zone_01_-_test/state
       qos: 0
+      payload: "ON"
       then:
         - logger.log: "MQTT EVENT"
         - switch.turn_on: led
