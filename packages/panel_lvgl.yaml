@@ -184,11 +184,13 @@ lvgl:
         - obj:
              width: 300
              height: 50
-             align_to:
-               id: lvgl_label
+             x: 17
+             y: 420
+             #align_to:
+               #id: lvgl_label
                #align: TOP_RIGHT
-               x: 17
-               y: 420
+               #x: 17
+               #y: 420
              border_width: 1
              border_color: 0
              border_opa: 50%
