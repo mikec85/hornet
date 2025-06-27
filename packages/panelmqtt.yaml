@@ -23,3 +23,10 @@ mqtt:
       qos: 0
       then:
         - logger.log: "MQTT EVENT"
+    - topic: hornet-nest-3cc06c/binary_sensor/zone_01/state
+      qos: 0
+      then:
+        - logger.log: "MQTT EVENT"
+        - switch.turn_on: led
+        - delay: 50ms  
+        - switch.turn_off: led
