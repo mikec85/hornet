@@ -142,7 +142,7 @@ lvgl:
         - button:
               id: arm_home_btn
               x: 490
-              y: 75
+              y: 90
               width: 240
               height: 100
               #checkable: true
@@ -156,7 +156,7 @@ lvgl:
         - button:
               id: arm_away_btn
               x: 490
-              y: 200
+              y: 215
               width: 240
               height: 100
               #checkable: true
@@ -170,7 +170,7 @@ lvgl:
         - button:
               id: arm_night_btn
               x: 490
-              y: 325
+              y: 340
               width: 240
               height: 100
               #checkable: true
