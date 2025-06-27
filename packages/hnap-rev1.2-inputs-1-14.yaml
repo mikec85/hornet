@@ -5,6 +5,7 @@ binary_sensor:
   - platform: gpio
     id: zone1
     name: Test
+    friendly_name: FrontDoor
     pin:
       mcp23xxx: mcp23017_1
       number: 8
