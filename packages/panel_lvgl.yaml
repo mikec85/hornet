@@ -182,10 +182,10 @@ lvgl:
               on_click:
                 - http_request.get: http://192.168.1.111/alarm_control_panel/acp1/arm_night
         - obj:
-             width: 300
+             width: 340
              height: 50
              x: 440
-             y: 20
+             y: 25
              #align_to:
                #id: lvgl_label
                #align: TOP_RIGHT
