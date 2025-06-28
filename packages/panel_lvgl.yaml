@@ -23,8 +23,8 @@ font:
     size: 40  # Set the font size to 20 pixels
     bpp: 4
   - file: "gfonts://Roboto"  # Example using Google Fonts
-    id: roboto20
-    size: 20  # Set the font size to 20 pixels
+    id: roboto24
+    size: 24  # Set the font size to 20 pixels
     bpp: 4
     
 touchscreen:
@@ -51,7 +51,7 @@ lvgl:
       #text_color: 0x000000 
       align: center
     - id: my_text_style
-      text_font: roboto20 # Apply the custom font defined in step 1
+      text_font: roboto24 # Apply the custom font defined in step 1
       # Other style properties like text color, alignment, etc. can be added here
       #text_color: 0x000000 
       align: center
@@ -96,6 +96,7 @@ lvgl:
                   align: CENTER
                   text: "Enter code and \uF00C"
                   text_align: CENTER
+                  styles: my_text_style
         - buttonmatrix:
             id: lvgl_keypad
             x: 40
