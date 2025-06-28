@@ -185,7 +185,7 @@ lvgl:
              width: 340
              height: 50
              x: 440
-             y: 25
+             y: 22
              #align_to:
                #id: lvgl_label
                #align: TOP_RIGHT
