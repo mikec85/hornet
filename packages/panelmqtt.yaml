@@ -39,4 +39,4 @@ mqtt:
         - lvgl.label.update:
             id: lvgl_label2
             text: !lambda |-
-              return ("Status: " + x;
+              return ("Status: " + x);
