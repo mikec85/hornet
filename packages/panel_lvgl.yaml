@@ -104,6 +104,7 @@ lvgl:
 
   pages:
     - id: keypad_page
+      bg_color: my_black
       widgets:
         - led:
             id: lvgl_led
