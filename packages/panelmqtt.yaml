@@ -37,4 +37,4 @@ mqtt:
         - lambda: |-
             ESP_LOGD("mqtt_on_message", "Received payload: %s", x);
         - lambda: |-
-            id(lvgl_label2).publish_state(x);
+            id(lvgl_label2).text(x);
