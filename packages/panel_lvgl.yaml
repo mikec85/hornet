@@ -189,7 +189,7 @@ lvgl:
              #align_to:
                #id: lvgl_label
                #align: TOP_RIGHT
-               #x: 25
+               #x: 23
                #y: 460
              border_width: 1
              border_color: 0
