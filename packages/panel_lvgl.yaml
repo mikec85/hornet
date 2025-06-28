@@ -19,11 +19,11 @@ globals:
 
 font:
   - file: "gfonts://Roboto"  # Example using Google Fonts
-    id: roboto20
+    id: roboto40
     size: 40  # Set the font size to 20 pixels
     bpp: 4
   - file: "gfonts://Roboto"  # Example using Google Fonts
-    id: roboto10
+    id: roboto20
     size: 20  # Set the font size to 20 pixels
     bpp: 4
     
@@ -46,12 +46,12 @@ touchscreen:
 lvgl:
   style_definitions:
     - id: my_button_style
-      text_font: roboto20  # Apply the custom font defined in step 1
+      text_font: roboto40  # Apply the custom font defined in step 1
       # Other style properties like text color, alignment, etc. can be added here
       #text_color: 0x000000 
       align: center
     - id: my_text_style
-      text_font: roboto20  # Apply the custom font defined in step 1
+      text_font: roboto20 # Apply the custom font defined in step 1
       # Other style properties like text color, alignment, etc. can be added here
       #text_color: 0x000000 
       align: center
