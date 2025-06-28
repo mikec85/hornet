@@ -31,3 +31,8 @@ mqtt:
         - switch.turn_on: led
         - delay: 50ms  
         - switch.turn_off: led
+    - topic: hornet-nest-3cc06c/alarm_control_panel/acp1/state
+      qos: 0
+      then:
+        - lambda: |-
+            ESP_LOGD("mqtt_on_message", "Received payload: %s", x);
