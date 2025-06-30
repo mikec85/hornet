@@ -113,7 +113,7 @@ lvgl:
             color: 0xFF0000
             brightness: 70%
         - obj:
-            width: 350
+            width: 75
             height: 50
             align_to:
               id: lvgl_led
@@ -134,7 +134,7 @@ lvgl:
               - label:
                   id: lvgl_label
                   align: CENTER
-                  text: "Enter code and \uF00C"
+                  text: "Code:"
                   text_align: CENTER
                   styles: my_text_style
         - buttonmatrix:
@@ -235,6 +235,34 @@ lvgl:
              width: 340
              height: 50
              x: 440
+             y: 23
+             #align_to:
+               #id: lvgl_label
+               #align: TOP_RIGHT
+               #x: 23
+               #y: 460
+             border_width: 1
+             border_color: 0
+             border_opa: 50%
+             pad_all: 0
+             bg_opa: 80%
+             bg_color: 0xFFFFFF
+             shadow_color: 0
+             shadow_opa: 50%
+             shadow_width: 10
+             shadow_spread: 3
+             radius: 5
+             widgets:
+               - label:
+                   id: lvgl_label2
+                   align: CENTER
+                   text: "Test"
+                   text_align: CENTER
+                   styles: my_text_style
+        - obj:
+             width: 200
+             height: 50
+             x: 140
              y: 23
              #align_to:
                #id: lvgl_label
