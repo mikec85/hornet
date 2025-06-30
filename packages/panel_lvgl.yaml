@@ -255,9 +255,9 @@ lvgl:
                    text_align: CENTER
                    styles: my_text_style
         - obj:
-             width: 260
+             width: 270
              height: 50
-             x: 180
+             x: 170
              y: 23
              border_width: 1
              border_color: 0
