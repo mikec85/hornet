@@ -113,7 +113,7 @@ lvgl:
             color: 0xFF0000
             brightness: 70%
         - obj:
-            width: 75
+            width: 85
             height: 50
             align_to:
               id: lvgl_led
