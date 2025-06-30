@@ -40,3 +40,12 @@ mqtt:
             id: lvgl_label2
             text: !lambda |-
               return ("Status: " + x);
+    - topic: hornet-nest-3cc06c/lastzone
+      qos: 0
+      then:
+        - lambda: |-
+            ESP_LOGD("mqtt_on_message", "Received payload: %s", x);
+        - lvgl.label.update:
+            id: lvgl_label3
+            text: !lambda |-
+              return ("Last Zone Change: " + x);
