@@ -19,6 +19,9 @@ binary_sensor:
       then:
         - lambda: |-
             id(last_zone) == "Zone 1";
+        - mqtt.publish:
+            topic: ${name}/lastzone
+            payload: "Zone 1"
 
   # Zone 02 Input
   - platform: gpio
