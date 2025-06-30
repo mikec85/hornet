@@ -1,5 +1,15 @@
 binary_sensor:
 
+  - alias: 'Publish Zone changes'
+    trigger:
+      platform: state
+      entity_id: sensor.zone1, sensor.zone2
+    action:
+      service: mqtt.publish
+      data_template:
+        payload: "{{trigger.to_state.state}}"
+        topic: "test/{{trigger.to_state.object_id}}" 
+        retain: true
   # Start MCP23017 Chip number 1 - 14 zones
   # Zone 01 Input
   - platform: gpio
@@ -22,6 +32,12 @@ binary_sensor:
         - mqtt.publish:
             topic: ${name}/lastzone
             payload: "Zone 1"
+        - lambda: |-
+          if (id(other_binary_sensor).state) {
+            return x;
+          } else {
+            return {};
+          }
 
   # Zone 02 Input
   - platform: gpio
