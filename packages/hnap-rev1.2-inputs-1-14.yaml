@@ -25,7 +25,7 @@ binary_sensor:
     on_press:
       - mqtt.publish:
           topic: ${name}/lastzone
-          payload: "Zone %s"
+          payload: "Zone {{name}}"
           
   # Zone 02 Input
   - platform: gpio
