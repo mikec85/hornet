@@ -18,7 +18,7 @@ binary_sensor:
     on_state:
       then:
         - lambda: |-
-          id(last_zone) == "Zone 1";
+            id(last_zone) == "Zone 1";
 
   # Zone 02 Input
   - platform: gpio
