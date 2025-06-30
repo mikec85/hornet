@@ -15,6 +15,9 @@ binary_sensor:
       inverted: $sensor_inverted
     filters:
       - delayed_on_off: $sensor_debounce_time
+    on_state:
+      then:
+        last_zone = "Zone 1"
 
   # Zone 02 Input
   - platform: gpio
