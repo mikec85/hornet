@@ -17,7 +17,8 @@ binary_sensor:
       - delayed_on_off: $sensor_debounce_time
     on_state:
       then:
-        last_zone: "Zone 1"
+        - lambda: |-
+          id(last_zone) == "Zone 1";
 
   # Zone 02 Input
   - platform: gpio
