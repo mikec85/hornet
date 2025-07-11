@@ -231,6 +231,20 @@ lvgl:
                     styles: my_button_style 
               on_click:
                 - http_request.get: http://192.168.1.111/alarm_control_panel/acp1/arm_night
+        - button:
+              id: restart_button
+              x: 790
+              y: 470
+              width: 10
+              height: 10
+              #checkable: true
+              widgets:
+                - label:
+                    align: CENTER
+                    text: ''
+                    styles: my_button_style 
+              on_click:
+                - http_request.get: http://192.168.1.111/alarm_control_panel/acp1/arm_night        
         - obj:
              width: 320
              height: 50
