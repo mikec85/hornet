@@ -315,7 +315,7 @@ key_collector:
           else:
             - lvgl.label.update:
                 id: lvgl_label
-                text: "Enter code and \uF00C"
+                text: "Code:"
     on_result:
       - if:
           condition:
