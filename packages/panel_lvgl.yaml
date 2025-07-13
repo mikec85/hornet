@@ -232,7 +232,7 @@ lvgl:
               on_click:
                 - http_request.get: http://192.168.1.111/alarm_control_panel/acp1/arm_night
         - button:
-              id: restart_button
+              id: restart_button_lvgl
               x: 780
               y: 460
               width: 20
