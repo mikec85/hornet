@@ -129,7 +129,7 @@ lvgl:
             shadow_opa: 50%
             shadow_width: 10
             shadow_spread: 3
-            radius: 5
+            radius: 7
             widgets:
               - label:
                   id: lvgl_label
