@@ -1,0 +1,316 @@
+number:
+  - platform: template
+    name: LVGL Screen timeout
+    optimistic: true
+    id: display_timeout
+    unit_of_measurement: "s"
+    initial_value: 45
+    restore_value: true
+    min_value: 10
+    max_value: 180
+    step: 5
+    mode: box
+ 
+globals:
+ - id: my_code_int
+   type: std::string
+   #restore_value: no
+   initial_value: '"0"'
+
+font:
+  - file: "gfonts://Roboto"  # Example using Google Fonts
+    id: roboto40
+    size: 40  # Set the font size to 20 pixels
+    bpp: 4
+  - file: "gfonts://Roboto"  # Example using Google Fonts
+    id: roboto24
+    size: 24  # Set the font size to 20 pixels
+    bpp: 4
+    
+color:
+  - id: my_red
+    red: 100%
+    green: 0%
+    blue: 0%
+  - id: my_yellow
+    red: 100%
+    green: 100%
+    blue: 0%
+  - id: my_green
+    red: 0%
+    green: 100%
+    blue: 0%
+  - id: my_blue
+    red: 0%
+    green: 0%
+    blue: 100%
+  - id: my_gray
+    red: 50%
+    green: 50%
+    blue: 50%
+  - id: my_orange
+    red: 100%
+    green: 50%
+    blue: 0%
+  - id: my_teal
+    red: 0%
+    green: 100%
+    blue: 100%
+  - id: my_white
+    red: 100%
+    green: 100%
+    blue: 100%
+  - id: my_black
+    red: 0%
+    green: 0%
+    blue: 0%
+    
+lvgl:
+  log_level: INFO
+  color_depth: 16
+  disp_bg_color: my_black
+  style_definitions:
+    - id: my_button_style
+      text_font: roboto40  # Apply the custom font defined in step 1
+      # Other style properties like text color, alignment, etc. can be added here
+      #text_color: 0x000000 
+      align: center
+    - id: my_text_style
+      text_font: roboto24 # Apply the custom font defined in step 1
+      # Other style properties like text color, alignment, etc. can be added here
+      #text_color: 0x000000 
+      align: center
+      
+  pages:
+    - id: keypad_page
+      bg_color: my_black
+      widgets:
+        - led:
+            id: lvgl_led
+            x: 30
+            y: 35
+            color: 0xFF0000
+            brightness: 70%
+        - obj:
+            width: 85
+            height: 50
+            align_to:
+              id: lvgl_led
+              align: OUT_RIGHT_MID
+              x: 17
+            border_width: 1
+            border_color: 0
+            border_opa: 50%
+            pad_all: 0
+            bg_opa: 80%
+            bg_color: 0xFFFFFF
+            shadow_color: 0
+            shadow_opa: 50%
+            shadow_width: 10
+            shadow_spread: 3
+            radius: 10
+            widgets:
+              - label:
+                  id: lvgl_label
+                  align: CENTER
+                  text: "Code:"
+                  text_align: CENTER
+                  styles: my_text_style
+        - buttonmatrix:
+            id: lvgl_keypad
+            x: 40
+            y: 85
+            width: 420
+            height: 390
+            items:
+              pressed:
+                bg_color: 0xFFFF00
+            rows:
+              - buttons:
+                  - text: 1
+                    control:
+                      no_repeat: true
+                  - text: 2
+                    control:
+                      no_repeat: true
+                  - text: 3
+                    control:
+                      no_repeat: true
+              - buttons:
+                  - text: 4
+                    control:
+                      no_repeat: true
+                  - text: 5
+                    control:
+                      no_repeat: true
+                  - text: 6
+                    control:
+                      no_repeat: true
+              - buttons:
+                  - text: 7
+                    control:
+                      no_repeat: true
+                  - text: 8
+                    control:
+                      no_repeat: true
+                  - text: 9
+                    control:
+                      no_repeat: true
+              - buttons:
+                  - text: "\uF55A"
+                    key_code: "*"
+                    control:
+                      no_repeat: true
+                  - text: 0
+                    control:
+                      no_repeat: true
+                  - text: "OFF"
+                    key_code: "#"
+                    control:
+                      no_repeat: true
+        - button:
+              id: arm_home_btn
+              x: 490
+              y: 90
+              width: 240
+              height: 100
+              #checkable: true
+              widgets:
+                - label:
+                    align: CENTER
+                    text: 'ARM HOME'
+                    styles: my_button_style 
+              on_click:
+                - http_request.get: http://192.168.1.111/alarm_control_panel/acp1/arm_home
+        - button:
+              id: arm_away_btn
+              x: 490
+              y: 215
+              width: 240
+              height: 100
+              #checkable: true
+              widgets:
+                - label:
+                    align: CENTER
+                    text: 'ARM AWAY'
+                    styles: my_button_style 
+              on_click:
+                - http_request.get: http://192.168.1.111/alarm_control_panel/acp1/arm_away        
+        - button:
+              id: arm_night_btn
+              x: 490
+              y: 340
+              width: 240
+              height: 100
+              #checkable: true
+              widgets:
+                - label:
+                    align: CENTER
+                    text: 'ARM NIGHT'
+                    styles: my_button_style 
+              on_click:
+                - http_request.get: http://192.168.1.111/alarm_control_panel/acp1/arm_night
+        - button:
+              id: restart_button_lvgl
+              x: 780
+              y: 460
+              width: 20
+              height: 20
+              #checkable: true
+              widgets:
+                - label:
+                    align: CENTER
+                    text: ''
+                    styles: my_button_style 
+              on_click:
+                - button.press: restart_button        
+        - obj:
+             width: 320
+             height: 50
+             x: 460
+             y: 23
+             border_width: 1
+             border_color: 0
+             border_opa: 50%
+             pad_all: 0
+             bg_opa: 80%
+             bg_color: 0xFFFFFF
+             shadow_color: 0
+             shadow_opa: 50%
+             shadow_width: 10
+             shadow_spread: 3
+             radius: 5
+             widgets:
+               - label:
+                   id: lvgl_label3
+                   align: CENTER
+                   text: "Test3"
+                   text_align: CENTER
+                   styles: my_text_style
+        - obj:
+             width: 270
+             height: 50
+             x: 170
+             y: 23
+             border_width: 1
+             border_color: 0
+             border_opa: 50%
+             pad_all: 0
+             bg_opa: 80%
+             bg_color: 0xFFFFFF
+             shadow_color: 0
+             shadow_opa: 50%
+             shadow_width: 10
+             shadow_spread: 3
+             radius: 5
+             widgets:
+               - label:
+                   id: lvgl_label2
+                   align: CENTER
+                   text: "Test2"
+                   text_align: CENTER
+                   styles: my_text_style
+                
+key_collector:
+  - source_id: lvgl_keypad
+    min_length: 4
+    max_length: 4
+    end_keys: "#"
+    end_key_required: true
+    back_keys: "*"
+    allowed_keys: "0123456789*#"
+    timeout: 5s
+    on_progress:
+      - logger.log:
+          format: "input progress: '%s', started by '%c'"
+          args: [ 'x.c_str()', "(start == 0 ? '~' : start)" ]
+      - if:
+          condition:
+            lambda: return (0 != x.compare(std::string{""}));
+          then:
+            - lvgl.label.update:
+                id: lvgl_label
+                text: !lambda 'return x.c_str();'
+          else:
+            - lvgl.label.update:
+                id: lvgl_label
+                text: "Code:"
+    on_result:
+      - if:
+          condition:
+            lambda: return (0 == x.compare(std::string{"1234"}));
+          then:
+            - logger.log: "Test 1234"
+      - lambda: |-
+          id(my_code_int) = x.c_str();
+          ESP_LOGD("main", "Global string updated to: %s", id(my_code_int).c_str());
+      - http_request.get: 
+          url: !lambda |- 
+            std::string url = "http://192.168.1.111/alarm_control_panel/acp1/disarm?code=" + id(my_code_int);
+            return url;
+      - logger.log: "Sent HTTP"
+      - logger.log:
+          format: "input result: '%s', started by '%c', ended by '%c'"
+          args: [ 'x.c_str()', "(start == 0 ? '~' : start)", "(end == 0 ? '~' : end)" ]
+
+    
