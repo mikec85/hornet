@@ -16,7 +16,7 @@ touchscreen:
   platform: gt911
   id: touch0
   display: main_display
-  #interrupt_pin: 38
+  interrupt_pin: 38
   update_interval: 50ms
   on_release:
       - if:
