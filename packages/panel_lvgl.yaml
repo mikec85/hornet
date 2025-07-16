@@ -65,22 +65,6 @@ color:
     green: 0%
     blue: 0%
     
-touchscreen:
-  platform: gt911
-  id: touch0
-  display: main_display
-  #interrupt_pin: 19
-  update_interval: 50ms
-  on_release:
-      - if:
-          condition: lvgl.is_paused
-          then:
-            - logger.log: "LVGL resuming"
-            - lvgl.resume:
-            - lvgl.widget.redraw:
-            - light.turn_on: back_light
-
-
 lvgl:
   log_level: INFO
   color_depth: 16
