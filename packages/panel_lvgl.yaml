@@ -82,6 +82,8 @@ touchscreen:
 
 
 lvgl:
+  log_level: INFO
+  color_depth: 16
   disp_bg_color: my_black
   style_definitions:
     - id: my_button_style
