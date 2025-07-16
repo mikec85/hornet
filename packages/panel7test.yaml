@@ -25,6 +25,8 @@ display:
 
 touchscreen:
   platform: gt911
+  id: my_touchscreen
+  display: my_display
   interrupt_pin: 38
 
 output:
