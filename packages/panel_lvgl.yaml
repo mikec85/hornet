@@ -334,10 +334,4 @@ key_collector:
           format: "input result: '%s', started by '%c', ended by '%c'"
           args: [ 'x.c_str()', "(start == 0 ? '~' : start)", "(end == 0 ? '~' : end)" ]
 
-#sensor:
-#  - platform: wifi_signal # Reports the WiFi signal strength/RSSI in dB
-#    name: "WiFi Signal dB"
-#    id: wifi_signal_db
-#    update_interval: 60s
-#    entity_category: "diagnostic"
     
