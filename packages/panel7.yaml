@@ -1,0 +1,49 @@
+# Define a PWM output on the ESP32
+output:
+  - platform: ledc
+    pin: 2
+    frequency: 1220
+    id: gpio_backlight_pwm
+
+light:
+  - platform: monochromatic # Define a monochromatic, dimmable light for the backlight
+    output: gpio_backlight_pwm
+    name: ${devicename} Display Backlight
+    id: back_light
+    restore_mode: ALWAYS_ON
+
+display:
+  - platform: rpi_dpi_rgb
+    id: main_display
+    color_order: RGB
+    invert_colors: True
+    update_interval: never
+    auto_clear_enabled: false # takes 2.8 seconds to clear the display
+    dimensions:
+      width: 800
+      height: 480
+    de_pin: 41
+    hsync_pin: 39
+    vsync_pin: 40
+    pclk_pin: 0
+    pclk_frequency: 16MHz
+    data_pins:
+      red:
+        - 14        #r1
+        - 21        #r2
+        - 47        #r3
+        - 48        #r4
+        - 45        #r5
+      green:
+        - 9         #g0
+        - 46         #g1
+        - 3         #g2
+        - 8        #g3
+        - 16        #g4
+        - 1         #g5
+      blue:
+        - 15         #b1
+        - 7         #b2
+        - 6        #b3
+        - 5         #b4
+        - 4         #b5
