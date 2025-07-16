@@ -1,0 +1,40 @@
+display:
+  - platform: rpi_dpi_rgb
+    data_pins:
+      red: [14, 21, 47, 48, 45]
+      green: [9, 46, 3, 8, 16, 1]
+      blue: [15, 7, 6, 5, 4]
+    de_pin: 41
+    hsync_pin: 39
+    vsync_pin: 40
+    pclk_pin: 0
+    hsync_front_porch: 40
+    hsync_pulse_width: 48
+    hsync_back_porch: 13
+    vsync_front_porch: 1
+    vsync_pulse_width: 31
+    vsync_back_porch: 13
+    pclk_inverted: true
+    pclk_frequency: 15MHz
+    color_order: RGB
+    auto_clear_enabled: false
+    update_interval: never
+    dimensions:
+      width: 800
+      height: 480
+
+touchscreen:
+  platform: gt911
+  interrupt_pin: 38
+
+output:
+  - platform: ledc
+    pin: 2
+    id: backlight_pin
+
+light:
+  - platform: monochromatic
+    output: backlight_pin
+    name: "Backlight Level"
+    restore_mode: RESTORE_DEFAULT_ON
+    gamma_correct: 1.8
