@@ -33,11 +33,12 @@ touchscreen:
 output:
   - platform: ledc
     pin: 2
-    id: backlight_pin
+    frequency: 1220
+    id: gpio_backlight_pwm
 
 light:
   - platform: monochromatic
-    output: backlight_pin
-    name: "Backlight Level"
-    restore_mode: RESTORE_DEFAULT_ON
-    gamma_correct: 1.8
+    output: gpio_backlight_pwm
+    name: ${devicename} Display Backlight
+    id: back_light
+    restore_mode: ALWAYS_ON
