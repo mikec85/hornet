@@ -5,7 +5,6 @@ substitutions:
   warning_beep_internal_only: 'false'
   warning_beep_pulse_time: 100ms
   warning_beep_pause_time: 130ms
-  warning_beep_shared: "false"
 
 script:
   - id: error_tone_${warning_beep_index}
