@@ -15,10 +15,10 @@ binary_sensor:
       inverted: $sensor_inverted
     filters:
       - delayed_on_off: $sensor_debounce_time
-    on_state:
-      then:
-        - lambda: |-
-            id(last_zone) == "Zone 1";
+    #on_state:
+      #then:
+        #- lambda: |-
+        #    id(last_zone) == "Zone 1";
         #- mqtt.publish:
         #    topic: ${name}/lastzone
         #    payload: "Zone 1"
