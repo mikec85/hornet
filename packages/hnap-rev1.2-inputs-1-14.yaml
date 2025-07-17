@@ -22,10 +22,10 @@ binary_sensor:
         #- mqtt.publish:
         #    topic: ${name}/lastzone
         #    payload: "Zone 1"
-    on_press:
-      - mqtt.publish:
-          topic: ${name}/lastzone
-          payload: "Zone {{name}}"
+    #on_press:
+    #  - mqtt.publish:
+    #      topic: ${name}/lastzone
+    #      payload: "Zone {{name}}"
           
   # Zone 02 Input
   - platform: gpio
