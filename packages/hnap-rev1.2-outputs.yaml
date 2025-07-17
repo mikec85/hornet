@@ -2,7 +2,7 @@ switch:
 
   # General +12V Mosfet Output - MCP23017_4 IO0
   - platform: gpio
-    name: Output 1
+    name: Siren
     id: output_1
     pin:
       mcp23xxx: mcp23017_4
