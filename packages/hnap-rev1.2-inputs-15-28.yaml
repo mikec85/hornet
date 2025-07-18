@@ -3,7 +3,8 @@ binary_sensor:
   # Start MCP23017 Chip number 2 - 14 zones
   # Zone 15 Input
   - platform: gpio
-    name: Zone 15
+    id: zone15
+    name: 15_KitchenWin1
     pin:
       mcp23xxx: mcp23017_2
       number: 8
@@ -16,7 +17,8 @@ binary_sensor:
 
   # Zone 16 Input
   - platform: gpio
-    name: Zone 16
+    id: zone16
+    name: 16_Master_WindowSide
     pin:
       mcp23xxx: mcp23017_2
       number: 9
@@ -29,7 +31,8 @@ binary_sensor:
 
   # Zone 17 Input
   - platform: gpio
-    name: Zone 17
+    id: zone17
+    name: 17_KitchenDoubleWindow
     pin:
       mcp23xxx: mcp23017_2
       number: 10
@@ -42,7 +45,8 @@ binary_sensor:
 
   # Zone 18 Input
   - platform: gpio
-    name: Zone 18
+    id: zone18
+    name: 18_TVRoom_Window2
     pin:
       mcp23xxx: mcp23017_2
       number: 11
@@ -55,7 +59,8 @@ binary_sensor:
 
   # Zone 19 Input
   - platform: gpio
-    name: Zone 19
+    id: zone19
+    name: FrontDoor
     pin:
       mcp23xxx: mcp23017_2
       number: 12
@@ -68,7 +73,8 @@ binary_sensor:
 
   # Zone 20 Input
   - platform: gpio
-    name: Zone 20
+    id: zone20
+    name: 20_DiningRoomWindow
     pin:
       mcp23xxx: mcp23017_2
       number: 13
@@ -81,7 +87,8 @@ binary_sensor:
 
   # Zone 21 Input
   - platform: gpio
-    name: Zone 21
+    id: zone21
+    name: 21_GarageDoorBG
     pin:
       mcp23xxx: mcp23017_2
       number: 14
@@ -94,7 +101,8 @@ binary_sensor:
 
   # Zone 22 Input
   - platform: gpio
-    name: Zone 22
+    id: zone22
+    name: 22_GarageDoorSM
     pin:
       mcp23xxx: mcp23017_2
       number: 0
@@ -107,7 +115,8 @@ binary_sensor:
 
   # Zone 23 Input
   - platform: gpio
-    name: Zone 23
+    id: zone23
+    name: 23_EllieGlassBreak
     pin:
       mcp23xxx: mcp23017_2
       number: 1
@@ -120,7 +129,8 @@ binary_sensor:
 
   # Zone 24 Input
   - platform: gpio
-    name: Zone 24
+    id: zone24
+    name: 24_MavGlassBreak
     pin:
       mcp23xxx: mcp23017_2
       number: 2
@@ -133,7 +143,8 @@ binary_sensor:
 
   # Zone 25 Input
   - platform: gpio
-    name: Zone 25
+    id: zone25
+    name: 25_ClarkGlassBreak
     pin:
       mcp23xxx: mcp23017_2
       number: 3
