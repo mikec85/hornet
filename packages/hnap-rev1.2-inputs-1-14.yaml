@@ -4,7 +4,7 @@ binary_sensor:
   # Zone 01 Input
   - platform: gpio
     id: zone1
-    name: MasterBathWd
+    name: 1_MasterBathWd
     state_topic: ${name}/binary_sensor/zone1/state
     pin:
       mcp23xxx: mcp23017_1
@@ -29,7 +29,7 @@ binary_sensor:
           
   # Zone 02 Input
   - platform: gpio
-    name: TVBackDoor
+    name: 2_TVBackDoor
     id: zone2
     pin:
       mcp23xxx: mcp23017_1
@@ -57,7 +57,7 @@ binary_sensor:
 
   # Zone 04 Input
   - platform: gpio
-    name: OfficeWindow
+    name: 4_OfficeWindow
     id: zone4
     pin:
       mcp23xxx: mcp23017_1
@@ -71,7 +71,7 @@ binary_sensor:
 
   # Zone 05 Input
   - platform: gpio
-    name: TV_RM_Window1
+    name: 5_TV_RM_Window1
     id: zone5
     pin:
       mcp23xxx: mcp23017_1
@@ -85,7 +85,7 @@ binary_sensor:
 
   # Zone 06 Input
   - platform: gpio
-    name: DoorToGarage
+    name: 6_DoorToGarage
     id: zone6
     pin:
       mcp23xxx: mcp23017_1
@@ -99,7 +99,7 @@ binary_sensor:
 
   # Zone 07 Input
   - platform: gpio
-    name: LivingRoomWin
+    name: 7_LivingRoomWin
     id: zone7
     pin:
       mcp23xxx: mcp23017_1
@@ -113,7 +113,7 @@ binary_sensor:
 
   # Zone 08 Input
   - platform: gpio
-    name: ClarkWindow
+    name: 8_ClarkWindow
     id: zone8
     pin:
       mcp23xxx: mcp23017_1
@@ -127,7 +127,7 @@ binary_sensor:
 
   # Zone 09 Input
   - platform: gpio
-    name: GarageWindow
+    name: 9_GarageWindow
     id: zone9
     pin:
       mcp23xxx: mcp23017_1
@@ -141,7 +141,7 @@ binary_sensor:
 
   # Zone 10 Input
   - platform: gpio
-    name: MavRoomWd
+    name: 10_MavRoomWd
     id: zone10
     pin:
       mcp23xxx: mcp23017_1
@@ -155,7 +155,7 @@ binary_sensor:
 
   # Zone 11 Input
   - platform: gpio
-    name: BackDoor
+    name: 11_BackDoor
     id: zone11
     pin:
       mcp23xxx: mcp23017_1
@@ -169,7 +169,7 @@ binary_sensor:
 
   # Zone 12 Input
   - platform: gpio
-    name: Master_MD_Window
+    name: 12_Master_MD_Window
     id: zone12
     pin:
       mcp23xxx: mcp23017_1
@@ -183,7 +183,7 @@ binary_sensor:
 
   # Zone 13 Input
   - platform: gpio
-    name: LivingRoom
+    name: 13_LivingRoom
     id: zone13
     pin:
       mcp23xxx: mcp23017_1
