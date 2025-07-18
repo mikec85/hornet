@@ -142,6 +142,7 @@ binary_sensor:
   # Zone 10 Input
   - platform: gpio
     name: MavRoomWd
+    id: zone10
     pin:
       mcp23xxx: mcp23017_1
       number: 2
@@ -155,6 +156,7 @@ binary_sensor:
   # Zone 11 Input
   - platform: gpio
     name: BackDoor
+    id: zone11
     pin:
       mcp23xxx: mcp23017_1
       number: 3
@@ -168,6 +170,7 @@ binary_sensor:
   # Zone 12 Input
   - platform: gpio
     name: Master_MD_Window
+    id: zone12
     pin:
       mcp23xxx: mcp23017_1
       number: 4
@@ -181,6 +184,7 @@ binary_sensor:
   # Zone 13 Input
   - platform: gpio
     name: LivingRoom
+    id: zone13
     pin:
       mcp23xxx: mcp23017_1
       number: 5
@@ -194,6 +198,7 @@ binary_sensor:
   # Zone 14 Input
   - platform: gpio
     name: Zone 14
+    id: zone14
     pin:
       mcp23xxx: mcp23017_1
       number: 6
