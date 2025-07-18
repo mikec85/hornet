@@ -183,7 +183,7 @@ binary_sensor:
 
   # Zone 13 Input
   - platform: gpio
-    name: 13_LivingRoom
+    name: 13_LivingRoom_Motion
     id: zone13
     pin:
       mcp23xxx: mcp23017_1
