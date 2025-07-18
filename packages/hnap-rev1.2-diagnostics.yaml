@@ -1,22 +1,22 @@
-text_sensor:
+#text_sensor:
   # Determine the IP Address of the wESP32 and Expose to HA
-  - platform: ethernet_info
-    ip_address:
-      name: Ethernet IP Address
-      entity_category: diagnostic
+#  - platform: ethernet_info
+#    ip_address:
+#      name: Ethernet IP Address
+#      entity_category: diagnostic
   # Determine the Device ID (Mac Address) of the wESP32 and Expose to HA
-  - platform: template
-    name: Device ID
-    id: device_id
-    entity_category: diagnostic
-    update_interval: never
+#  - platform: template
+#    name: Device ID
+#    id: device_id
+#    entity_category: diagnostic
+#    update_interval: never
     
-sensor:
+#sensor:
   # Expose the Board Uptime to HA
-  - platform: uptime
-    name: Uptime
-    id: uptime_sensor
-    entity_category: diagnostic
+#  - platform: uptime
+#    name: Uptime
+#    id: uptime_sensor
+#    entity_category: diagnostic
 
 binary_sensor:
   # Start +12V Fuse Monitoring - On Fuse Blown, Enable Piezo Buzzer
