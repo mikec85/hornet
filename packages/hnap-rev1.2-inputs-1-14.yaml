@@ -4,7 +4,7 @@ binary_sensor:
   # Zone 01 Input
   - platform: gpio
     id: zone1
-    name: Test
+    name: MasterBathWd
     state_topic: ${name}/binary_sensor/zone1/state
     pin:
       mcp23xxx: mcp23017_1
@@ -29,7 +29,7 @@ binary_sensor:
           
   # Zone 02 Input
   - platform: gpio
-    name: Zone 02
+    name: TVBackDoor
     id: zone2
     pin:
       mcp23xxx: mcp23017_1
@@ -57,7 +57,7 @@ binary_sensor:
 
   # Zone 04 Input
   - platform: gpio
-    name: Zone 04
+    name: OfficeWindow
     id: zone4
     pin:
       mcp23xxx: mcp23017_1
@@ -71,7 +71,7 @@ binary_sensor:
 
   # Zone 05 Input
   - platform: gpio
-    name: Zone 05
+    name: TV_RM_Window1
     id: zone5
     pin:
       mcp23xxx: mcp23017_1
@@ -85,7 +85,7 @@ binary_sensor:
 
   # Zone 06 Input
   - platform: gpio
-    name: Zone 06
+    name: DoorToGarage
     id: zone6
     pin:
       mcp23xxx: mcp23017_1
@@ -99,7 +99,7 @@ binary_sensor:
 
   # Zone 07 Input
   - platform: gpio
-    name: Zone 07
+    name: LivingRoomWin
     id: zone7
     pin:
       mcp23xxx: mcp23017_1
@@ -113,7 +113,7 @@ binary_sensor:
 
   # Zone 08 Input
   - platform: gpio
-    name: Zone 08
+    name: ClarkWindow
     id: zone8
     pin:
       mcp23xxx: mcp23017_1
@@ -127,7 +127,7 @@ binary_sensor:
 
   # Zone 09 Input
   - platform: gpio
-    name: Zone 09
+    name: GarageWindow
     id: zone9
     pin:
       mcp23xxx: mcp23017_1
@@ -141,7 +141,7 @@ binary_sensor:
 
   # Zone 10 Input
   - platform: gpio
-    name: Zone 10
+    name: MavRoomWd
     pin:
       mcp23xxx: mcp23017_1
       number: 2
@@ -154,7 +154,7 @@ binary_sensor:
 
   # Zone 11 Input
   - platform: gpio
-    name: Zone 11
+    name: BackDoor
     pin:
       mcp23xxx: mcp23017_1
       number: 3
@@ -167,7 +167,7 @@ binary_sensor:
 
   # Zone 12 Input
   - platform: gpio
-    name: Zone 12
+    name: Master_MD_Window
     pin:
       mcp23xxx: mcp23017_1
       number: 4
@@ -180,7 +180,7 @@ binary_sensor:
 
   # Zone 13 Input
   - platform: gpio
-    name: Zone 13
+    name: LivingRoom
     pin:
       mcp23xxx: mcp23017_1
       number: 5
