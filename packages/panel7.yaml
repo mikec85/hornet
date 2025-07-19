@@ -29,7 +29,7 @@ touchscreen:
             
 display:
   - platform: rpi_dpi_rgb
-    id: my_display
+    id: main_display
     data_pins:
       red: [14, 21, 47, 48, 45]
       green: [9, 46, 3, 8, 16, 1]
