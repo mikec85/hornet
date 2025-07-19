@@ -5,6 +5,7 @@ binary_sensor:
   - platform: gpio
     id: zone1
     name: 1_MasterBathWd
+    icon: mdi:mdi-window-closed
     state_topic: ${name}/binary_sensor/zone1/state
     pin:
       mcp23xxx: mcp23017_1
@@ -31,6 +32,7 @@ binary_sensor:
   - platform: gpio
     name: 2_TVBackDoor
     id: zone2
+    icon: mdi:mdi-glassdoor
     pin:
       mcp23xxx: mcp23017_1
       number: 9
@@ -59,6 +61,7 @@ binary_sensor:
   - platform: gpio
     name: 4_OfficeWindow
     id: zone4
+    icon: mdi:mdi-window-closed
     pin:
       mcp23xxx: mcp23017_1
       number: 11
@@ -73,6 +76,7 @@ binary_sensor:
   - platform: gpio
     name: 5_TV_RM_Window1
     id: zone5
+    icon: mdi:mdi-window-closed
     pin:
       mcp23xxx: mcp23017_1
       number: 12
@@ -87,6 +91,7 @@ binary_sensor:
   - platform: gpio
     name: 6_DoorToGarage
     id: zone6
+    icon: mdi:mdi-glassdoor
     pin:
       mcp23xxx: mcp23017_1
       number: 13
@@ -101,6 +106,7 @@ binary_sensor:
   - platform: gpio
     name: 7_LivingRoomWin
     id: zone7
+    icon: mdi:mdi-window-closed
     pin:
       mcp23xxx: mcp23017_1
       number: 14
@@ -115,6 +121,7 @@ binary_sensor:
   - platform: gpio
     name: 8_ClarkWindow
     id: zone8
+    icon: mdi:mdi-window-closed
     pin:
       mcp23xxx: mcp23017_1
       number: 0
@@ -129,6 +136,7 @@ binary_sensor:
   - platform: gpio
     name: 9_GarageWindow
     id: zone9
+    icon: mdi:mdi-window-closed
     pin:
       mcp23xxx: mcp23017_1
       number: 1
@@ -143,6 +151,7 @@ binary_sensor:
   - platform: gpio
     name: 10_MavRoomWd
     id: zone10
+    icon: mdi:mdi-window-closed
     pin:
       mcp23xxx: mcp23017_1
       number: 2
@@ -157,6 +166,7 @@ binary_sensor:
   - platform: gpio
     name: 11_BackDoor
     id: zone11
+    icon: mdi:mdi-glassdoor
     pin:
       mcp23xxx: mcp23017_1
       number: 3
@@ -171,6 +181,7 @@ binary_sensor:
   - platform: gpio
     name: 12_Master_MD_Window
     id: zone12
+    icon: mdi:mdi-window-closed
     pin:
       mcp23xxx: mcp23017_1
       number: 4
@@ -185,6 +196,7 @@ binary_sensor:
   - platform: gpio
     name: 13_LivingRoom_Motion
     id: zone13
+    icon: mdi:mdi-movie
     pin:
       mcp23xxx: mcp23017_1
       number: 5
