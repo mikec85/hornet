@@ -5,6 +5,7 @@ binary_sensor:
   - platform: gpio
     id: zone15
     name: 15_KitchenWin1
+    icon: mdi:mdi-window-closed
     pin:
       mcp23xxx: mcp23017_2
       number: 8
@@ -19,6 +20,7 @@ binary_sensor:
   - platform: gpio
     id: zone16
     name: 16_Master_WindowSide
+    icon: mdi:mdi-window-closed
     pin:
       mcp23xxx: mcp23017_2
       number: 9
@@ -33,6 +35,7 @@ binary_sensor:
   - platform: gpio
     id: zone17
     name: 17_KitchenDoubleWindow
+    icon: mdi:mdi-window-closed
     pin:
       mcp23xxx: mcp23017_2
       number: 10
@@ -47,6 +50,7 @@ binary_sensor:
   - platform: gpio
     id: zone18
     name: 18_TVRoom_Window2
+    icon: mdi:mdi-window-closed
     pin:
       mcp23xxx: mcp23017_2
       number: 11
@@ -61,6 +65,7 @@ binary_sensor:
   - platform: gpio
     id: zone19
     name: FrontDoor
+    icon: mdi:mdi-glassdoor
     pin:
       mcp23xxx: mcp23017_2
       number: 12
@@ -75,6 +80,7 @@ binary_sensor:
   - platform: gpio
     id: zone20
     name: 20_DiningRoomWindow
+    icon: mdi:mdi-window-closed
     pin:
       mcp23xxx: mcp23017_2
       number: 13
@@ -89,6 +95,7 @@ binary_sensor:
   - platform: gpio
     id: zone21
     name: 21_GarageDoorBG
+    icon: mdi:mdi-garage
     pin:
       mcp23xxx: mcp23017_2
       number: 14
@@ -103,6 +110,7 @@ binary_sensor:
   - platform: gpio
     id: zone22
     name: 22_GarageDoorSM
+    icon: mdi:mdi-garage
     pin:
       mcp23xxx: mcp23017_2
       number: 0
@@ -117,6 +125,7 @@ binary_sensor:
   - platform: gpio
     id: zone23
     name: 23_EllieGlassBreak
+    icon: mdi:mdi-glass-tulip
     pin:
       mcp23xxx: mcp23017_2
       number: 1
@@ -131,6 +140,7 @@ binary_sensor:
   - platform: gpio
     id: zone24
     name: 24_MavGlassBreak
+    icon: mdi:mdi-glass-tulip
     pin:
       mcp23xxx: mcp23017_2
       number: 2
@@ -145,6 +155,7 @@ binary_sensor:
   - platform: gpio
     id: zone25
     name: 25_ClarkGlassBreak
+    icon: mdi:mdi-glass-tulip
     pin:
       mcp23xxx: mcp23017_2
       number: 3
