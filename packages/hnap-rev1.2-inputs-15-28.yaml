@@ -4,7 +4,7 @@ binary_sensor:
   # Zone 15 Input
   - platform: gpio
     id: zone15
-    name: 15_KitchenWin1
+    name: 15_Master_WindowSide
     icon: mdi:window-closed
     pin:
       mcp23xxx: mcp23017_2
@@ -19,7 +19,7 @@ binary_sensor:
   # Zone 16 Input
   - platform: gpio
     id: zone16
-    name: 16_Master_WindowSide
+    name: 16_KitchenWin1
     icon: mdi:window-closed
     pin:
       mcp23xxx: mcp23017_2
