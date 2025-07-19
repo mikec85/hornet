@@ -4,6 +4,7 @@ switch:
   - platform: gpio
     name: Siren
     id: output_1
+    icon: mdi:bullhorn
     pin:
       mcp23xxx: mcp23017_4
       number: 0
