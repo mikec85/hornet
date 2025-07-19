@@ -44,18 +44,18 @@ binary_sensor:
       - delayed_on_off: $sensor_debounce_time
 
   # Zone 03 Input
-  - platform: gpio
-    name: Zone 03
-    id: zone3
-    pin:
-      mcp23xxx: mcp23017_1
-      number: 10
-      mode:
-        input: true
-        pullup: false
-      inverted: $sensor_inverted
-    filters:
-      - delayed_on_off: $sensor_debounce_time
+#  - platform: gpio
+#    name: Zone 03
+#    id: zone3
+#    pin:
+#      mcp23xxx: mcp23017_1
+#      number: 10
+#      mode:
+#        input: true
+#        pullup: false
+#      inverted: $sensor_inverted
+#    filters:
+#      - delayed_on_off: $sensor_debounce_time
 
   # Zone 04 Input
   - platform: gpio
@@ -208,16 +208,16 @@ binary_sensor:
       - delayed_on_off: $sensor_debounce_time
 
   # Zone 14 Input
-  - platform: gpio
-    name: Zone 14
-    id: zone14
-    pin:
-      mcp23xxx: mcp23017_1
-      number: 6
-      mode:
-        input: true
-        pullup: false
-      inverted: $sensor_inverted
-    filters:
-      - delayed_on_off: $sensor_debounce_time
+#  - platform: gpio
+#    name: Zone 14
+#    id: zone14
+#    pin:
+#      mcp23xxx: mcp23017_1
+#      number: 6
+#      mode:
+#        input: true
+#        pullup: false
+#      inverted: $sensor_inverted
+#    filters:
+#      - delayed_on_off: $sensor_debounce_time
   # End MCP23017 Chip number 1
