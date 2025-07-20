@@ -220,12 +220,17 @@ lvgl:
                 - label:
                     align: CENTER
                     text: 'ARM NIGHT'
-                    styles: my_button_style 
+                    styles: my_button_style
+              on_double_click:
+                - logger.log: "Double Click"
+                #- mqtt.publish:
+                #    topic: hornet-nest-3cc06c/alarm_control_panel/acp1/command
+                #    payload: "arm_night"
               on_click:
                 #- http_request.get: http://192.168.1.111/alarm_control_panel/acp1/arm_night
-                - mqtt.publish:
-                    topic: hornet-nest-3cc06c/alarm_control_panel/acp1/command
-                    payload: "arm_night"
+                #- mqtt.publish:
+                 #   topic: hornet-nest-3cc06c/alarm_control_panel/acp1/command
+                 #   payload: "arm_night"
         - button:
               id: restart_button_lvgl
               x: 780
