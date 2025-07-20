@@ -6,7 +6,7 @@ binary_sensor:
     id: zone1
     name: 1_MasterBathWd
     icon: mdi:window-closed
-    state_topic: ${name}/binary_sensor/zone1/state
+    #state_topic: ${name}/binary_sensor/zone1/state
     pin:
       mcp23xxx: mcp23017_1
       number: 8
