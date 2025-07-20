@@ -69,7 +69,6 @@ lvgl:
   log_level: INFO
   color_depth: 16
   disp_bg_color: my_black
-  touchscreens: my_touch
   touchscreens:
     - touchscreen_id: my_touchscreen
       long_press_time: 2s
