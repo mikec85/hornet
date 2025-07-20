@@ -64,7 +64,7 @@ binary_sensor:
   # Zone 19 Input
   - platform: gpio
     id: zone19
-    name: FrontDoor
+    name: 19_FrontDoor
     icon: mdi:door
     pin:
       mcp23xxx: mcp23017_2
