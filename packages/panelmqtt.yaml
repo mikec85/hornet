@@ -37,7 +37,7 @@ mqtt:
       then:
         - logger.log: "MQTT EVENT"
         - switch.turn_on: led
-        - delay: 50ms  
+        - delay: 100ms  #was 50
         - switch.turn_off: led
     - topic: hornet-nest-3cc06c/on_ready
       qos: 0
