@@ -195,7 +195,7 @@ lvgl:
                 - mqtt.publish:
                     topic: hornet-nest-3cc06c/alarm_control_panel/acp1/command
                     payload: "arm_home"
-              on_click:
+              #on_click:
                 #- http_request.get: http://192.168.1.111/alarm_control_panel/acp1/arm_home
                 #- mqtt.publish:
                 #    topic: hornet-nest-3cc06c/alarm_control_panel/acp1/command
@@ -217,7 +217,7 @@ lvgl:
                 - mqtt.publish:
                     topic: hornet-nest-3cc06c/alarm_control_panel/acp1/command
                     payload: "arm_away"
-              on_click:
+              #on_click:
                 #- http_request.get: http://192.168.1.111/alarm_control_panel/acp1/arm_away
                 #- mqtt.publish:
                 #    topic: hornet-nest-3cc06c/alarm_control_panel/acp1/command
