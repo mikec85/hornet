@@ -31,14 +31,14 @@ mqtt:
       qos: 0
       then:
         - logger.log: "MQTT EVENT"
-    - topic: hornet-nest-3cc06c/binary_sensor/zone_01_-_test/state
-      qos: 0
-      payload: "ON"
-      then:
-        - logger.log: "MQTT EVENT"
-        - switch.turn_on: led
-        - delay: 50ms  
-        - switch.turn_off: led
+    #- topic: hornet-nest-3cc06c/binary_sensor/zone_01_-_test/state
+    #  qos: 0
+    #  payload: "ON"
+    #  then:
+    #    - logger.log: "MQTT EVENT"
+    #    - switch.turn_on: led
+    #    - delay: 50ms  
+    #    - switch.turn_off: led
     - topic: hornet-nest-3cc06c/alarm_control_panel/acp1/state
       qos: 0
       then:
