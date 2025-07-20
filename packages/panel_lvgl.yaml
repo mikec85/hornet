@@ -190,11 +190,16 @@ lvgl:
                     align: CENTER
                     text: 'ARM HOME'
                     styles: my_button_style 
-              on_click:
-                #- http_request.get: http://192.168.1.111/alarm_control_panel/acp1/arm_home
+              on_long_press:
+                - logger.log: "Long press Click"
                 - mqtt.publish:
                     topic: hornet-nest-3cc06c/alarm_control_panel/acp1/command
                     payload: "arm_home"
+              on_click:
+                #- http_request.get: http://192.168.1.111/alarm_control_panel/acp1/arm_home
+                #- mqtt.publish:
+                #    topic: hornet-nest-3cc06c/alarm_control_panel/acp1/command
+                #    payload: "arm_home"
         - button:
               id: arm_away_btn
               x: 490
@@ -207,11 +212,16 @@ lvgl:
                     align: CENTER
                     text: 'ARM AWAY'
                     styles: my_button_style 
-              on_click:
-                #- http_request.get: http://192.168.1.111/alarm_control_panel/acp1/arm_away
+              on_long_press:
+                - logger.log: "Long press Click"
                 - mqtt.publish:
                     topic: hornet-nest-3cc06c/alarm_control_panel/acp1/command
                     payload: "arm_away"
+              on_click:
+                #- http_request.get: http://192.168.1.111/alarm_control_panel/acp1/arm_away
+                #- mqtt.publish:
+                #    topic: hornet-nest-3cc06c/alarm_control_panel/acp1/command
+                #    payload: "arm_away"
         - button:
               id: arm_night_btn
               x: 490
@@ -226,9 +236,9 @@ lvgl:
                     styles: my_button_style
               on_long_press:
                 - logger.log: "Long press Click"
-                #- mqtt.publish:
-                #    topic: hornet-nest-3cc06c/alarm_control_panel/acp1/command
-                #    payload: "arm_night"
+                - mqtt.publish:
+                    topic: hornet-nest-3cc06c/alarm_control_panel/acp1/command
+                    payload: "arm_night"
               on_click:
                 - logger.log: "On Click"
                 #- http_request.get: http://192.168.1.111/alarm_control_panel/acp1/arm_night
