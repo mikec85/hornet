@@ -221,7 +221,7 @@ lvgl:
                     align: CENTER
                     text: 'ARM NIGHT'
                     styles: my_button_style
-              on_double_click:
+              on_long_press:
                 - logger.log: "Double Click"
                 #- mqtt.publish:
                 #    topic: hornet-nest-3cc06c/alarm_control_panel/acp1/command
