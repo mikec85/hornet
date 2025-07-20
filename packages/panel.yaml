@@ -14,7 +14,7 @@ light:
 
 touchscreen:
   platform: gt911
-  id: touch0
+  id: my_touchscreen
   display: main_display
   #interrupt_pin: 19
   update_interval: 50ms
