@@ -222,11 +222,12 @@ lvgl:
                     text: 'ARM NIGHT'
                     styles: my_button_style
               on_long_press:
-                - logger.log: "Double Click"
+                - logger.log: "Long press Click"
                 #- mqtt.publish:
                 #    topic: hornet-nest-3cc06c/alarm_control_panel/acp1/command
                 #    payload: "arm_night"
               on_click:
+                - logger.log: "On Click"
                 #- http_request.get: http://192.168.1.111/alarm_control_panel/acp1/arm_night
                 #- mqtt.publish:
                  #   topic: hornet-nest-3cc06c/alarm_control_panel/acp1/command
