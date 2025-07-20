@@ -13,6 +13,14 @@ mqtt:
         - logger.log: "MQTT armed_home"
     - topic: hornet-nest-3cc06c/alarm_control_panel/acp1/state
       qos: 0
+      payload: "armed_night"
+      then:
+        - lvgl.led.update:
+            id: lvgl_led
+            color: 0xFF0000
+        - logger.log: "MQTT armed_night"
+    - topic: hornet-nest-3cc06c/alarm_control_panel/acp1/state
+      qos: 0
       payload: "disarmed"
       then:
         - lvgl.led.update:
