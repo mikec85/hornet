@@ -1,3 +1,9 @@
+globals:
+  - id: last_zone_global
+    type: std::string
+    restore_value: no
+    initial_value: ''
+
 # MQTT
 mqtt:
   id: mqtt_client
