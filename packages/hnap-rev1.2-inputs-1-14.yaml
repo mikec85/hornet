@@ -16,6 +16,12 @@ binary_sensor:
       inverted: $sensor_inverted
     filters:
       - delayed_on_off: $sensor_debounce_time
+    on_state:
+      then:
+        - mqtt.publish:
+            topic: hornet-nest-3cc06c/lastzone
+            retain: True
+            payload:  "Zone 1_MasterBathWd"
 
   # Zone 02 Input
   - platform: gpio
@@ -31,6 +37,12 @@ binary_sensor:
       inverted: $sensor_inverted
     filters:
       - delayed_on_off: $sensor_debounce_time
+    on_state:
+      then:
+        - mqtt.publish:
+            topic: hornet-nest-3cc06c/lastzone
+            retain: True
+            payload:  "Zone 2_TVBackDoor"
 
 
   # Zone 03 Input
@@ -61,6 +73,12 @@ binary_sensor:
       inverted: $sensor_inverted
     filters:
       - delayed_on_off: $sensor_debounce_time
+    on_state:
+      then:
+        - mqtt.publish:
+            topic: hornet-nest-3cc06c/lastzone
+            retain: True
+            payload:  "Zone 4_OfficeWindow"
 
   # Zone 05 Input
   - platform: gpio
@@ -76,6 +94,12 @@ binary_sensor:
       inverted: $sensor_inverted
     filters:
       - delayed_on_off: $sensor_debounce_time
+    on_state:
+      then:
+        - mqtt.publish:
+            topic: hornet-nest-3cc06c/lastzone
+            retain: True
+            payload:  "Zone 5_TV_RM_Window1" 
 
   # Zone 06 Input
   - platform: gpio
@@ -102,11 +126,7 @@ binary_sensor:
         - mqtt.publish:
             topic: hornet-nest-3cc06c/lastzone
             retain: True
-            payload:  !lambda |-
-                // return ;
-                char buf[128];
-                sprintf(buf, "Zone %.2f", id(zone6).get_name());
-                return buf;  
+            payload:  "Zone 6_DoorToGarage" 
 
   # Zone 07 Input
   - platform: gpio
@@ -122,6 +142,12 @@ binary_sensor:
       inverted: $sensor_inverted
     filters:
       - delayed_on_off: $sensor_debounce_time
+    on_state:
+      then:
+        - mqtt.publish:
+            topic: hornet-nest-3cc06c/lastzone
+            retain: True
+            payload:  "Zone 7_LivingRoomWin"
 
   # Zone 08 Input
   - platform: gpio
@@ -137,6 +163,12 @@ binary_sensor:
       inverted: $sensor_inverted
     filters:
       - delayed_on_off: $sensor_debounce_time
+    on_state:
+      then:
+        - mqtt.publish:
+            topic: hornet-nest-3cc06c/lastzone
+            retain: True
+            payload:  "Zone 8_ClarkWindow"
 
   # Zone 09 Input
   - platform: gpio
@@ -152,6 +184,12 @@ binary_sensor:
       inverted: $sensor_inverted
     filters:
       - delayed_on_off: $sensor_debounce_time
+    on_state:
+      then:
+        - mqtt.publish:
+            topic: hornet-nest-3cc06c/lastzone
+            retain: True
+            payload:  "Zone 9_GarageWindow"
 
   # Zone 10 Input
   - platform: gpio
@@ -167,6 +205,12 @@ binary_sensor:
       inverted: $sensor_inverted
     filters:
       - delayed_on_off: $sensor_debounce_time
+    on_state:
+      then:
+        - mqtt.publish:
+            topic: hornet-nest-3cc06c/lastzone
+            retain: True
+            payload:  "Zone 10_MavRoomWd"
 
   # Zone 11 Input
   - platform: gpio
@@ -182,6 +226,12 @@ binary_sensor:
       inverted: $sensor_inverted
     filters:
       - delayed_on_off: $sensor_debounce_time
+    on_state:
+      then:
+        - mqtt.publish:
+            topic: hornet-nest-3cc06c/lastzone
+            retain: True
+            payload:  "Zone 11_BackDoor"
 
   # Zone 12 Input
   - platform: gpio
@@ -197,6 +247,12 @@ binary_sensor:
       inverted: $sensor_inverted
     filters:
       - delayed_on_off: $sensor_debounce_time
+    on_state:
+      then:
+        - mqtt.publish:
+            topic: hornet-nest-3cc06c/lastzone
+            retain: True
+            payload:  "Zone 12_Master_MD_Window"
 
   # Zone 13 Input
   - platform: gpio
@@ -212,6 +268,12 @@ binary_sensor:
       inverted: $sensor_inverted
     filters:
       - delayed_on_off: $sensor_debounce_time
+    on_state:
+      then:
+        - mqtt.publish:
+            topic: hornet-nest-3cc06c/lastzone
+            retain: True
+            payload:  "Zone 13_LivingRoom_Motion"
 
   # Zone 14 Input
 #  - platform: gpio
