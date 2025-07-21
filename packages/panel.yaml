@@ -5,6 +5,11 @@ output:
     frequency: 1220
     id: gpio_backlight_pwm
 
+udp:
+  addresses: 192.168.1.239
+
+syslog:
+  
 light:
   - platform: monochromatic # Define a monochromatic, dimmable light for the backlight
     output: gpio_backlight_pwm
