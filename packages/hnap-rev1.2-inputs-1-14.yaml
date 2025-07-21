@@ -105,7 +105,7 @@ binary_sensor:
             payload:  !lambda |-
                 // return ;
                 char buf[128];
-                sprintf(buf, "Zone %.2f", x.name);
+                sprintf(buf, "Zone %.2f", id(zone6).get_name());
                 return buf;  
 
   # Zone 07 Input
