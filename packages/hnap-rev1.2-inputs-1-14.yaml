@@ -106,11 +106,7 @@ binary_sensor:
                 // return ;
                 char buf[128];
                 sprintf(buf, "Zone %.2f", name);
-                return buf;
-        - mqtt.publish:
-            topic: hornet-nest-3cc06c/lastzone
-            retain: True
-            payload:  "Zone ${name}" + ${name}   
+                return buf;  
 
   # Zone 07 Input
   - platform: gpio
