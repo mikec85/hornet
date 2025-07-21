@@ -15,6 +15,12 @@ binary_sensor:
       inverted: $sensor_inverted
     filters:
       - delayed_on_off: $sensor_debounce_time
+    on_state:
+      then:
+        - mqtt.publish:
+            topic: hornet-nest-3cc06c/lastzone
+            retain: True
+            payload:  "Zone 15_Master_WindowSide"
 
   # Zone 16 Input
   - platform: gpio
@@ -30,6 +36,12 @@ binary_sensor:
       inverted: $sensor_inverted
     filters:
       - delayed_on_off: $sensor_debounce_time
+    on_state:
+      then:
+        - mqtt.publish:
+            topic: hornet-nest-3cc06c/lastzone
+            retain: True
+            payload:  "Zone 16_KitchenWin1"
 
   # Zone 17 Input
   - platform: gpio
@@ -45,6 +57,12 @@ binary_sensor:
       inverted: $sensor_inverted
     filters:
       - delayed_on_off: $sensor_debounce_time
+    on_state:
+      then:
+        - mqtt.publish:
+            topic: hornet-nest-3cc06c/lastzone
+            retain: True
+            payload:  "Zone 17_KitchenDoubleWindow"
 
   # Zone 18 Input
   - platform: gpio
@@ -60,6 +78,12 @@ binary_sensor:
       inverted: $sensor_inverted
     filters:
       - delayed_on_off: $sensor_debounce_time
+    on_state:
+      then:
+        - mqtt.publish:
+            topic: hornet-nest-3cc06c/lastzone
+            retain: True
+            payload:  "Zone 18_TVRoom_Window2"
 
   # Zone 19 Input
   - platform: gpio
@@ -75,6 +99,12 @@ binary_sensor:
       inverted: $sensor_inverted
     filters:
       - delayed_on_off: $sensor_debounce_time
+    on_state:
+      then:
+        - mqtt.publish:
+            topic: hornet-nest-3cc06c/lastzone
+            retain: True
+            payload:  "Zone 19_FrontDoor"
 
   # Zone 20 Input
   - platform: gpio
@@ -90,6 +120,12 @@ binary_sensor:
       inverted: $sensor_inverted
     filters:
       - delayed_on_off: $sensor_debounce_time
+    on_state:
+      then:
+        - mqtt.publish:
+            topic: hornet-nest-3cc06c/lastzone
+            retain: True
+            payload:  "Zone 20_DiningRoomWindow"
 
   # Zone 21 Input
   - platform: gpio
@@ -105,6 +141,12 @@ binary_sensor:
       inverted: $sensor_inverted
     filters:
       - delayed_on_off: $sensor_debounce_time
+    on_state:
+      then:
+        - mqtt.publish:
+            topic: hornet-nest-3cc06c/lastzone
+            retain: True
+            payload:  "Zone 21_GarageDoorBG"
 
   # Zone 22 Input
   - platform: gpio
@@ -120,6 +162,12 @@ binary_sensor:
       inverted: $sensor_inverted
     filters:
       - delayed_on_off: $sensor_debounce_time
+    on_state:
+      then:
+        - mqtt.publish:
+            topic: hornet-nest-3cc06c/lastzone
+            retain: True
+            payload:  "Zone 22_GarageDoorSM"
 
   # Zone 23 Input
   - platform: gpio
@@ -135,6 +183,12 @@ binary_sensor:
       inverted: $sensor_inverted
     filters:
       - delayed_on_off: $sensor_debounce_time
+    on_state:
+      then:
+        - mqtt.publish:
+            topic: hornet-nest-3cc06c/lastzone
+            retain: True
+            payload:  "Zone 23_EllieGlassBreak"
 
   # Zone 24 Input
   - platform: gpio
@@ -150,6 +204,12 @@ binary_sensor:
       inverted: $sensor_inverted
     filters:
       - delayed_on_off: $sensor_debounce_time
+    on_state:
+      then:
+        - mqtt.publish:
+            topic: hornet-nest-3cc06c/lastzone
+            retain: True
+            payload:  "Zone 24_MavGlassBreak"
 
   # Zone 25 Input
   - platform: gpio
@@ -165,6 +225,12 @@ binary_sensor:
       inverted: $sensor_inverted
     filters:
       - delayed_on_off: $sensor_debounce_time
+    on_state:
+      then:
+        - mqtt.publish:
+            topic: hornet-nest-3cc06c/lastzone
+            retain: True
+            payload:  "Zone 25_ClarkGlassBreak"
 
   # Zone 26 Input
 #  - platform: gpio
