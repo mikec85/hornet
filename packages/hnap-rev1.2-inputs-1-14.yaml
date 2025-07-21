@@ -114,7 +114,11 @@ binary_sensor:
         - mqtt.publish:
             topic: hornet-nest-3cc06c/lastzone
             retain: True
-            payload:  "Zone {{name}}"  
+            payload:  "Zone ${name}"
+        - mqtt.publish:
+            topic: hornet-nest-3cc06c/lastzone
+            retain: True
+            payload:  "Zone ${name}" + ${name}   
 
   # Zone 07 Input
   - platform: gpio
