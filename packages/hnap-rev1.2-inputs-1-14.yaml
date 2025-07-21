@@ -21,11 +21,7 @@ binary_sensor:
         - mqtt.publish:
             topic: hornet-nest-3cc06c/lastzone
             retain: True
-            payload:  "Zone ${name}"
-        - mqtt.publish:
-            topic: hornet-nest-3cc06c/lastzone
-            retain: True
-            payload:  "Zone ${name}" + ${name}    
+            payload:  "Zone ${name}"  
         #- lambda: |-
         #    id(last_zone) == "Zone 1";
         #- mqtt.publish:
