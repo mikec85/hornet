@@ -32,6 +32,7 @@ binary_sensor:
     filters:
       - delayed_on_off: $sensor_debounce_time
 
+
   # Zone 03 Input
 #  - platform: gpio
 #    name: Zone 03
