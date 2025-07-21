@@ -96,9 +96,9 @@ binary_sensor:
         #- logger.log:
         #    format: "Old state was %s"
         #    args: ['x_previous.has_value() ? ONOFF(x_previous) : "Unknown"']
-        - logger.log:
-            format: "New state is %s"
-            args: ['x.has_value() ? ONOFF(x) : "Unknown"']
+        #- logger.log:
+        #    format: "New state is %s"
+        #    args: ['x.has_value() ? ONOFF(x) : "Unknown"']
         - mqtt.publish:
             topic: hornet-nest-3cc06c/lastzone
             retain: True
