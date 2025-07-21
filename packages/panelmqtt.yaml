@@ -71,3 +71,12 @@ mqtt:
             id: lvgl_label3
             text: !lambda |-
               return ("Last Zone Change: " + x);
+    - topic: hornet-nest-3cc06c/lastzone
+      qos: 0
+      then:
+        - lambda: |-
+            ESP_LOGD("mqtt_on_message", "Received payload: %s", x);
+        - globals.set:
+            id: last_zone_global
+            value: !lambda |-
+              return ("" + x);
