@@ -25,9 +25,10 @@ display:
       height: 480
 
 touchscreen:
-  platform: pca9557
+  platform: gt911
   id: my_touchscreen
   display: my_display
+  address: 0x5D
   #interrupt_pin: 38
 
 output:
