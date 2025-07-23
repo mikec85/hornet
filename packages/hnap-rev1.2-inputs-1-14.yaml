@@ -268,12 +268,12 @@ binary_sensor:
       inverted: $sensor_inverted
     filters:
       - delayed_on_off: $sensor_debounce_time
-    on_state:
-      then:
-        - mqtt.publish:
-            topic: hornet-nest-3cc06c/lastzone
-            retain: True
-            payload:  "Zone 13_LivingRoom_Motion"
+    #on_state:
+    #  then:
+    #    - mqtt.publish:
+    #        topic: hornet-nest-3cc06c/lastzone
+    #        retain: True
+    #        payload:  "Zone 13_LivingRoom_Motion"
 
   # Zone 14 Input
 #  - platform: gpio
