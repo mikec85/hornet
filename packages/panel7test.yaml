@@ -25,10 +25,10 @@ display:
       height: 480
 
 touchscreen:
-  platform: gt911
+  platform: pca9557
   id: my_touchscreen
   display: my_display
-  interrupt_pin: 38
+  #interrupt_pin: 38
 
 output:
   - platform: ledc
