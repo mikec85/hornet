@@ -1,0 +1,88 @@
+globals:
+  - id: last_zone_global
+    type: std::string
+    restore_value: no
+    initial_value: ''
+
+# MQTT
+mqtt:
+  id: mqtt_client
+  broker: mqtt.coffeys.net
+  on_message:
+    - topic: konnected-fdc55d/alarm_control_panel/acp1/state
+      qos: 0
+      payload: "armed_home"
+      then:
+        - lvgl.led.update:
+            id: lvgl_led
+            color: 0xFF0000
+        - logger.log: "MQTT armed_home"
+    - topic: konnected-fdc55d/alarm_control_panel/acp1/state
+      qos: 0
+      payload: "armed_night"
+      then:
+        - lvgl.led.update:
+            id: lvgl_led
+            color: 0xFF0000
+        - logger.log: "MQTT armed_night"
+    - topic: konnected-fdc55d/alarm_control_panel/acp1/state
+      qos: 0
+      payload: "disarmed"
+      then:
+        - lvgl.led.update:
+            id: lvgl_led
+            color: 0x00FF00
+        - logger.log: "MQTT disarmed"
+    - topic: konnected-fdc55d/alarm_control_panel/acp1/state
+      qos: 0
+      then:
+        - logger.log: "MQTT EVENT"
+    - topic: konnected-fdc55d/chime
+      qos: 0
+      payload: "Chime"
+      then:
+        - logger.log: "MQTT EVENT"
+        - switch.turn_on: led
+        - delay: 100ms  #was 50
+        - switch.turn_off: led
+    - topic: konnected-fdc55d/on_ready
+      qos: 0
+      payload: "true"
+      then:
+        - lvgl.label.update:
+            id: lvgl_label3
+            text: "System Ready"
+    - topic: konnected-fdc55d/on_ready
+      qos: 0
+      payload: "false"
+      then:
+        - lvgl.label.update:
+            id: lvgl_label3
+            text: "System Not Ready"
+    - topic: konnected-fdc55d/alarm_control_panel/acp1/state
+      qos: 0
+      then:
+        - lambda: |-
+            ESP_LOGD("mqtt_on_message", "Received payload: %s", x);
+        - lvgl.label.update:
+            id: lvgl_label2
+            text: !lambda |-
+              return ("Status: " + x);
+    #- topic: hornet-nest-3cc06c/lastzone
+    #  qos: 0
+    #  then:
+    #    - lambda: |-
+    #        ESP_LOGD("mqtt_on_message", "Received payload: %s", x);
+    #    - lvgl.label.update:
+    #        id: lvgl_label3
+    #        text: !lambda |-
+    #          return ("Last Zone Change: " + x);
+    - topic: konnected-fdc55d/lastzone
+      qos: 0
+      then:
+        - lambda: |-
+            ESP_LOGD("mqtt_on_message", "Received payload: %s", x);
+        - globals.set:
+            id: last_zone_global
+            value: !lambda |-
+              return ("" + x);
