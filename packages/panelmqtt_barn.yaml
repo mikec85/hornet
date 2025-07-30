@@ -11,12 +11,30 @@ mqtt:
   on_message:
     - topic: konnected-fdc55d/alarm_control_panel/acp1/state
       qos: 0
+      payload: "arming"
+      then:
+        - switch.turn_on: led
+  id: mqtt_client
+  broker: mqtt.coffeys.net
+  on_message:
+    - topic: konnected-fdc55d/alarm_control_panel/acp1/state
+      qos: 0
+      payload: "pending"
+      then:
+        - switch.turn_on: led
+        
+  id: mqtt_client
+  broker: mqtt.coffeys.net
+  on_message:
+    - topic: konnected-fdc55d/alarm_control_panel/acp1/state
+      qos: 0
       payload: "armed_home"
       then:
         - lvgl.led.update:
             id: lvgl_led
             color: 0xFF0000
         - logger.log: "MQTT armed_home"
+        - switch.turn_off: led
     - topic: konnected-fdc55d/alarm_control_panel/acp1/state
       qos: 0
       payload: "armed_night"
@@ -25,6 +43,7 @@ mqtt:
             id: lvgl_led
             color: 0xFF0000
         - logger.log: "MQTT armed_night"
+        - switch.turn_off: led
     - topic: konnected-fdc55d/alarm_control_panel/acp1/state
       qos: 0
       payload: "disarmed"
@@ -33,10 +52,8 @@ mqtt:
             id: lvgl_led
             color: 0x00FF00
         - logger.log: "MQTT disarmed"
-    - topic: konnected-fdc55d/alarm_control_panel/acp1/state
-      qos: 0
-      then:
-        - logger.log: "MQTT EVENT"
+        - switch.turn_off: led
+
     - topic: konnected-fdc55d/chime
       qos: 0
       payload: "Chime"
@@ -59,6 +76,7 @@ mqtt:
         - lvgl.label.update:
             id: lvgl_label3
             text: "System Not Ready"
+            
     - topic: konnected-fdc55d/alarm_control_panel/acp1/state
       qos: 0
       then:
