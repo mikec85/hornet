@@ -54,7 +54,7 @@ mqtt:
       payload: "Chime"
       then:
         - logger.log: "MQTT EVENT"
-        - switch.turn_on: led
+        - switch.turn_on: beeper
         - delay: 100ms  #was 50
         - switch.turn_off: beeper
     - topic: konnected-fdc55d/on_ready
