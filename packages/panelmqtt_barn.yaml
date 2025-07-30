@@ -38,7 +38,7 @@ mqtt:
             id: lvgl_led
             color: 0xFF0000
         - logger.log: "MQTT armed_night"
-        - switch.turn_off: Beeper
+        - switch.turn_off: beeper
     - topic: konnected-fdc55d/alarm_control_panel/acp1/state
       qos: 0
       payload: "disarmed"
