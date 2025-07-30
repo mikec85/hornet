@@ -14,18 +14,13 @@ mqtt:
       payload: "arming"
       then:
         - switch.turn_on: led
-  id: mqtt_client
-  broker: mqtt.coffeys.net
-  on_message:
+
     - topic: konnected-fdc55d/alarm_control_panel/acp1/state
       qos: 0
       payload: "pending"
       then:
         - switch.turn_on: led
-        
-  id: mqtt_client
-  broker: mqtt.coffeys.net
-  on_message:
+
     - topic: konnected-fdc55d/alarm_control_panel/acp1/state
       qos: 0
       payload: "armed_home"
