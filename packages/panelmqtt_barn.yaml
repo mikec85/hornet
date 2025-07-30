@@ -13,13 +13,13 @@ mqtt:
       qos: 0
       payload: "arming"
       then:
-        - switch.turn_on: led
+        - switch.turn_on: Beeper
 
     - topic: konnected-fdc55d/alarm_control_panel/acp1/state
       qos: 0
       payload: "pending"
       then:
-        - switch.turn_on: led
+        - switch.turn_on: Beeper
 
     - topic: konnected-fdc55d/alarm_control_panel/acp1/state
       qos: 0
@@ -29,7 +29,7 @@ mqtt:
             id: lvgl_led
             color: 0xFF0000
         - logger.log: "MQTT armed_home"
-        - switch.turn_off: led
+        - switch.turn_off: Beeper
     - topic: konnected-fdc55d/alarm_control_panel/acp1/state
       qos: 0
       payload: "armed_night"
@@ -38,7 +38,7 @@ mqtt:
             id: lvgl_led
             color: 0xFF0000
         - logger.log: "MQTT armed_night"
-        - switch.turn_off: led
+        - switch.turn_off: Beeper
     - topic: konnected-fdc55d/alarm_control_panel/acp1/state
       qos: 0
       payload: "disarmed"
@@ -47,7 +47,7 @@ mqtt:
             id: lvgl_led
             color: 0x00FF00
         - logger.log: "MQTT disarmed"
-        - switch.turn_off: led
+        - switch.turn_off: Beeper
 
     - topic: konnected-fdc55d/chime
       qos: 0
@@ -56,7 +56,7 @@ mqtt:
         - logger.log: "MQTT EVENT"
         - switch.turn_on: led
         - delay: 100ms  #was 50
-        - switch.turn_off: led
+        - switch.turn_off: Beeper
     - topic: konnected-fdc55d/on_ready
       qos: 0
       payload: "true"
