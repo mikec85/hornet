@@ -53,6 +53,7 @@ mqtt:
         - lvgl.led.update:
             id: lvgl_led
             color: 0xFF0000
+        - button.press: red_led
         - logger.log: "MQTT armed_home"
     - topic: hornet-nest-3cc06c/alarm_control_panel/acp1/state
       qos: 0
@@ -61,6 +62,7 @@ mqtt:
         - lvgl.led.update:
             id: lvgl_led
             color: 0xFF0000
+        - button.press: red_led
         - logger.log: "MQTT armed_night"
     - topic: hornet-nest-3cc06c/alarm_control_panel/acp1/state
       qos: 0
@@ -69,6 +71,7 @@ mqtt:
         - lvgl.led.update:
             id: lvgl_led
             color: 0x00FF00
+        - button.press: green_led
         - logger.log: "MQTT disarmed"
     - topic: hornet-nest-3cc06c/alarm_control_panel/acp1/state
       qos: 0
@@ -79,9 +82,9 @@ mqtt:
       payload: "Chime"
       then:
         - logger.log: "MQTT EVENT"
-        - switch.turn_on: led
+        - switch.turn_on: beeper
         - delay: 100ms  #was 50
-        - switch.turn_off: led
+        - switch.turn_off: beeper
     - topic: hornet-nest-3cc06c/on_ready
       qos: 0
       payload: "true"
