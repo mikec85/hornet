@@ -9,6 +9,35 @@ mqtt:
   id: mqtt_client
   broker: mqtt.coffeys.net
   on_message:
+    - topic: hornet-nest-3cc06c/binary_sensor/21_garagedoorbg/state
+      qos: 0
+      payload: "ON"
+      then:
+        - globals.set: 
+          id: bigdoor_loop 
+          value: "true"
+    - topic: hornet-nest-3cc06c/binary_sensor/21_garagedoorbg/state
+      qos: 0
+      payload: "OFF"
+      then:
+        - globals.set: 
+          id: bigdoor_loop 
+          value: "false"
+    - topic: hornet-nest-3cc06c/binary_sensor/22_garagedoorsm/state
+      qos: 0
+      payload: "ON"
+      then:
+        - globals.set: 
+          id: smalldoor_loop 
+          value: "true"
+    - topic: hornet-nest-3cc06c/binary_sensor/22_garagedoorsm/state
+      qos: 0
+      payload: "OFF"
+      then:
+        - globals.set: 
+          id: smalldoor_loop 
+          value: "false"
+          
     - topic: hornet-nest-3cc06c/alarm_control_panel/acp1/state
       qos: 0
       payload: "armed_home"
