@@ -24,6 +24,7 @@ mqtt:
         - globals.set: 
             id: bigdoor_loop 
             value: "true"
+        - script.execute: flash_led
     - topic: hornet-nest-3cc06c/binary_sensor/21_garagedoorbg/state
       qos: 0
       payload: "OFF"
@@ -38,6 +39,7 @@ mqtt:
         - globals.set: 
             id: smalldoor_loop 
             value: "true"
+        - script.execute: flash_led
     - topic: hornet-nest-3cc06c/binary_sensor/22_garagedoorsm/state
       qos: 0
       payload: "OFF"
