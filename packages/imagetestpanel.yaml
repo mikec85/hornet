@@ -1,0 +1,441 @@
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "vP4WtsBabT3be5iJ6TjkAousA3cMnQBOhtF5EmsJmBc="
+
+ota:
+  - platform: esphome
+  - platform: web_server
+#    password: "bb96cfb9c256e893e5974f861f5a7675"
+
+esphome:
+  name: crowpanel7imagetest
+  friendly_name: crowpanel7imagetest
+  platformio_options:
+    build_flags: "-DBOARD_HAS_PSRAM"
+    board_build.esp-idf.memory_type: qio_opi
+    board_build.flash_mode: dio
+
+esp32:
+  board: esp32-s3-devkitc-1
+  framework:
+    type: esp-idf
+    sdkconfig_options:
+      CONFIG_ESP32S3_DEFAULT_CPU_FREQ_240: y
+      CONFIG_ESP32S3_DATA_CACHE_64KB: y
+      CONFIG_SPIRAM_FETCH_INSTRUCTIONS: y
+      CONFIG_SPIRAM_RODATA: y
+
+
+psram:
+  mode: octal
+  speed: 80MHz
+
+packages:
+  remote_package:
+    url: https://github.com/mikec85/hornet
+    ref: main
+    refresh: always
+    files:
+     - packages/blank.yaml
+     - packages/panel7test.yaml
+     #- packages/panel7_lvgl.yaml
+     - packages/panelmqtt.yaml
+     - packages/wifi.yaml
+
+http_request:
+
+web_server:
+  port: 80
+  version: 3
+
+switch:
+  - platform: gpio
+    name: "Beeper"
+    id: led
+    pin: 38
+    inverted: no
+
+button:
+  - platform: restart
+    id: restart_button
+    name: Restart
+    entity_category: config
+
+  - platform: template
+    name: "Test Button"
+    on_press:
+      - component.update: my_online_image 
+
+  - platform: template
+    name: "Driveway image refresh"
+    on_press:
+      - component.update: driveway_image
+
+  - platform: template
+    name: "Frontdoor image refresh"
+    on_press:
+      - component.update: frontdoor_image
+
+  - platform: template
+    name: "Driveway Page"
+    on_press:
+      - lvgl.page.show: driveway_page
+
+  - platform: template
+    name: "Frontdoor Page"
+    on_press:
+      - lvgl.page.show: frontdoor_page
+
+  - platform: template
+    name: "Frontdoor2 Page"
+    on_press:
+      - lvgl.page.show: frontdoor2_page
+
+  - platform: template
+    name: "Main Page"
+    on_press:
+      - lvgl.page.show: main_page
+
+# Enable logging
+logger:
+  level: DEBUG
+  
+#wifi:
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  power_save_mode: none
+  fast_connect: true
+  output_power: 20.4 dB
+  manual_ip:
+    static_ip: 192.168.1.126
+    gateway: 192.168.1.1
+    subnet: 255.255.255.0  
+    dns1: 8.8.8.8
+    dns2: 8.8.4.4
+
+i2c:
+  sda: 19
+  scl: 20
+  scan: true
+  frequency: 200kHz
+
+
+time:
+  - platform: sntp
+    id: sntp_time
+    timezone: America/Chicago
+    servers:
+     - 0.pool.ntp.org
+     - 1.pool.ntp.org
+     - 2.pool.ntp.org
+    on_time:
+      # Every morning
+      - seconds: 0
+        minutes: 00
+        hours: 6
+        days_of_week: SUN-SAT
+        then:
+          button.press: restart_button 
+#https://www.sample-videos.com/img/Sample-jpg-image-50kb.jpg
+#http://192.168.1.103:8080/local_file/foto_falecido.png
+#http://192.168.1.21/cgi-bin/api.cgi?cmd=Snap&user=admin&password=Paxton911&channel=0&rs=adf234j0jkdf
+
+online_image:
+  - url: http://192.168.1.21/cgi-bin/api.cgi?cmd=Snap&user=admin&password=Paxton911&channel=0&rs=adf234j0jkdf # Dynamic picture 
+    id: my_online_image
+    type: RGB565
+    format: JPEG
+    transparency: alpha_channel
+    resize: 640x360
+    #update_interval: 10s
+    on_download_finished:
+      - logger.log: "Download concluded waiting LVGL display." # Only for test if donwload is running.
+      - lvgl.image.update:
+          id: foto_falecido_img
+          src: my_online_image
+
+  - url: http://192.168.1.21/cgi-bin/api.cgi?cmd=Snap&user=admin&password=Paxton911&channel=0&rs=adf234j0jkdf&width=640&height=360 # Dynamic picture 
+    id: driveway_image
+    type: RGB565
+    format: JPEG
+    transparency: alpha_channel
+    #resize: 800x480
+    #update_interval: 10s
+    on_download_finished:
+      - logger.log: "Download concluded waiting LVGL display." # Only for test if donwload is running.
+      - lvgl.image.update:
+          id: driveway_img
+          src: driveway_image
+
+  - url: http://192.168.1.222/cgi-bin/api.cgi?cmd=Snap&user=admin&password=Paxton911&channel=0&rs=adf234j0jkdf&width=640&height=480 # Dynamic picture 
+    id: frontdoor_image
+    type: RGB565
+    format: JPEG
+    transparency: alpha_channel
+    #resize: 800x480
+    #update_interval: 10s
+    on_download_finished:
+      - logger.log: "Download concluded waiting LVGL display." # Only for test if donwload is running.
+      - lvgl.image.update:
+          id: frontdoor_img
+          src: frontdoor_image
+
+  - url: http://192.168.1.222/cgi-bin/api.cgi?cmd=Snap&user=admin&password=Paxton911&channel=0&rs=adf234j0jkdf&width=640&height=480 # Dynamic picture 
+    id: frontdoor2_image
+    type: RGB565
+    format: JPEG
+    transparency: alpha_channel
+    #resize: 800x480
+    update_interval: 15s
+    on_download_finished:
+      - logger.log: "Download concluded waiting LVGL display." # Only for test if donwload is running.
+      - lvgl.image.update:
+          id: frontdoor2_img
+          src: frontdoor2_image
+
+number:
+  - platform: template
+    name: LVGL Screen timeout
+    optimistic: true
+    id: display_timeout
+    unit_of_measurement: "s"
+    initial_value: 45
+    restore_value: true
+    min_value: 10
+    max_value: 180
+    step: 5
+    mode: box
+ 
+globals:
+ - id: my_code_int
+   type: std::string
+   #restore_value: no
+   initial_value: '"0"'
+
+font:
+  - file: "gfonts://Roboto"  # Example using Google Fonts
+    id: roboto40
+    size: 40  # Set the font size to 20 pixels
+    bpp: 4
+  - file: "gfonts://Roboto"  # Example using Google Fonts
+    id: roboto24
+    size: 24  # Set the font size to 20 pixels
+    bpp: 4
+    
+color:
+  - id: my_red
+    red: 100%
+    green: 0%
+    blue: 0%
+  - id: my_yellow
+    red: 100%
+    green: 100%
+    blue: 0%
+  - id: my_green
+    red: 0%
+    green: 100%
+    blue: 0%
+  - id: my_blue
+    red: 0%
+    green: 0%
+    blue: 100%
+  - id: my_gray
+    red: 50%
+    green: 50%
+    blue: 50%
+  - id: my_orange
+    red: 100%
+    green: 50%
+    blue: 0%
+  - id: my_teal
+    red: 0%
+    green: 100%
+    blue: 100%
+  - id: my_white
+    red: 100%
+    green: 100%
+    blue: 100%
+  - id: my_black
+    red: 0%
+    green: 0%
+    blue: 0%
+    
+lvgl:
+  log_level: INFO
+  color_depth: 16
+  disp_bg_color: my_black
+  style_definitions:
+    - id: my_button_style
+      text_font: roboto40  # Apply the custom font defined in step 1
+      # Other style properties like text color, alignment, etc. can be added here
+      #text_color: 0x000000 
+      align: center
+    - id: my_text_style
+      text_font: roboto24 # Apply the custom font defined in step 1
+      # Other style properties like text color, alignment, etc. can be added here
+      #text_color: 0x000000 
+      align: center
+      
+  pages:
+    - id: main_page
+      bg_color: my_black
+      widgets:
+        - led:
+            id: lvgl_led
+            x: 30
+            y: 35
+            color: 0xFF0000
+            brightness: 70%
+        - obj:
+            width: 85
+            height: 50
+            align_to:
+              id: lvgl_led
+              align: OUT_RIGHT_MID
+              x: 17
+            border_width: 1
+            border_color: 0
+            border_opa: 50%
+            pad_all: 0
+            bg_opa: 80%
+            bg_color: 0xFFFFFF
+            shadow_color: 0
+            shadow_opa: 50%
+            shadow_width: 10
+            shadow_spread: 3
+            radius: 10
+            widgets:
+              - label:
+                  id: lvgl_label
+                  align: CENTER
+                  text: "Code:"
+                  text_align: CENTER
+                  styles: my_text_style
+
+        - image:
+            id: foto_falecido_img
+            x: 50
+            y: 50 
+            src: my_online_image
+
+        - obj:
+             width: 320
+             height: 50
+             x: 460
+             y: 23
+             border_width: 1
+             border_color: 0
+             border_opa: 50%
+             pad_all: 0
+             bg_opa: 80%
+             bg_color: 0xFFFFFF
+             shadow_color: 0
+             shadow_opa: 50%
+             shadow_width: 10
+             shadow_spread: 3
+             radius: 5
+             widgets:
+               - label:
+                   id: lvgl_label3
+                   align: CENTER
+                   text: "Test3"
+                   text_align: CENTER
+                   styles: my_text_style
+        - obj:
+             width: 270
+             height: 50
+             x: 170
+             y: 23
+             border_width: 1
+             border_color: 0
+             border_opa: 50%
+             pad_all: 0
+             bg_opa: 80%
+             bg_color: 0xFFFFFF
+             shadow_color: 0
+             shadow_opa: 50%
+             shadow_width: 10
+             shadow_spread: 3
+             radius: 5
+             widgets:
+               - label:
+                   id: lvgl_label2
+                   align: CENTER
+                   text: "Test2"
+                   text_align: CENTER
+                   styles: my_text_style
+
+    - id: driveway_page
+      bg_color: my_black
+      widgets:              
+        - image:
+            id: driveway_img
+            x: 80
+            y: 100 
+            src: driveway_image
+        - button:
+            id: front_door_btn
+            x: 300
+            y: 20
+            width: 200
+            height: 60
+            #checkable: true
+            widgets:
+              - label:
+                  align: CENTER
+                  text: 'FrontDoor'
+                  styles: my_button_style 
+            on_click:
+              - component.update: frontdoor_image
+              - lvgl.page.show: frontdoor_page
+
+
+    - id: frontdoor_page
+      bg_color: my_black
+      widgets:              
+        - image:
+            id: frontdoor_img
+            x: 160
+            y: 0 
+            src: frontdoor_image
+        - button:
+            id: driveway_btn
+            x: 0
+            y: 20
+            width: 160
+            height: 60
+            #checkable: true
+            widgets:
+              - label:
+                  align: CENTER
+                  text: 'Driveway'
+                  styles: my_text_style 
+            on_click:
+              - component.update: driveway_image
+              - lvgl.page.show: driveway_page
+
+    - id: frontdoor2_page
+      bg_color: my_black
+      widgets:              
+        - image:
+            id: frontdoor2_img
+            x: 160
+            y: 0 
+            src: frontdoor_image
+        - button:
+            id: driveway2_btn
+            x: 0
+            y: 20
+            width: 160
+            height: 60
+            #checkable: true
+            widgets:
+              - label:
+                  align: CENTER
+                  text: 'Driveway'
+                  styles: my_text_style 
+            on_click:
+              - component.update: driveway_image
+              - lvgl.page.show: driveway_page
