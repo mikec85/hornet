@@ -30,7 +30,16 @@ touchscreen:
   display: my_display
   address: 0x5D
   #interrupt_pin: 38
-
+  update_interval: 50ms
+  on_release:
+      - if:
+          condition: lvgl.is_paused
+          then:
+            - logger.log: "LVGL resuming"
+            - lvgl.resume:
+            - lvgl.widget.redraw:
+            - light.turn_on: back_light
+            
 output:
   - platform: ledc
     pin: 2
