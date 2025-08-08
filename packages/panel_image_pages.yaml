@@ -1,9 +1,5 @@
 
 button:
-  - platform: restart
-    id: restart_button
-    name: Restart
-    entity_category: config
 
   - platform: template
     name: "Test Button"
