@@ -88,7 +88,7 @@ lvgl:
       - lvgl.pause:    
       
   pages:
-    - id: keypad_page
+    - id: main_page
       bg_color: my_black
       widgets:
         - led:
