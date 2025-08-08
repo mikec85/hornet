@@ -35,7 +35,8 @@ button:
     name: "Main Page"
     on_press:
       - lvgl.page.show: main_page
-
+      
+online_image:
   - url: http://192.168.1.21/cgi-bin/api.cgi?cmd=Snap&user=admin&password=Paxton911&channel=0&rs=adf234j0jkdf&width=640&height=360 # Dynamic picture 
     id: driveway_image
     type: RGB565
