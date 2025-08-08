@@ -36,21 +36,6 @@ button:
     on_press:
       - lvgl.page.show: main_page
 
-
-online_image:
-  - url: http://192.168.1.21/cgi-bin/api.cgi?cmd=Snap&user=admin&password=Paxton911&channel=0&rs=adf234j0jkdf # Dynamic picture 
-    id: my_online_image
-    type: RGB565
-    format: JPEG
-    transparency: alpha_channel
-    resize: 640x360
-    #update_interval: 10s
-    on_download_finished:
-      - logger.log: "Download concluded waiting LVGL display." # Only for test if donwload is running.
-      - lvgl.image.update:
-          id: foto_falecido_img
-          src: my_online_image
-
   - url: http://192.168.1.21/cgi-bin/api.cgi?cmd=Snap&user=admin&password=Paxton911&channel=0&rs=adf234j0jkdf&width=640&height=360 # Dynamic picture 
     id: driveway_image
     type: RGB565
