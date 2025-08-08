@@ -103,7 +103,20 @@ lvgl:
             on_click:
               - component.update: frontdoor_image
               - lvgl.page.show: frontdoor_page
-
+        - button:
+            id: to_main_btn
+            x: 10
+            y: 20
+            width: 160
+            height: 60
+            #checkable: true
+            widgets:
+              - label:
+                  align: CENTER
+                  text: 'Main'
+                  styles: my_text_style 
+            on_click:
+              - lvgl.page.show: main_page
 
     - id: frontdoor_page
       bg_color: my_black
@@ -128,7 +141,20 @@ lvgl:
             on_click:
               - component.update: driveway_image
               - lvgl.page.show: driveway_page
-
+        - button:
+            id: to_main_btn2
+            x: 0
+            y: 100
+            width: 160
+            height: 60
+            #checkable: true
+            widgets:
+              - label:
+                  align: CENTER
+                  text: 'Main'
+                  styles: my_text_style 
+            on_click:
+              - lvgl.page.show: main_page
     - id: frontdoor2_page
       bg_color: my_black
       widgets:              
@@ -152,3 +178,17 @@ lvgl:
             on_click:
               - component.update: driveway_image
               - lvgl.page.show: driveway_page
+        - button:
+            id: to_main_btn
+            x: 0
+            y: 100
+            width: 160
+            height: 60
+            #checkable: true
+            widgets:
+              - label:
+                  align: CENTER
+                  text: 'Main'
+                  styles: my_text_style 
+            on_click:
+              - lvgl.page.show: main_page
