@@ -11,8 +11,8 @@ light:
     name: Display_Backlight
     id: back_light
     restore_mode: ALWAYS_ON
-    gamma_correct: 1.8
-    brightness: 0.5
+    #gamma_correct: 1.8
+    #brightness: 0.5
     on_boot:
       - light.turn_on:
           id: gpio_backlight_pwm
