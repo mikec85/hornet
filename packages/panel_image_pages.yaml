@@ -2,11 +2,6 @@
 button:
 
   - platform: template
-    name: "Test Button"
-    on_press:
-      - component.update: my_online_image 
-
-  - platform: template
     name: "Driveway image refresh"
     on_press:
       - component.update: driveway_image
