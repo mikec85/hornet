@@ -11,6 +11,10 @@ light:
     name: Display_Backlight
     id: back_light
     restore_mode: ALWAYS_ON
+    on_boot:
+      - light.turn_on:
+          id: backlight
+          brightness: 0.7 # Set initial brightness to 50%
 
 touchscreen:
   platform: gt911
