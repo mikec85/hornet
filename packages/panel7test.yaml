@@ -52,4 +52,5 @@ light:
     name: Display Backlight
     id: back_light
     restore_mode: ALWAYS_ON
+    gamma_correct: 1.8
    
