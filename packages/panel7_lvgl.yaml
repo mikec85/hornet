@@ -217,6 +217,22 @@ lvgl:
               on_click:
                 - http_request.get: http://192.168.1.111/alarm_control_panel/acp1/arm_night
         - button:
+              id: camera_page
+              x: 490
+              y: 290
+              width: 240
+              height: 90
+              #checkable: true
+              widgets:
+                - label:
+                    align: CENTER
+                    text: 'CAMERA'
+                    styles: my_button_style 
+              on_click:
+                - component.update: frontdoor_image
+                - lvgl.page.show: frontdoor_page
+                
+        - button:
               id: restart_button_lvgl
               x: 780
               y: 460
