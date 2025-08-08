@@ -15,7 +15,7 @@ light:
     brightness: 0.5
     on_boot:
       - light.turn_on:
-          id: backlight
+          id: gpio_backlight_pwm
           brightness: 0.5 # Set initial brightness to 50%
 
 touchscreen:
