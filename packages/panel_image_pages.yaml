@@ -1,0 +1,177 @@
+
+button:
+  - platform: restart
+    id: restart_button
+    name: Restart
+    entity_category: config
+
+  - platform: template
+    name: "Test Button"
+    on_press:
+      - component.update: my_online_image 
+
+  - platform: template
+    name: "Driveway image refresh"
+    on_press:
+      - component.update: driveway_image
+
+  - platform: template
+    name: "Frontdoor image refresh"
+    on_press:
+      - component.update: frontdoor_image
+
+  - platform: template
+    name: "Driveway Page"
+    on_press:
+      - lvgl.page.show: driveway_page
+
+  - platform: template
+    name: "Frontdoor Page"
+    on_press:
+      - lvgl.page.show: frontdoor_page
+
+  - platform: template
+    name: "Frontdoor2 Page"
+    on_press:
+      - lvgl.page.show: frontdoor2_page
+
+  - platform: template
+    name: "Main Page"
+    on_press:
+      - lvgl.page.show: main_page
+
+
+online_image:
+  - url: http://192.168.1.21/cgi-bin/api.cgi?cmd=Snap&user=admin&password=Paxton911&channel=0&rs=adf234j0jkdf # Dynamic picture 
+    id: my_online_image
+    type: RGB565
+    format: JPEG
+    transparency: alpha_channel
+    resize: 640x360
+    #update_interval: 10s
+    on_download_finished:
+      - logger.log: "Download concluded waiting LVGL display." # Only for test if donwload is running.
+      - lvgl.image.update:
+          id: foto_falecido_img
+          src: my_online_image
+
+  - url: http://192.168.1.21/cgi-bin/api.cgi?cmd=Snap&user=admin&password=Paxton911&channel=0&rs=adf234j0jkdf&width=640&height=360 # Dynamic picture 
+    id: driveway_image
+    type: RGB565
+    format: JPEG
+    transparency: alpha_channel
+    #resize: 800x480
+    #update_interval: 10s
+    on_download_finished:
+      - logger.log: "Download concluded waiting LVGL display." # Only for test if donwload is running.
+      - lvgl.image.update:
+          id: driveway_img
+          src: driveway_image
+
+  - url: http://192.168.1.222/cgi-bin/api.cgi?cmd=Snap&user=admin&password=Paxton911&channel=0&rs=adf234j0jkdf&width=640&height=480 # Dynamic picture 
+    id: frontdoor_image
+    type: RGB565
+    format: JPEG
+    transparency: alpha_channel
+    #resize: 800x480
+    #update_interval: 10s
+    on_download_finished:
+      - logger.log: "Download concluded waiting LVGL display." # Only for test if donwload is running.
+      - lvgl.image.update:
+          id: frontdoor_img
+          src: frontdoor_image
+
+  - url: http://192.168.1.222/cgi-bin/api.cgi?cmd=Snap&user=admin&password=Paxton911&channel=0&rs=adf234j0jkdf&width=640&height=480 # Dynamic picture 
+    id: frontdoor2_image
+    type: RGB565
+    format: JPEG
+    transparency: alpha_channel
+    #resize: 800x480
+    update_interval: 15s
+    on_download_finished:
+      - logger.log: "Download concluded waiting LVGL display." # Only for test if donwload is running.
+      - lvgl.image.update:
+          id: frontdoor2_img
+          src: frontdoor2_image
+
+
+
+
+    
+lvgl:
+      
+  pages:
+
+
+    - id: driveway_page
+      bg_color: my_black
+      widgets:              
+        - image:
+            id: driveway_img
+            x: 80
+            y: 100 
+            src: driveway_image
+        - button:
+            id: front_door_btn
+            x: 300
+            y: 20
+            width: 200
+            height: 60
+            #checkable: true
+            widgets:
+              - label:
+                  align: CENTER
+                  text: 'FrontDoor'
+                  styles: my_button_style 
+            on_click:
+              - component.update: frontdoor_image
+              - lvgl.page.show: frontdoor_page
+
+
+    - id: frontdoor_page
+      bg_color: my_black
+      widgets:              
+        - image:
+            id: frontdoor_img
+            x: 160
+            y: 0 
+            src: frontdoor_image
+        - button:
+            id: driveway_btn
+            x: 0
+            y: 20
+            width: 160
+            height: 60
+            #checkable: true
+            widgets:
+              - label:
+                  align: CENTER
+                  text: 'Driveway'
+                  styles: my_text_style 
+            on_click:
+              - component.update: driveway_image
+              - lvgl.page.show: driveway_page
+
+    - id: frontdoor2_page
+      bg_color: my_black
+      widgets:              
+        - image:
+            id: frontdoor2_img
+            x: 160
+            y: 0 
+            src: frontdoor_image
+        - button:
+            id: driveway2_btn
+            x: 0
+            y: 20
+            width: 160
+            height: 60
+            #checkable: true
+            widgets:
+              - label:
+                  align: CENTER
+                  text: 'Driveway'
+                  styles: my_text_style 
+            on_click:
+              - component.update: driveway_image
+              - lvgl.page.show: driveway_page
