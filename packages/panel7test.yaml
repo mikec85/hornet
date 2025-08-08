@@ -52,8 +52,8 @@ light:
     name: ${devicename} Display Backlight
     id: back_light
     restore_mode: ALWAYS_ON
-    brightness: 0.5
-    #on_boot:
-      #- light.turn_on:
-          #id: gpio_backlight_pwm
-          #brightness: 0.5 # Set initial brightness to 50%
+    #brightness: 0.5
+    on_boot:
+      - light.turn_on:
+          id: gpio_backlight_pwm
+          brightness: 0.5 # Set initial brightness to 50%
