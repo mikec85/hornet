@@ -22,11 +22,6 @@ button:
       - lvgl.page.show: frontdoor_page
 
   - platform: template
-    name: "Frontdoor2 Page"
-    on_press:
-      - lvgl.page.show: frontdoor2_page
-
-  - platform: template
     name: "Main Page"
     on_press:
       - lvgl.page.show: main_page
@@ -57,21 +52,6 @@ online_image:
       - lvgl.image.update:
           id: frontdoor_img
           src: frontdoor_image
-
-  - url: http://192.168.1.222/cgi-bin/api.cgi?cmd=Snap&user=admin&password=Paxton911&channel=0&rs=adf234j0jkdf&width=640&height=480 # Dynamic picture 
-    id: frontdoor2_image
-    type: RGB565
-    format: JPEG
-    transparency: alpha_channel
-    #resize: 800x480
-    #update_interval: 15s
-    on_download_finished:
-      - logger.log: "Download concluded waiting LVGL display." # Only for test if donwload is running.
-      - lvgl.image.update:
-          id: frontdoor2_img
-          src: frontdoor2_image
-
-
 
 
     
@@ -155,40 +135,4 @@ lvgl:
                   styles: my_text_style 
             on_click:
               - lvgl.page.show: main_page
-    - id: frontdoor2_page
-      bg_color: my_black
-      widgets:              
-        - image:
-            id: frontdoor2_img
-            x: 160
-            y: 0 
-            src: frontdoor_image
-        - button:
-            id: driveway2_btn
-            x: 0
-            y: 20
-            width: 160
-            height: 60
-            #checkable: true
-            widgets:
-              - label:
-                  align: CENTER
-                  text: 'Driveway'
-                  styles: my_text_style 
-            on_click:
-              - component.update: driveway_image
-              - lvgl.page.show: driveway_page
-        - button:
-            id: to_main_btn
-            x: 0
-            y: 100
-            width: 160
-            height: 60
-            #checkable: true
-            widgets:
-              - label:
-                  align: CENTER
-                  text: 'Main'
-                  styles: my_text_style 
-            on_click:
-              - lvgl.page.show: main_page
+
