@@ -191,7 +191,7 @@ lvgl:
         - button:
               id: arm_away_btn
               x: 490
-              y: 195
+              y: 185
               width: 240
               height: 90
               #checkable: true
@@ -205,7 +205,7 @@ lvgl:
         - button:
               id: arm_night_btn
               x: 490
-              y: 310
+              y: 290
               width: 240
               height: 90
               #checkable: true
