@@ -87,7 +87,7 @@ online_image:
     format: JPEG
     transparency: alpha_channel
     #resize: 800x480
-    update_interval: 15s
+    #update_interval: 15s
     on_download_finished:
       - logger.log: "Download concluded waiting LVGL display." # Only for test if donwload is running.
       - lvgl.image.update:
