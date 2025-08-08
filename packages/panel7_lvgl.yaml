@@ -219,7 +219,7 @@ lvgl:
         - button:
               id: camera_page
               x: 490
-              y: 290
+              y: 390
               width: 240
               height: 90
               #checkable: true
