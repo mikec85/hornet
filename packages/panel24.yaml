@@ -27,10 +27,10 @@ touchscreen:
     update_interval: 50ms
     threshold: 400
     calibration:
-      x_min: 3860
-      x_max: 280
-      y_min: 340
-      y_max: 3860
+      x_min: 0
+      x_max: 320
+      y_min: 0
+      y_max: 240
             
 display:
   - platform: ili9xxx
