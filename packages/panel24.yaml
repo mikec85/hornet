@@ -1,0 +1,35 @@
+# Define a PWM output on the ESP32
+output:
+  - platform: ledc
+    pin: GPIO27
+    inverted: False
+    id: backlight_pwm
+
+light:
+  - platform: monochromatic # Define a monochromatic, dimmable light for the backlight
+    output: gpio_backlight_pwm
+    name: Display_Backlight
+    id: back_light
+    restore_mode: ALWAYS_ON
+
+
+touchscreen:
+    platform: xpt2046
+    id: touch
+    cs_pin: 33
+    interrupt_pin: 36
+    update_interval: 50ms
+    threshold: 400
+    calibration:
+      x_min: 3860
+      x_max: 280
+      y_min: 340
+      y_max: 3860
+            
+display:
+  - platform: ili9xxx
+    id: dp
+    model: ili9341
+    dc_pin: 2
+    cs_pin: 15
+    rotation: 90
