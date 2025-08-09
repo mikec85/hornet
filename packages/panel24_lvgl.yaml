@@ -86,7 +86,7 @@ lvgl:
       - logger.log: "LVGL is idle"
       - light.turn_off: back_light
       - lvgl.pause:    
-  #320x240    
+  #240x320    
   pages:
     - id: main_page
       bg_color: my_black
