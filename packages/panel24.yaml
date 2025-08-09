@@ -39,3 +39,4 @@ display:
     dc_pin: 2
     cs_pin: 15
     rotation: 90
+    invert_colors: false
