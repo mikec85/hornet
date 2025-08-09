@@ -3,7 +3,7 @@ output:
   - platform: ledc
     pin: GPIO27
     inverted: False
-    id: backlight_pwm
+    id: gpio_backlight_pwm
 
 light:
   - platform: monochromatic # Define a monochromatic, dimmable light for the backlight
