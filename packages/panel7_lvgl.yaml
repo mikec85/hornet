@@ -126,7 +126,7 @@ lvgl:
             id: lvgl_keypad
             x: 40
             y: 85
-            width: 420
+            width: 410
             height: 390
             items:
               pressed:
