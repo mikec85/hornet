@@ -1,0 +1,134 @@
+sensor:
+
+  - platform: adc
+    internal: true
+    name: "Raw Dust"
+    accuracy_decimals: 6
+    unit_of_measurement: "volts"
+    update_interval: 2s
+    pin: GPIO32
+    id: aq
+
+  - platform: adc
+    internal: true
+    name: "Raw Dust36"
+    accuracy_decimals: 6
+    update_interval: 5s
+    unit_of_measurement: "volts"
+    pin: GPIO36
+#  - platform: adc
+#    internal: true
+#    name: "Raw Dust39"
+#    accuracy_decimals: 6
+#    update_interval: 5s
+#    unit_of_measurement: "volts"
+#    pin: GPIO39
+  - platform: adc
+    internal: true
+    name: "Raw Dust34"
+    accuracy_decimals: 6
+    update_interval: 5s
+    unit_of_measurement: "volts"
+    pin: GPIO34
+  - platform: adc
+    internal: true
+    name: "Raw Dust35"
+    accuracy_decimals: 6
+    update_interval: 5s
+    unit_of_measurement: "volts"
+    pin: GPIO35
+#  - platform: adc
+#    internal: true
+#    name: "Raw Dust32"
+#    accuracy_decimals: 6
+#    update_interval: 5s
+#    unit_of_measurement: "volts"
+#    pin: GPIO32
+
+  - platform: adc
+    internal: true
+    name: "Raw Dust25"
+    accuracy_decimals: 6
+    update_interval: 5s
+    unit_of_measurement: "volts"
+    pin: GPIO25
+  - platform: adc
+    internal: true
+    name: "Raw Dust26"
+    accuracy_decimals: 6
+    update_interval: 5s
+    unit_of_measurement: "volts"
+    pin: GPIO26
+  - platform: adc
+    internal: true
+    name: "Raw Dust27"
+    accuracy_decimals: 6
+    update_interval: 5s
+    unit_of_measurement: "volts"
+    pin: GPIO27
+  - platform: adc
+    internal: true
+    name: "Raw Dust14"
+    accuracy_decimals: 6
+    update_interval: 5s
+    unit_of_measurement: "volts"
+    pin: GPIO14
+  - platform: adc
+    internal: true
+    name: "Raw Dust12"
+    accuracy_decimals: 6
+    update_interval: 5s
+    unit_of_measurement: "volts"
+    pin: GPIO12
+
+#  - platform: adc
+#    internal: true
+#    name: "Raw Dust10"
+#    accuracy_decimals: 6
+#    update_interval: 5s
+#    unit_of_measurement: "volts"
+#    pin: GPIO10
+#  - platform: adc
+#    internal: true
+#    name: "Raw Dust11"
+#    accuracy_decimals: 6
+#    update_interval: 5s
+#    unit_of_measurement: "volts"
+#    pin: GPIO11
+#  - platform: adc
+#    internal: true
+#    name: "Raw Dust13"
+#    accuracy_decimals: 6
+#    update_interval: 5s
+#    unit_of_measurement: "volts"
+#    pin: GPIO13
+
+
+#  - platform: adc
+#    internal: true
+#    name: "Raw Dust4"
+#    accuracy_decimals: 6
+#    update_interval: 5s
+#    unit_of_measurement: "volts"
+#    pin: GPIO4
+  - platform: adc
+    internal: true
+    name: "Raw Dust0"
+    accuracy_decimals: 6
+    update_interval: 5s
+    unit_of_measurement: "volts"
+    pin: GPIO0
+  - platform: adc
+    internal: true
+    name: "Raw Dust2"
+    accuracy_decimals: 6
+    update_interval: 5s
+    unit_of_measurement: "volts"
+    pin: GPIO2
+  - platform: adc
+    internal: true
+    name: "Raw Dust15"
+    accuracy_decimals: 6
+    update_interval: 5s
+    unit_of_measurement: "volts"
+    pin: GPIO15
