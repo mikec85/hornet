@@ -1,5 +1,18 @@
+output:
+    # GP2Y1010AU0F Sample LED in the Keyestudio KS0196 PM2.5 Dust Sensor Module.
+  - platform: gpio
+    pin:
+      number: 13
+      inverted: true
+    id: led
+
 sensor:
 
+  - platform: gp2y1010au0f
+    name: 'Indoor PM2.5'
+    sensor: aq
+    output: led
+    
   - platform: adc
     internal: true
     name: "Raw Dust"
