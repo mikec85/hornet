@@ -8,6 +8,7 @@ globals:
 mqtt:
   id: mqtt_client
   broker: mqtt.coffeys.net
+  discovery: true
   on_message:
     - topic: konnected-fdc55d/alarm_control_panel/acp1/state
       qos: 0
