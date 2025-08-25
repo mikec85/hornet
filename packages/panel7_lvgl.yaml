@@ -176,7 +176,7 @@ lvgl:
                       no_repeat: true
         - button:
               id: arm_home_btn
-              x: 490
+              x: 455
               y: 80
               width: 240
               height: 90
@@ -190,7 +190,7 @@ lvgl:
                 - http_request.get: http://192.168.1.111/alarm_control_panel/acp1/arm_home
         - button:
               id: arm_away_btn
-              x: 490
+              x: 455
               y: 185
               width: 240
               height: 90
@@ -204,7 +204,7 @@ lvgl:
                 - http_request.get: http://192.168.1.111/alarm_control_panel/acp1/arm_away        
         - button:
               id: arm_night_btn
-              x: 490
+              x: 455
               y: 290
               width: 240
               height: 90
@@ -218,7 +218,7 @@ lvgl:
                 - http_request.get: http://192.168.1.111/alarm_control_panel/acp1/arm_night
         - button:
               id: camera_page
-              x: 490
+              x: 455
               y: 390
               width: 240
               height: 90
@@ -231,6 +231,21 @@ lvgl:
               on_click:
                 - component.update: frontdoor_image
                 - lvgl.page.show: frontdoor_page
+
+        - button:
+              id: door_bg
+              x: 698
+              y: 80
+              width: 102
+              height: 90
+              #checkable: true
+              widgets:
+                - label:
+                    align: CENTER
+                    text: 'BG'
+                    styles: my_button_style 
+              on_click:
+                - logger.log: "Open"
                 
         - button:
               id: restart_button_lvgl
