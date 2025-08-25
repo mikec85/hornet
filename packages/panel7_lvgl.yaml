@@ -246,7 +246,27 @@ lvgl:
                     styles: my_button_style 
               on_click:
                 - logger.log: "Open"
-                
+                - mqtt.publish:
+                    topic: hornet-nest-3cc06c/button/operate_garage_door_big/command
+                    payload: "PRESS"
+        - button:
+              id: door_sm
+              x: 698
+              y: 185
+              width: 102
+              height: 90
+              #checkable: true
+              widgets:
+                - label:
+                    align: CENTER
+                    text: 'SM'
+                    styles: my_button_style 
+              on_click:
+                - logger.log: "Open"
+                - mqtt.publish:
+                    topic: hornet-nest-3cc06c/button/operate_garage_door_small/command
+                    payload: "PRESS"
+                    
         - button:
               id: restart_button_lvgl
               x: 780
