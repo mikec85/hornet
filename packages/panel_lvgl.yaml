@@ -65,6 +65,7 @@ color:
     green: 0%
     blue: 0%
   - id: lightblue
+    hex: 97bbbf
     
 lvgl:
   log_level: INFO
