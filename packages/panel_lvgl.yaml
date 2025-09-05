@@ -135,6 +135,9 @@ lvgl:
             width: 420
             height: 390
             bg_color: my_blue
+            border_width: 1
+            border_color: my_blue
+            border_opa: 50%
             items:
               pressed:
                 bg_color: 0xFFFF00
