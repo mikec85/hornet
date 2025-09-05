@@ -95,7 +95,7 @@ lvgl:
 
   pages:
     - id: keypad_page
-      bg_color: #97bbbf
+      bg_color: lightblue
       widgets:
         - led:
             id: lvgl_led
