@@ -197,6 +197,10 @@ lvgl:
               width: 240
               height: 100
               bg_color: my_blue
+              shadow_color: 0
+              shadow_opa: 50%
+              shadow_width: 10
+              shadow_spread: 3
               #checkable: true
               widgets:
                 - label:
@@ -219,6 +223,10 @@ lvgl:
               y: 215
               width: 240
               height: 100
+              shadow_color: 0
+              shadow_opa: 50%
+              shadow_width: 10
+              shadow_spread: 3
               bg_color: my_blue
               #checkable: true
               widgets:
@@ -242,6 +250,10 @@ lvgl:
               y: 340
               width: 240
               height: 100
+              shadow_color: 0
+              shadow_opa: 50%
+              shadow_width: 10
+              shadow_spread: 3
               bg_color: my_blue
               #checkable: true
               widgets:
