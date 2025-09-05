@@ -1,5 +1,5 @@
 time:
-  - platform: ...
+  - platform: sntp
     on_time:
       - hours: 2,3,4,5
         minutes: 5
@@ -36,12 +36,3 @@ switch:
             - lvgl.resume:
             - lvgl.widget.redraw:
 
-touchscreen:
-  - platform: ...
-    on_release:
-      then:
-        - if:
-            condition: lvgl.is_paused
-            then:
-              - lvgl.resume:
-              - lvgl.widget.redraw:
