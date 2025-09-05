@@ -304,19 +304,13 @@ lvgl:
              border_opa: 50%
              pad_all: 0
              bg_opa: 80%
-             bg_color: 0xFFFFFF
+             bg_color: lightblue
              shadow_color: 0
              shadow_opa: 50%
              shadow_width: 10
              shadow_spread: 3
              radius: 5
-             widgets:
-               - label:
-                   id: lvgl_label2
-                   align: CENTER
-                   text: "Test2"
-                   text_align: CENTER
-                   styles: my_text_style
+
                 
 key_collector:
   - source_id: lvgl_keypad
