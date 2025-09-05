@@ -280,13 +280,8 @@ lvgl:
               y: 460
               width: 20
               height: 20
-              bg_color: lightblue
+              bg_color: bgblue
               #checkable: true
-              widgets:
-                - label:
-                    align: CENTER
-                    text: ""
-                    styles: my_button_style 
               on_click:
                 - button.press: restart_button        
         - obj:
