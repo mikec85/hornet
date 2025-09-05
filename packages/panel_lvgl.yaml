@@ -111,7 +111,7 @@ lvgl:
               align: OUT_RIGHT_MID
               x: 17
             border_width: 1
-            border_color: 0
+            border_color: my_blue
             border_opa: 50%
             pad_all: 0
             bg_opa: 80%
