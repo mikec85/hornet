@@ -64,8 +64,10 @@ color:
     red: 0%
     green: 0%
     blue: 0%
-  - id: lightblue
+  - id: lightblue2
     hex: 97bbbf
+  - id: lightblue
+    hex: 97aebf
     
 lvgl:
   log_level: INFO
