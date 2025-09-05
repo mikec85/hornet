@@ -132,6 +132,7 @@ lvgl:
             y: 85
             width: 420
             height: 390
+            bg_color: my_blue
             items:
               pressed:
                 bg_color: 0xFFFF00
