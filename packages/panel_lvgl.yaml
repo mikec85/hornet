@@ -68,7 +68,7 @@ color:
     hex: 97bbbf
   - id: lightblue3
     hex: 97aebf
-  - id: lightblue
+  - id: bgblue
     hex: 2d4a7a
     
 lvgl:
@@ -99,7 +99,7 @@ lvgl:
 
   pages:
     - id: keypad_page
-      bg_color: lightblue
+      bg_color: bgblue
       widgets:
         - led:
             id: lvgl_led
