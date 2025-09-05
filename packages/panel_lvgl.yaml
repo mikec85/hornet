@@ -187,6 +187,7 @@ lvgl:
               y: 90
               width: 240
               height: 100
+              bg_color: my_blue
               #checkable: true
               widgets:
                 - label:
@@ -209,6 +210,7 @@ lvgl:
               y: 215
               width: 240
               height: 100
+              bg_color: my_blue
               #checkable: true
               widgets:
                 - label:
@@ -231,6 +233,7 @@ lvgl:
               y: 340
               width: 240
               height: 100
+              bg_color: my_blue
               #checkable: true
               widgets:
                 - label:
@@ -254,6 +257,7 @@ lvgl:
               y: 460
               width: 20
               height: 20
+              bg_color: my_blue
               #checkable: true
               widgets:
                 - label:
