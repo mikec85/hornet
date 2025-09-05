@@ -140,6 +140,10 @@ lvgl:
             border_width: 1
             border_color: my_blue
             border_opa: 50%
+            shadow_color: 0
+            shadow_opa: 50%
+            shadow_width: 10
+            shadow_spread: 3
             items:
               pressed:
                 bg_color: 0xFFFF00
