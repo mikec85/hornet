@@ -69,7 +69,7 @@ color:
   - id: lightblue3
     hex: 97aebf
   - id: lightblue
-    hex: 97a6bf
+    hex: 2d4a7a
     
 lvgl:
   log_level: INFO
