@@ -2,7 +2,10 @@ globals:
   - id: mqtt_panel_global_string
     type: std::string
     initial_value: 'hornet-nest-3cc06c/alarm_control_panel/acp1/command' # Initial value for the string
-
+  - id: disarm_panel_global_string
+    type: std::string
+    initial_value: 'http://192.168.1.111/alarm_control_panel/acp1/disarm?code=' # Initial value for the string
+    
 number:
   - platform: template
     name: LVGL Screen timeout
@@ -221,11 +224,6 @@ lvgl:
                 - mqtt.publish:
                     topic: !lambda 'return id(mqtt_panel_global_string).state;'
                     payload: "arm_home"
-              #on_click:
-                #- http_request.get: http://192.168.1.111/alarm_control_panel/acp1/arm_home
-                #- mqtt.publish:
-                #    topic: hornet-nest-3cc06c/alarm_control_panel/acp1/command
-                #    payload: "arm_home"
         - button:
               id: arm_away_btn
               x: 490
@@ -246,13 +244,8 @@ lvgl:
               on_long_press:
                 - logger.log: "Long press Click"
                 - mqtt.publish:
-                    topic: hornet-nest-3cc06c/alarm_control_panel/acp1/command
+                    topic: !lambda 'return id(mqtt_panel_global_string).state;'
                     payload: "arm_away"
-              #on_click:
-                #- http_request.get: http://192.168.1.111/alarm_control_panel/acp1/arm_away
-                #- mqtt.publish:
-                #    topic: hornet-nest-3cc06c/alarm_control_panel/acp1/command
-                #    payload: "arm_away"
         - button:
               id: arm_night_btn
               x: 490
@@ -273,14 +266,10 @@ lvgl:
               on_long_press:
                 - logger.log: "Long press Click"
                 - mqtt.publish:
-                    topic: hornet-nest-3cc06c/alarm_control_panel/acp1/command
+                    topic: !lambda 'return id(mqtt_panel_global_string).state;'
                     payload: "arm_night"
               on_click:
                 - logger.log: "On Click"
-                #- http_request.get: http://192.168.1.111/alarm_control_panel/acp1/arm_night
-                #- mqtt.publish:
-                 #   topic: hornet-nest-3cc06c/alarm_control_panel/acp1/command
-                 #   payload: "arm_night"
         - button:
               id: restart_button_lvgl
               x: 780
@@ -373,7 +362,7 @@ key_collector:
           ESP_LOGD("main", "Global string updated to: %s", id(my_code_int).c_str());
       - http_request.get: 
           url: !lambda |- 
-            std::string url = "http://192.168.1.111/alarm_control_panel/acp1/disarm?code=" + id(my_code_int);
+            std::string url = id(disarm_panel_global_string) + id(my_code_int);
             return url;
       - logger.log: "Sent HTTP"
       - logger.log:
