@@ -64,6 +64,14 @@ color:
     red: 0%
     green: 0%
     blue: 0%
+  - id: lightblue2
+    hex: 97bbbf
+  - id: lightblue3
+    hex: 97aebf
+  - id: bgblue2
+    hex: 2d4a7a
+  - id: bgblue
+    hex: 172640
     
 lvgl:
   log_level: INFO
@@ -89,7 +97,7 @@ lvgl:
       
   pages:
     - id: main_page
-      bg_color: my_black
+      bg_color: bgblue
       widgets:
         - led:
             id: lvgl_led
@@ -128,6 +136,14 @@ lvgl:
             y: 85
             width: 410
             height: 390
+            bg_color: my_blue
+            border_width: 1
+            border_color: my_blue
+            border_opa: 50%
+            shadow_color: 0
+            shadow_opa: 50%
+            shadow_width: 10
+            shadow_spread: 3
             items:
               pressed:
                 bg_color: 0xFFFF00
@@ -180,6 +196,11 @@ lvgl:
               y: 80
               width: 240
               height: 90
+              bg_color: my_blue
+              shadow_color: 0
+              shadow_opa: 50%
+              shadow_width: 10
+              shadow_spread: 3
               #checkable: true
               widgets:
                 - label:
@@ -194,6 +215,11 @@ lvgl:
               y: 185
               width: 240
               height: 90
+              bg_color: my_blue
+              shadow_color: 0
+              shadow_opa: 50%
+              shadow_width: 10
+              shadow_spread: 3
               #checkable: true
               widgets:
                 - label:
@@ -208,6 +234,11 @@ lvgl:
               y: 290
               width: 240
               height: 90
+              bg_color: my_blue
+              shadow_color: 0
+              shadow_opa: 50%
+              shadow_width: 10
+              shadow_spread: 3
               #checkable: true
               widgets:
                 - label:
@@ -222,6 +253,11 @@ lvgl:
               y: 390
               width: 240
               height: 90
+              bg_color: my_blue
+              shadow_color: 0
+              shadow_opa: 50%
+              shadow_width: 10
+              shadow_spread: 3
               #checkable: true
               widgets:
                 - label:
@@ -238,6 +274,11 @@ lvgl:
               y: 80
               width: 102
               height: 90
+              bg_color: my_blue
+              shadow_color: 0
+              shadow_opa: 50%
+              shadow_width: 10
+              shadow_spread: 3
               #checkable: true
               widgets:
                 - label:
@@ -255,6 +296,11 @@ lvgl:
               y: 185
               width: 102
               height: 90
+              bg_color: my_blue
+              shadow_color: 0
+              shadow_opa: 50%
+              shadow_width: 10
+              shadow_spread: 3
               #checkable: true
               widgets:
                 - label:
@@ -273,12 +319,8 @@ lvgl:
               y: 460
               width: 20
               height: 20
+              bg_color: bgblue
               #checkable: true
-              widgets:
-                - label:
-                    align: CENTER
-                    text: ''
-                    styles: my_button_style 
               on_click:
                 - button.press: restart_button        
         - obj:
