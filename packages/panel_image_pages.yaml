@@ -65,8 +65,8 @@ lvgl:
       widgets:              
         - image:
             id: driveway_img
-            x: 80
-            y: 100 
+            x: 0
+            y: 0 
             src: driveway_image
         - button:
             id: front_door_btn
