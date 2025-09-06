@@ -1,3 +1,8 @@
+globals:
+  - id: mqtt_panel_global_string
+    type: std::string
+    initial_value: 'hornet-nest-3cc06c/alarm_control_panel/acp1/command' # Initial value for the string
+
 number:
   - platform: template
     name: LVGL Screen timeout
@@ -214,7 +219,7 @@ lvgl:
               on_long_press:
                 - logger.log: "Long press Click"
                 - mqtt.publish:
-                    topic: hornet-nest-3cc06c/alarm_control_panel/acp1/command
+                    topic: !lambda 'return id(mqtt_panel_global_string).state;'
                     payload: "arm_home"
               #on_click:
                 #- http_request.get: http://192.168.1.111/alarm_control_panel/acp1/arm_home
