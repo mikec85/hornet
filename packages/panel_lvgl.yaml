@@ -215,7 +215,7 @@ lvgl:
               on_long_press:
                 - logger.log: "Long press Click"
                 - mqtt.publish:
-                    topic: !lambda 'return id(mqtt_panel_global_string).state;'
+                    topic: !lambda 'return id(mqtt_panel_global_string);'
                     payload: "arm_home"
         - button:
               id: arm_away_btn
@@ -237,7 +237,7 @@ lvgl:
               on_long_press:
                 - logger.log: "Long press Click"
                 - mqtt.publish:
-                    topic: !lambda 'return id(mqtt_panel_global_string).state;'
+                    topic: !lambda 'return id(mqtt_panel_global_string);'
                     payload: "arm_away"
         - button:
               id: arm_night_btn
@@ -259,7 +259,7 @@ lvgl:
               on_long_press:
                 - logger.log: "Long press Click"
                 - mqtt.publish:
-                    topic: !lambda 'return id(mqtt_panel_global_string).state;'
+                    topic: !lambda 'return id(mqtt_panel_global_string);'
                     payload: "arm_night"
               on_click:
                 - logger.log: "On Click"
@@ -355,7 +355,7 @@ key_collector:
           ESP_LOGD("main", "Global string updated to: %s", id(my_code_int).c_str());
       - http_request.get: 
           url: !lambda |- 
-            std::string url = id(disarm_panel_global_string).state + id(my_code_int);
+            std::string url = id(disarm_panel_global_string) + id(my_code_int);
             return url;
       - logger.log: "Sent HTTP"
       - logger.log:
