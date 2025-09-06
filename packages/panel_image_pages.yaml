@@ -70,8 +70,8 @@ lvgl:
             src: driveway_image
         - button:
             id: front_door_btn
-            x: 300
-            y: 20
+            x: 600
+            y: 0
             width: 200
             height: 60
             #checkable: true
@@ -85,8 +85,8 @@ lvgl:
               - lvgl.page.show: frontdoor_page
         - button:
             id: to_main_btn3
-            x: 10
-            y: 20
+            x: 0
+            y: 0
             width: 160
             height: 60
             #checkable: true
