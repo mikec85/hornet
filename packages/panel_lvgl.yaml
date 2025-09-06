@@ -68,8 +68,10 @@ color:
     hex: 97bbbf
   - id: lightblue3
     hex: 97aebf
-  - id: bgblue
+  - id: bgblue2
     hex: 2d4a7a
+  - id: bgblue
+    hex: 172640
     
 lvgl:
   log_level: INFO
