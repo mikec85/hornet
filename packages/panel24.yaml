@@ -31,6 +31,14 @@ touchscreen:
       x_max: 240
       y_min: 0
       y_max: 320
+    on_release:
+      - if:
+          condition: lvgl.is_paused
+          then:
+            - logger.log: "LVGL resuming"
+            - lvgl.resume:
+            - lvgl.widget.redraw:
+            - light.turn_on: back_light
             
 display:
   - platform: ili9xxx
