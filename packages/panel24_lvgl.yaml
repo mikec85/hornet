@@ -114,7 +114,7 @@ lvgl:
                 
         - obj:
               align: BOTTOM_MID
-              y: -40
+              y: -20
               layout:
                 type: FLEX
                 flex_flow: ROW
