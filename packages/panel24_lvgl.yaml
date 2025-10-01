@@ -146,7 +146,7 @@ lvgl:
                     height: 70
                     range_from: 70
                     range_to: 105
-                    selected_digit: 1
+                    selected_digit: 0
                     styles: my_text_style
                     rollover: false
                     digits: 3
