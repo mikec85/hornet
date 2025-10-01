@@ -140,7 +140,7 @@ lvgl:
                     selected_digit: 1
                     rollover: false
                     digits: 3
-                    decimal_places: 1
+                    decimal_places: 0
                     on_value:
                       then:
                         - homeassistant.action:
