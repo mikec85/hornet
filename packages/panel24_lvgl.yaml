@@ -108,18 +108,18 @@ lvgl:
                 - logger.log: "Still executing"
                 
         - obj:
-              #align: BOTTOM_MID
-              #y: -50
-              #layout:
-              #  type: FLEX
-              #  flex_flow: ROW
-              #  flex_align_cross: CENTER
-              #width: SIZE_CONTENT
-              #height: SIZE_CONTENT
-              x: 10
-              y: 80
-              width: 160
-              height: 50
+              align: BOTTOM_MID
+              y: -50
+              layout:
+                type: FLEX
+                flex_flow: ROW
+                flex_align_cross: CENTER
+              width: SIZE_CONTENT
+              height: SIZE_CONTENT
+              #x: 10
+              #y: 80
+              #width: 160
+              #height: 50
               
               widgets:
                 - button:
@@ -133,7 +133,7 @@ lvgl:
                     id: spinbox_id
                     align: CENTER
                     text_align: CENTER
-                    width: 50
+                    width: 100
                     range_from: 70
                     range_to: 105
                     selected_digit: 1
