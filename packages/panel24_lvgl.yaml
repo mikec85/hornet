@@ -156,7 +156,7 @@ lvgl:
                         - homeassistant.action:
                             action: climate.set_temperature
                             data:
-                              temperature: !lambda return x;
+                              temperature: !lambda return id(target_temperature).state;
                               entity_id: climate.dock_pro_mike_dockpro
                         - logger.log: 
                             format: "problem %f"
