@@ -131,6 +131,8 @@ lvgl:
                     widgets:
                       - label:
                            text: "-"
+                           style:
+                             text_font: lvgl.font_montserrat_24
                 - spinbox:
                     id: spinbox_id
                     align: CENTER
