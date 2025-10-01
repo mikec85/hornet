@@ -27,7 +27,7 @@ touchscreen:
     update_interval: 50ms
     threshold: 400
     transform:
-      mirror_x: false
+      mirror_x: true
       mirror_y: false
       swap_xy: true
     calibration:
