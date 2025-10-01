@@ -124,6 +124,8 @@ lvgl:
               widgets:
                 - button:
                     id: spin_down
+                    width: 40 
+                    height: 40
                     on_click:
                       - lvgl.spinbox.decrement: spinbox_id
                     widgets:
@@ -150,6 +152,8 @@ lvgl:
                               entity_id: climate.dock_pro_mike_dockpro
                 - button:
                     id: spin_up
+                    width: 40 
+                    height: 40
                     on_click:
                       - lvgl.spinbox.increment: spinbox_id
                     widgets:
