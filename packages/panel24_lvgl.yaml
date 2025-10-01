@@ -139,7 +139,7 @@ lvgl:
                     height: 70
                     range_from: 70
                     range_to: 105
-                    selected_digit: 1
+                    #selected_digit: 1
                     rollover: false
                     digits: 3
                     decimal_places: 0
