@@ -108,14 +108,19 @@ lvgl:
                 - logger.log: "Still executing"
                 
         - obj:
-              align: BOTTOM_MID
-              y: -50
-              layout:
-                type: FLEX
-                flex_flow: ROW
-                flex_align_cross: CENTER
-              width: SIZE_CONTENT
-              height: SIZE_CONTENT
+              #align: BOTTOM_MID
+              #y: -50
+              #layout:
+              #  type: FLEX
+              #  flex_flow: ROW
+              #  flex_align_cross: CENTER
+              #width: SIZE_CONTENT
+              #height: SIZE_CONTENT
+              x: 10
+              y: 80
+              width: 160
+              height: 50
+              
               widgets:
                 - button:
                     id: spin_down
@@ -129,8 +134,8 @@ lvgl:
                     align: CENTER
                     text_align: CENTER
                     width: 50
-                    range_from: 15
-                    range_to: 35
+                    range_from: 70
+                    range_to: 105
                     selected_digit: 1
                     rollover: false
                     digits: 3
