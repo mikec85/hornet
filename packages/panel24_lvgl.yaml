@@ -131,7 +131,7 @@ lvgl:
                     widgets:
                       - label:
                            text: "-"
-                      
+                           styles: my_button_style 
                 - spinbox:
                     id: spinbox_id
                     align: CENTER
@@ -141,6 +141,7 @@ lvgl:
                     range_from: 70
                     range_to: 105
                     #selected_digit: 1
+                    styles: my_text_style
                     rollover: false
                     digits: 3
                     decimal_places: 0
@@ -160,5 +161,5 @@ lvgl:
                     widgets:
                       - label:
                           text: "+"
-
+                          styles: my_button_style
                 
