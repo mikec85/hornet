@@ -71,7 +71,7 @@ lvgl:
   disp_bg_color: my_black
   touchscreens:
     - touchscreen_id: my_touchscreen
-      long_press_time: 2s
+      long_press_time: 1s
   style_definitions:
     - id: my_button_style
       text_font: roboto40  # Apply the custom font defined in step 1
