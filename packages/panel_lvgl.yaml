@@ -263,16 +263,16 @@ lvgl:
                     payload: "arm_night"
               on_click:
                 - logger.log: "On Click"
-        - button:
-              id: restart_button_lvgl
-              x: 780
-              y: 460
-              width: 20
-              height: 20
-              bg_color: bgblue
+        #- button:
+              #id: restart_button_lvgl
+              #x: 780
+              #y: 460
+              #width: 20
+              #height: 20
+              #bg_color: bgblue
               #checkable: true
-              on_click:
-                - button.press: restart_button        
+              #on_click:
+                #- button.press: restart_button        
         - obj:
              width: 320
              height: 50
