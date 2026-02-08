@@ -358,7 +358,7 @@ key_collector:
             std::string url = id(disarm_panel_global_string) + id(my_code_int);
             return url;
       - mqtt.publish_json:
-            topic: id(disarm_mqtt_global_string)
+            topic: std::string id(disarm_mqtt_global_string)
             payload: |-
               root["data"] = id(my_code_int);    
       - logger.log: "Sent HTTP"
