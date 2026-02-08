@@ -5,3 +5,6 @@ globals:
   - id: disarm_panel_global_string
     type: std::string
     initial_value: '"http://192.168.1.252/alarm_control_panel/acp1/disarm?code="' # Initial value for the string
+  - id: disarm_mqtt_global_string
+    type: std::string
+    initial_value: '"konnected-fdc55d/alarm_control_panel/acp1/disarm"' # Initial value for the string
