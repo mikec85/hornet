@@ -101,8 +101,8 @@ lvgl:
       widgets:
         - led:
             id: lvgl_led
-            x: 30
-            y: 35
+            x: 20
+            y: 25
             width: 45
             height: 45
             color: 0xFF0000
