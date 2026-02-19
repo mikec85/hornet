@@ -11,6 +11,10 @@ globals:
     type: bool
     restore_value: no
     initial_value: 'false'
+  - id: glb_system_ready
+    type: bool
+    restore_value: no
+    initial_value: 'false'
     
 # MQTT
 mqtt:
@@ -94,6 +98,9 @@ mqtt:
         - lvgl.label.update:
             id: lvgl_label3
             text: "System Ready"
+        - globals.set: 
+            id: glb_system_ready 
+            value: "true"    
     - topic: hornet-nest-3cc06c/on_ready
       qos: 0
       payload: "false"
@@ -101,6 +108,9 @@ mqtt:
         - lvgl.label.update:
             id: lvgl_label3
             text: "System Not Ready"
+        - globals.set: 
+            id: glb_system_ready 
+            value: "false" 
     - topic: hornet-nest-3cc06c/alarm_control_panel/acp1/state
       qos: 0
       then:
