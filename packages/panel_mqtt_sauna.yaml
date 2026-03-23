@@ -26,8 +26,8 @@ mqtt:
   broker: mqtt.coffeys.net
   on_json_message:
     - topic: sonoff/sauna
-      qos: 0
-      payload: "ON"
+      #qos: 0
+      #payload: "ON"
       then:
         - lambda: |-
             // Safely check if the key exists before assigning to prevent crashes
