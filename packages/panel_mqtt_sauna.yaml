@@ -49,7 +49,8 @@ mqtt:
         - lambda: |-
             // Safely check if the key exists before assigning to prevent crashes
             if (x["celcius"].is<float>()) {
-              id(var_celcius) = x["celcius"];
+              id(var_celcius2) = x["celcius"];
+              id(var_celcius).make_call().set_value(x["celcius"]).perform();
               lv_textarea_set_text(id(sauna_txt_celcius), x["celcius"]);
               lv_textarea_set_text(sauna_txt_celcius, x["celcius"]);
             }
