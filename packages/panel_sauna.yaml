@@ -6,10 +6,8 @@ button:
       - lvgl.page.show: main_page
 
     
-lvgl:
-      
+lvgl:      
   pages:
-
 
     - id: sauna_page
       bg_color: my_black
