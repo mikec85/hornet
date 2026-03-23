@@ -21,7 +21,7 @@ lvgl:
             height: 60
             one_line: true
             placeholder_text: "Enter text here"
-            text: var_celcius
+            #text: var_celcius
           
         - button:
             id: sauna_on_btn
