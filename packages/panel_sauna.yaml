@@ -1,0 +1,56 @@
+button:
+
+  - platform: template
+    name: "Main Page"
+    on_press:
+      - lvgl.page.show: main_page
+
+    
+lvgl:
+      
+  pages:
+
+
+    - id: sauna_page
+      bg_color: my_black
+      widgets:              
+
+        - label:
+          id: sauna_temp_label
+          x: 0
+          y: 0
+          width: 200
+          height: 60
+          text: "row 0, column 1"
+
+          
+        - button:
+            id: sauna_on_btn
+            x: 600
+            y: 0
+            width: 200
+            height: 60
+            #checkable: true
+            widgets:
+              - label:
+                  align: CENTER
+                  text: 'Sauna'
+                  styles: my_button_style 
+            on_click:
+              - component.update: frontdoor_image
+              - lvgl.page.show: frontdoor_page
+        - button:
+            id: to_main_btn3
+            x: 0
+            y: 0
+            width: 160
+            height: 60
+            #checkable: true
+            widgets:
+              - label:
+                  align: CENTER
+                  text: 'Main'
+                  styles: my_text_style 
+            on_click:
+              - lvgl.page.show: main_page
+
