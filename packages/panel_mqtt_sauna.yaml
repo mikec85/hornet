@@ -52,7 +52,7 @@ globals:
   - id: var_celcius2
     type: float
     restore_value: yes
-  - id: var_fahrenheit
+  - id: var_fahrenheit2
     type: float
     restore_value: no
   - id: var_state
@@ -61,7 +61,7 @@ globals:
   - id: var_active
     type: int
     restore_value: no
-  - id: var_setpoint
+  - id: var_setpoint2
     type: int
     restore_value: no
   - id: var_autooff
