@@ -1,10 +1,3 @@
-button:
-
-  - platform: template
-    name: "Main Page"
-    on_press:
-      - lvgl.page.show: main_page
-
     
 lvgl:      
   pages:
