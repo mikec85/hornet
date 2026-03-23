@@ -13,7 +13,7 @@ number:
           args: [ 'x' ]
       - lvgl.textarea.update:
           id: sauna_txt_celcius
-          text: !lambda "return std::string(x);"
+          text: !lambda "return to_string(x);"
 
 globals:
 
