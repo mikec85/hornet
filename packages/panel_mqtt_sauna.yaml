@@ -1,6 +1,20 @@
+number:
+  - platform: template
+    name: "My Triggering Variable"
+    id: var_celcius
+    optimistic: true
+    min_value: 0
+    max_value: 100
+    step: 1
+    # This trigger fires ANY time the value changes!
+    on_value:
+      - logger.log:
+          format: "The new variable value is %.1f"
+          args: [ 'x' ]
+
 globals:
 
-  - id: var_celcius
+  - id: var_celcius2
     type: float
     restore_value: yes
   - id: var_fahrenheit
