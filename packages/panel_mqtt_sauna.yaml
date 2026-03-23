@@ -13,7 +13,7 @@ number:
           args: [ 'x' ]
       - lvgl.textarea.update:
           id: sauna_txt_celcius
-          text: !lambda "return to_string((int)x);"
+          text: !lambda "return to_string((int)round(x));"
 
 globals:
 
