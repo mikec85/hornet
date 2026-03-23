@@ -34,6 +34,7 @@ mqtt:
             if (x["celcius"].is<float>()) {
               id(var_celcius) = x["celcius"];
               lv_textarea_set_text(id(sauna_txt_celcius), x["celcius"]);
+              lv_textarea_set_text(sauna_txt_celcius, x["celcius"]);
             }
             if (x["fahrenheit"].is<float>()) {
               id(var_fahrenheit) = x["fahrenheit"];
