@@ -343,7 +343,7 @@ lvgl:
                     styles: my_button_style 
               on_click:
                 - logger.log: "Suana Page"
-                - lvgl.page.show: suana_page
+                - lvgl.page.show: sauna_page
                     
         - button:
               id: restart_button_lvgl
