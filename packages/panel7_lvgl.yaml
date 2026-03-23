@@ -325,6 +325,27 @@ lvgl:
                     payload: "PRESS"
                     
         - button:
+              id: sauna_pg
+              x: 698
+              y: 290
+              width: 102
+              height: 90
+              bg_color: my_blue
+              shadow_color: 0
+              shadow_opa: 50%
+              shadow_width: 10
+              shadow_spread: 3
+              #checkable: true
+              widgets:
+                - label:
+                    align: CENTER
+                    text: 'Sauna'
+                    styles: my_button_style 
+              on_click:
+                - logger.log: "Suana Page"
+                - lvgl.page.show: suana_page
+                    
+        - button:
               id: restart_button_lvgl
               x: 780
               y: 460
