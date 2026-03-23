@@ -31,22 +31,22 @@ mqtt:
       then:
         - lambda: |-
             // Safely check if the key exists before assigning to prevent crashes
-            if (x.containsKey("celcius")) {
+            if (x["celcius"].is<float>()) {
               id(var_celcius) = x["celcius"];
             }
-            if (x.containsKey("fahrenheit")) {
+            if (x["fahrenheit"].is<float>()) {
               id(var_fahrenheit) = x["fahrenheit"];
             }
-            if (x.containsKey("state")) {
+            if (x["state"].is<int>()) {
               id(var_state) = x["state"];
             }
-            if (x.containsKey("active")) {
+            if (x["active"].is<int>()) {
               id(var_active) = x["active"];
             }
-            if (x.containsKey("setpoint")) {
+            if (x["setpoint"].is<int>()) {
               id(var_setpoint) = x["setpoint"];
             }
-            if (x.containsKey("autooff")) {
+            if (x["autooff"].is<int>()) {
               id(var_autooff) = x["autooff"];
             }
 
