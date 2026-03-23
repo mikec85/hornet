@@ -33,7 +33,7 @@ mqtt:
             // Safely check if the key exists before assigning to prevent crashes
             if (x["celcius"].is<float>()) {
               id(var_celcius) = x["celcius"];
-              lv_textarea_set_text(id(my_textarea_id), x["celcius"]);
+              lv_textarea_set_text(id(sauna_txt_celcius), x["celcius"]);
             }
             if (x["fahrenheit"].is<float>()) {
               id(var_fahrenheit) = x["fahrenheit"];
