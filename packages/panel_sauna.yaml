@@ -13,7 +13,14 @@ lvgl:
        #   width: 200
        #   height: 60
        #   text: "row 0, column 1"
-
+        - textarea:
+            id: textarea_id
+            x: 0
+            y: 100
+            width: 200
+            height: 60
+            one_line: true
+            placeholder_text: "Enter text here"
           
         - button:
             id: sauna_on_btn
