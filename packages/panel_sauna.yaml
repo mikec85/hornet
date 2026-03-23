@@ -14,13 +14,14 @@ lvgl:
        #   height: 60
        #   text: "row 0, column 1"
         - textarea:
-            id: textarea_id
+            id: sauna_txt_celcius
             x: 0
             y: 100
             width: 200
             height: 60
             one_line: true
             placeholder_text: "Enter text here"
+            text: var_celcius
           
         - button:
             id: sauna_on_btn
