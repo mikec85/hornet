@@ -87,7 +87,7 @@ mqtt:
               lv_textarea_set_text(sauna_txt_celcius, x["celcius"]);
             }
             if (x["fahrenheit"].is<float>()) {
-              id(var_fahrenheit) = x["fahrenheit"];
+              id(var_fahrenheit2) = x["fahrenheit"];
               id(var_fahrenheit).make_call().set_value(x["fahrenheit"]).perform();
             }
             if (x["state"].is<int>()) {
@@ -97,7 +97,7 @@ mqtt:
               id(var_active) = x["active"];
             }
             if (x["setpoint"].is<int>()) {
-              id(var_setpoint) = x["setpoint"];
+              id(var_setpoint2) = x["setpoint"];
               id(var_setpoint).make_call().set_value(x["setpoint"]).perform();
             }
             if (x["autooff"].is<int>()) {
