@@ -11,6 +11,9 @@ number:
       - logger.log:
           format: "The new variable value is %.1f"
           args: [ 'x' ]
+      - lvgl.textarea.update:
+        id: sauna_txt_celcius
+        text: '!lambda "return x;"'
 
 globals:
 
