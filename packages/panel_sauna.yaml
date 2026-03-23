@@ -2,7 +2,7 @@
 lvgl:      
   pages:
 
-    - id: sauna_page
+    - id: sauna_page2
       bg_color: my_black
       widgets:              
 
