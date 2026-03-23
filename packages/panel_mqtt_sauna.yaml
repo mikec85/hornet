@@ -15,6 +15,38 @@ number:
           id: sauna_txt_celcius
           text: !lambda "return to_string((int)round(x));"
 
+  - platform: template
+    name: "fahrenheit"
+    id: var_fahrenheit
+    optimistic: true
+    min_value: 0
+    max_value: 100
+    step: 1
+    # This trigger fires ANY time the value changes!
+    on_value:
+      - logger.log:
+          format: "The new variable value is %.1f"
+          args: [ 'x' ]
+      - lvgl.textarea.update:
+          id: sauna_txt_fahrenheit
+          text: !lambda "return to_string((int)round(x));"
+
+  - platform: template
+    name: "Setpoint"
+    id: var_setpoint
+    optimistic: true
+    min_value: 0
+    max_value: 100
+    step: 1
+    # This trigger fires ANY time the value changes!
+    on_value:
+      - logger.log:
+          format: "The new variable value is %.1f"
+          args: [ 'x' ]
+      - lvgl.textarea.update:
+          id: sauna_txt_setpoint
+          text: !lambda "return to_string((int)round(x));"
+          
 globals:
 
   - id: var_celcius2
@@ -56,6 +88,7 @@ mqtt:
             }
             if (x["fahrenheit"].is<float>()) {
               id(var_fahrenheit) = x["fahrenheit"];
+              id(var_fahrenheit).make_call().set_value(x["fahrenheit"]).perform();
             }
             if (x["state"].is<int>()) {
               id(var_state) = x["state"];
@@ -65,6 +98,7 @@ mqtt:
             }
             if (x["setpoint"].is<int>()) {
               id(var_setpoint) = x["setpoint"];
+              id(var_setpoint).make_call().set_value(x["setpoint"]).perform();
             }
             if (x["autooff"].is<int>()) {
               id(var_autooff) = x["autooff"];
