@@ -40,7 +40,7 @@ lvgl:
               - component.update: frontdoor_image
               - lvgl.page.show: frontdoor_page
         - button:
-            id: to_main_btn3
+            id: to_main_btn4
             x: 0
             y: 0
             width: 160
