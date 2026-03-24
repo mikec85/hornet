@@ -33,7 +33,7 @@ number:
           
 globals:
 
-  - id: var_celcius2
+  - id: var_celcius
     type: float
     restore_value: yes
   - id: var_fahrenheit2
@@ -65,7 +65,7 @@ mqtt:
         - lambda: |-
             // Safely check if the key exists before assigning to prevent crashes
             if (x["celcius"].is<float>()) {
-              id(var_celcius2) = x["celcius"];
+              id(var_celcius) = x["celcius"];
             }
             if (x["fahrenheit"].is<float>()) {
               id(var_fahrenheit2) = x["fahrenheit"];
