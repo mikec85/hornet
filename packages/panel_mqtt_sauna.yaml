@@ -1,21 +1,5 @@
 number:
   - platform: template
-    name: "My Triggering Variable"
-    id: var_celcius
-    optimistic: true
-    min_value: 0
-    max_value: 100
-    step: 1
-    # This trigger fires ANY time the value changes!
-    on_value:
-      - logger.log:
-          format: "The new variable value is %.1f"
-          args: [ 'x' ]
-      - lvgl.textarea.update:
-          id: sauna_txt_celcius
-          text: !lambda "return to_string((int)round(x));"
-
-  - platform: template
     name: "fahrenheit"
     id: var_fahrenheit
     optimistic: true
@@ -82,9 +66,7 @@ mqtt:
             // Safely check if the key exists before assigning to prevent crashes
             if (x["celcius"].is<float>()) {
               id(var_celcius2) = x["celcius"];
-              id(var_celcius).make_call().set_value(x["celcius"]).perform();
-              lv_textarea_set_text(id(sauna_txt_celcius), x["celcius"]);
-              lv_textarea_set_text(sauna_txt_celcius, x["celcius"]);
+              #id(var_celcius).make_call().set_value(x["celcius"]).perform();
             }
             if (x["fahrenheit"].is<float>()) {
               id(var_fahrenheit2) = x["fahrenheit"];
