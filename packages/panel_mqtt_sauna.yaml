@@ -66,7 +66,6 @@ mqtt:
             // Safely check if the key exists before assigning to prevent crashes
             if (x["celcius"].is<float>()) {
               id(var_celcius2) = x["celcius"];
-              #id(var_celcius).make_call().set_value(x["celcius"]).perform();
             }
             if (x["fahrenheit"].is<float>()) {
               id(var_fahrenheit2) = x["fahrenheit"];
