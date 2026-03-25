@@ -13,7 +13,7 @@ number:
           args: [ 'x' ]
       - lvgl.textarea.update:
           id: sauna_txt_fahrenheit
-          text: !lambda "return to_string((int)round(x));"
+          text: !lambda "return to_string((int)round(x)) + \" degrees Fahrenheit\";"
 
   - platform: template
     name: "Setpoint"
@@ -29,7 +29,7 @@ number:
           args: [ 'x' ]
       - lvgl.textarea.update:
           id: sauna_txt_setpoint
-          text: !lambda "return to_string((int)round(x));"
+          text: !lambda "return to_string((int)round(x)) + \" degrees Fahrenheit\";"
           
 globals:
 
