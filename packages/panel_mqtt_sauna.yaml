@@ -84,10 +84,21 @@ mqtt:
             if (x["autooff"].is<int>()) {
               id(var_autooff) = x["autooff"];
             }
-        - lvgl.image.update:
-          id: on_off_img
-          src: fire
-
+        - if:
+            condition:
+              lambda: 'return id(var_state) == 0;'
+            then:    
+              - lvgl.image.update:
+                id: on_off_img
+                src: fire
+        - if:
+            condition:
+              lambda: 'return id(var_state) == 1;'
+            then:    
+              - lvgl.image.update:
+                id: on_off_img
+                src: fireoff
+                
             // Optional: Print to the ESPHome log so you can verify it's working!
             ESP_LOGI("json_parser", "Celcius is now: %.1f", id(var_celcius));
             ESP_LOGI("json_parser", "Setpoint is now: %d", id(var_setpoint));
