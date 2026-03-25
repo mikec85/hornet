@@ -1,4 +1,3 @@
-    
 lvgl:      
   pages:
 
@@ -6,23 +5,43 @@ lvgl:
       bg_color: my_black
       widgets:              
 
-       # - label:
-       #   id: sauna_temp_label
-       #   x: 0
-       #   y: 0
-       #   width: 200
-       #   height: 60
-       #   text: "row 0, column 1"
+        - label:
+            id: sauna_temp_label
+            x: 0
+            y: 70
+            width: 200
+            height: 60
+            text_color: my_white 
+            text_font: montserrat_28
+            text: "Temperature"
+
         - textarea:
-            id: sauna_txt_celcius
+            id: sauna_txt_fahrenheit
             x: 0
             y: 100
             width: 200
             height: 60
             one_line: true
             placeholder_text: "Enter text here"
-            #text: var_celcius
-          
+
+        - label:
+            id: sauna_set_label
+            x: 0
+            y: 150
+            width: 200
+            height: 60
+            text_color: my_white 
+            text_font: montserrat_28
+            text: "Set Point"
+        - textarea:
+            id: sauna_txt_setpoint
+            x: 0
+            y: 180
+            width: 200
+            height: 60
+            one_line: true
+            placeholder_text: "Enter text here"
+
         - button:
             id: sauna_on_btn
             x: 600
@@ -36,8 +55,21 @@ lvgl:
                   text: 'Sauna'
                   styles: my_button_style 
             on_click:
-              - component.update: frontdoor_image
-              - lvgl.page.show: frontdoor_page
+              then:
+                - if:
+                    condition:
+                      lambda: 'return id(var_state) == 0;'
+                    then:
+                      - mqtt.publish:
+                          topic: sonoff/sauna/set
+                          payload: "{\"state\":true}"
+                - if:
+                    condition:
+                      lambda: 'return id(var_state) == 1;'
+                    then:
+                      - mqtt.publish:
+                          topic: sonoff/sauna/set
+                          payload: "{\"state\":false}"
         - button:
             id: to_main_btn4
             x: 0
@@ -51,5 +83,6 @@ lvgl:
                   text: 'Main'
                   styles: my_text_style 
             on_click:
-              - lvgl.page.show: main_page
+              - lvgl.page.show: main_page   
 
+  
