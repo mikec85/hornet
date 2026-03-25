@@ -4,7 +4,7 @@ number:
     id: var_fahrenheit
     optimistic: true
     min_value: 0
-    max_value: 100
+    max_value: 200
     step: 1
     # This trigger fires ANY time the value changes!
     on_value:
