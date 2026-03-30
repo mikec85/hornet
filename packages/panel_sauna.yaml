@@ -117,6 +117,13 @@ lvgl:
             on_click:
               then:
                 - logger.log: "Decrease setpoint pressed"
+                - mqtt.publish:
+                    topic: sonoff/sauna/set
+                    payload: !lambda |-
+                      id(var_setpoint2)--;
+                      char buf[50];
+                      sprintf(buf, "{\"setpoint\": %d }", id(var_setpoint2));
+                      return {buf};
 
         # Setpoint Textarea
         - textarea:
@@ -128,6 +135,18 @@ lvgl:
             one_line: false
             text_font: montserrat_28
             placeholder_text: "-- °C"
+
+        # Setpoint Textarea
+        - textarea:
+            id: sauna_txt_setpoint_f
+            x: 520
+            y: 380
+            width: 120
+            height: 80
+            one_line: false
+            text_font: montserrat_28
+            placeholder_text: "-- °F"
+
 
         # Increase (+) Button
         - button:
@@ -145,3 +164,10 @@ lvgl:
             on_click:
               then:
                 - logger.log: "Increase setpoint pressed"
+                - mqtt.publish:
+                    topic: sonoff/sauna/set
+                    payload: !lambda |-
+                      id(var_setpoint2)++;
+                      char buf[50];
+                      sprintf(buf, "{\"setpoint\": %d }", id(var_setpoint2));
+                      return {buf};
