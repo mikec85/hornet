@@ -97,19 +97,27 @@ mqtt:
             condition:
               lambda: 'return id(var_state) == 1;'
             then:    
-              - lvgl.image.update:
-                  id: on_off_img
-                  src: mdi_fire
-                  image_recolor: my_red
+              #- lvgl.image.update:
+              #    id: on_off_img
+              #    src: mdi_fire
+              #    image_recolor: my_red
+              - lvgl.label.update:
+                  id: on_off_label
+                  text: "\U000F0238"
+                  text_color: my_red
         - if:
             condition:
               lambda: 'return id(var_state) == 0;'
             then:    
-              - lvgl.image.update:
-                  id: on_off_img
-                  src: mdi_fireoff
-                  image_recolor: my_red
-                
+              #- lvgl.image.update:
+              #    id: on_off_img
+              #    src: mdi_fireoff
+              #    image_recolor: my_red
+              - lvgl.label.update:
+                  id: on_off_label
+                  text: "\U000F1722"
+                  text_color: my_black
+                  
            # // Optional: Print to the ESPHome log so you can verify it's working!
            # // ESP_LOGI("json_parser", "Fahrenheit is now: %d", id(var_fahrenheit));
            # // ESP_LOGI("json_parser", "Setpoint is now: %d", id(var_setpoint));
