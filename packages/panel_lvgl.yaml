@@ -263,6 +263,28 @@ lvgl:
                     payload: "arm_night"
               on_click:
                 - logger.log: "On Click"
+
+         - button:
+              id: sauna_pg
+              x: 735
+              y: 405
+              width: 60
+              height: 70
+              bg_color: my_blue
+              shadow_color: 0
+              shadow_opa: 50%
+              shadow_width: 10
+              shadow_spread: 3
+              #checkable: true
+              widgets:
+                - label:
+                    align: CENTER
+                    text: 'Sauna'
+                    styles: my_button_style 
+              on_click:
+                - logger.log: "Suana Page"
+                - lvgl.page.show: sauna_page
+                
         #- button:
               #id: restart_button_lvgl
               #x: 780
