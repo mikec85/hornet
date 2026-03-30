@@ -1,59 +1,48 @@
+font:
+  - file: "fonts/materialdesignicons-webfont.ttf"
+    id: icon_font
+    size: 120
+    glyphs: [
+          "\U000F0238", # mdi-fire  F0238
+          "\U000F1722", # mdi-fire-off. F1722
+          ]
+
 lvgl:      
   pages:
-
     - id: sauna_page
-      bg_color: my_black
+      bg_color: bgblue
       widgets:              
-        - image:
-            id: on_off_img
+
+        # --- TOP NAVIGATION BAR ---
+        - label:
+            # ... other configurations
+            id: on_off_label
             x: 360
-            y: 90 
-            src: mdi_fireoff
-            
-        - label:
-            id: sauna_temp_label
-            x: 0
-            y: 70
-            width: 200
-            height: 60
-            text_color: my_white 
-            text_font: montserrat_28
-            text: "Temperature"
+            y: 10 
+            text_font: icon_font
+            text: "\U000F1722"
+            text_color: my_black
 
-        - textarea:
-            id: sauna_txt_fahrenheit
-            x: 0
-            y: 100
-            width: 200
+        - button:
+            id: to_main_btn4
+            x: 20
+            y: 20
+            width: 160
             height: 60
-            one_line: true
-            placeholder_text: "Enter text here"
-
-        - label:
-            id: sauna_set_label
-            x: 0
-            y: 150
-            width: 200
-            height: 60
-            text_color: my_white 
-            text_font: montserrat_28
-            text: "Set Point"
-        - textarea:
-            id: sauna_txt_setpoint
-            x: 0
-            y: 180
-            width: 200
-            height: 60
-            one_line: true
-            placeholder_text: "Enter text here"
+            widgets:
+              - label:
+                  align: CENTER
+                  text: 'Main'
+                  styles: my_text_style 
+            on_click:
+              - lvgl.page.show: main_page   
 
         - button:
             id: sauna_on_btn
             x: 600
-            y: 0
-            width: 200
+            y: 20
+            width: 180 # Pulled in slightly so right edge is at 780px instead of 800px
             height: 60
-            #checkable: true
             widgets:
               - label:
                   align: CENTER
@@ -75,19 +64,84 @@ lvgl:
                       - mqtt.publish:
                           topic: sonoff/sauna/set
                           payload: "{\"state\":false}"
+
+        # --- LEFT SIDE: CURRENT TEMPERATURE ---
+        
+        - label:
+            id: sauna_temp_label
+            x: 80
+            y: 220
+            width: 200
+            height: 40
+            text_color: my_white 
+            text_font: montserrat_28
+            # text_align: center # Uncomment if you want the text centered in the 200px box
+            text: "Temperature"
+
+        - textarea:
+            id: sauna_txt_fahrenheit
+            x: 80
+            y: 280
+            width: 200
+            height: 80
+            one_line: false
+            text_font: montserrat_28
+            placeholder_text: "-- °F"
+
+        # --- RIGHT SIDE: SETPOINT CONTROLS ---
+
+        - label:
+            id: sauna_set_label
+            x: 420 
+            y: 220
+            width: 320 # Exactly spans the 3 widgets below (420 to 740)
+            height: 40
+            text_color: my_white 
+            text_font: montserrat_28
+            # text_align: center # Uncomment if you want the text centered in the 320px box
+            text: "Set Point"
+
+        # Decrease (-) Button
         - button:
-            id: to_main_btn4
-            x: 0
-            y: 0
-            width: 160
-            height: 60
-            #checkable: true
+            id: sauna_set_dec_btn
+            x: 420
+            y: 280
+            width: 80
+            height: 80
             widgets:
               - label:
                   align: CENTER
-                  text: 'Main'
+                  text: "-"
+                  text_font: montserrat_28
                   styles: my_text_style 
             on_click:
-              - lvgl.page.show: main_page   
+              then:
+                - logger.log: "Decrease setpoint pressed"
 
-  
+        # Setpoint Textarea
+        - textarea:
+            id: sauna_txt_setpoint
+            x: 520
+            y: 280
+            width: 120
+            height: 80
+            one_line: false
+            text_font: montserrat_28
+            placeholder_text: "-- °C"
+
+        # Increase (+) Button
+        - button:
+            id: sauna_set_inc_btn
+            x: 660
+            y: 280
+            width: 80
+            height: 80
+            widgets:
+              - label:
+                  align: CENTER
+                  text: "+"
+                  text_font: montserrat_28
+                  styles: my_text_style 
+            on_click:
+              then:
+                - logger.log: "Increase setpoint pressed"
