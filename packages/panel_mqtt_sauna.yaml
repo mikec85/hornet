@@ -1,3 +1,10 @@
+image:
+  - file: mdi:fire
+    id: mdi_fire
+    type: grayscale
+    transparency: alpha_channel
+    resize: 80x80
+
 number:
   - platform: template
     name: "fahrenheit"
@@ -90,7 +97,7 @@ mqtt:
             then:    
               - lvgl.image.update:
                   id: on_off_img
-                  src: mdi:fire
+                  src: mdi_fire
         - if:
             condition:
               lambda: 'return id(var_state) == 1;'
