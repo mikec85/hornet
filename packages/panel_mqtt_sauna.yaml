@@ -5,6 +5,12 @@ image:
     transparency: alpha_channel
     resize: 80x80
 
+  - file: mdi:fireoff
+    id: mdi_fireoff
+    type: grayscale
+    transparency: alpha_channel
+    resize: 80x80
+    
 number:
   - platform: template
     name: "fahrenheit"
@@ -104,7 +110,7 @@ mqtt:
             then:    
               - lvgl.image.update:
                   id: on_off_img
-                  src: mdi:fireoff
+                  src: mdi_fireoff
                 
            # // Optional: Print to the ESPHome log so you can verify it's working!
            # // ESP_LOGI("json_parser", "Fahrenheit is now: %d", id(var_fahrenheit));
