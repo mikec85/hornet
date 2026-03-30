@@ -8,7 +8,7 @@ lvgl:
             id: on_off_img
             x: 360
             y: 90 
-            src: 
+            src: mdi_fireoff
             
         - label:
             id: sauna_temp_label
