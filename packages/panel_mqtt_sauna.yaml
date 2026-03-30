@@ -89,15 +89,15 @@ mqtt:
               lambda: 'return id(var_state) == 0;'
             then:    
               - lvgl.image.update:
-                id: on_off_img
-                src: fire
+                  id: on_off_img
+                  src: fire
         - if:
             condition:
               lambda: 'return id(var_state) == 1;'
             then:    
               - lvgl.image.update:
-                id: on_off_img
-                src: fireoff
+                  id: on_off_img
+                  src: fireoff
                 
            # // Optional: Print to the ESPHome log so you can verify it's working!
            # // ESP_LOGI("json_parser", "Fahrenheit is now: %d", id(var_fahrenheit));
