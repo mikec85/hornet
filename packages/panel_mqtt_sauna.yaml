@@ -5,7 +5,7 @@ image:
     transparency: alpha_channel
     resize: 80x80
 
-  - file: mdi:fireoff
+  - file: mdi:fire-off
     id: mdi_fireoff
     type: grayscale
     transparency: alpha_channel
