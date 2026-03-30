@@ -39,6 +39,9 @@ number:
       - lvgl.textarea.update:
           id: sauna_txt_setpoint
           text: !lambda "return to_string((int)round(x)) + \" °C\";"
+      - lvgl.textarea.update:
+          id: sauna_txt_setpoint_f
+          text: !lambda "return to_string((int)round(x) x 9/5 + 32) + \" °F\";" #(0°C × 9/5) + 32
           
 globals:
 
