@@ -104,6 +104,7 @@ mqtt:
               - lvgl.image.update:
                   id: on_off_img
                   src: mdi_fire
+                  image_recolor: my_red
         - if:
             condition:
               lambda: 'return id(var_state) == 0;'
@@ -111,6 +112,7 @@ mqtt:
               - lvgl.image.update:
                   id: on_off_img
                   src: mdi_fireoff
+                  image_recolor: my_red
                 
            # // Optional: Print to the ESPHome log so you can verify it's working!
            # // ESP_LOGI("json_parser", "Fahrenheit is now: %d", id(var_fahrenheit));
