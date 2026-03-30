@@ -4,7 +4,12 @@ lvgl:
     - id: sauna_page
       bg_color: my_black
       widgets:              
-
+        - image:
+            id: on_off_img
+            x: 360
+            y: 90 
+            src: 
+            
         - label:
             id: sauna_temp_label
             x: 0
