@@ -375,7 +375,7 @@ lvgl:
                - label:
                    id: lvgl_label3
                    align: CENTER
-                   text: "Test3"
+                   text: "  "
                    text_align: CENTER
                    styles: my_text_style
         - obj:
