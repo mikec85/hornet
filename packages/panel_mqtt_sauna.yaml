@@ -100,5 +100,5 @@ mqtt:
                 src: fireoff
                 
             // Optional: Print to the ESPHome log so you can verify it's working!
-            ESP_LOGI("json_parser", "Fahrenheit is now: %.1f", id(var_fahrenheit));
+            ESP_LOGI("json_parser", "Fahrenheit is now: %d", id(var_fahrenheit));
             ESP_LOGI("json_parser", "Setpoint is now: %d", id(var_setpoint));
