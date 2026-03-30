@@ -3,13 +3,13 @@ image:
     id: mdi_fire
     type: grayscale
     transparency: alpha_channel
-    resize: 80x80
+    resize: 100x100
 
   - file: mdi:fire-off
     id: mdi_fireoff
     type: grayscale
     transparency: alpha_channel
-    resize: 80x80
+    resize: 100x100
     
 number:
   - platform: template
