@@ -264,7 +264,7 @@ lvgl:
               on_click:
                 - logger.log: "On Click"
 
-         - button:
+        - button:
               id: sauna_pg
               x: 735
               y: 405
