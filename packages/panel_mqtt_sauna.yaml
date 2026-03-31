@@ -59,6 +59,7 @@ number:
       - lvgl.textarea.update:
           id: sauna_txt_autooff
           text: !lambda "return to_string((int)round(x)) + \" Minutes\";"
+      - lvgl.widget.show: sauna_txt_autooff
       
 globals:
 
