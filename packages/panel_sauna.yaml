@@ -88,6 +88,18 @@ lvgl:
             text_font: montserrat_28
             placeholder_text: "-- °F"
 
+        # Autooff Textarea
+        - textarea:
+            id: sauna_txt_autooff
+            x: 80
+            y: 380
+            width: 200
+            height: 80
+            hidden: true
+            one_line: false
+            text_font: montserrat_28
+            placeholder_text: "--"
+            
         # --- RIGHT SIDE: SETPOINT CONTROLS ---
 
         - label:
