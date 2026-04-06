@@ -12,7 +12,7 @@ font:
     glyphs: [
           "\U000F0238", # mdi-fire  F0238
           "\U000F1722", # mdi-fire-off. F1722
-          "\U000F05F1", # mdi-ev-station. F05F1
+          "\U000F05F1", # mdi-ev-station. F05F1 
           ]
 
 lvgl:      
