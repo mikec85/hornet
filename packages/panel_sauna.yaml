@@ -12,6 +12,7 @@ font:
     glyphs: [
           "\U000F0238", # mdi-fire  F0238
           "\U000F1722", # mdi-fire-off. F1722
+          "\U000F05F1", # mdi-ev-station. F05F1
           ]
 
 lvgl:      
@@ -32,6 +33,14 @@ lvgl:
             y: 10 
             text_font: icon_font
             text: "\U000F1722"
+            text_color: my_black
+        - label:
+            # ... other configurations
+            id: on_off_charger
+            x: 360
+            y: 90 
+            text_font: icon_font
+            text: "\U000F05F1"
             text_color: my_black
 
         - button:
