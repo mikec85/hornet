@@ -29,7 +29,7 @@ lvgl:
         - label:
             # ... other configurations
             id: on_off_label
-            x: 320
+            x: 270
             y: 10 
             text_font: icon_font
             text: "\U000F1722"
@@ -37,7 +37,7 @@ lvgl:
         - label:
             # ... other configurations
             id: on_off_charger
-            x: 400
+            x: 420
             y: 10 
             text_font: icon_font
             text: "\U000F05F1"
