@@ -1,11 +1,4 @@
-image:
 
-
-  - file: mdi:fire-off
-    id: mdi_fireoff
-    type: grayscale
-    transparency: alpha_channel
-    resize: 100x100
     
 number:
   - platform: template
@@ -87,6 +80,26 @@ globals:
 mqtt:
   id: mqtt_client
   broker: mqtt.coffeys.net
+  on_message:
+    - topic: evCharger/status
+        qos: 0
+        payload: "Standby"
+        then:
+          - logger.log: "MQTT evCharger Standby"
+          - lvgl.label.update:
+                  id: on_off_charger
+                  text: "\U000F1722"
+                  text_color: my_black
+    - topic: evCharger/status
+        qos: 0
+        payload: "Charging"
+        then:
+          - logger.log: "MQTT evCharger Standby"
+          - lvgl.label.update:
+                  id: on_off_charger
+                  text: "\U000F1722"
+                  text_color: my_green
+          
   on_json_message:
     - topic: sonoff/sauna
       #qos: 0
