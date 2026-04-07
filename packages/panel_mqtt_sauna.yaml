@@ -77,6 +77,7 @@ globals:
   - id: var_evcharging
     type: boolean
     restore_value: no
+    initial_value: 'false'
     
 # MQTT
 mqtt:
@@ -94,7 +95,7 @@ mqtt:
             text_color: my_black
         - globals.set:
             id: var_evcharging
-            value: false
+            value: "false"
     - topic: evCharger/status
       qos: 0
       payload: "Charging"
@@ -106,7 +107,7 @@ mqtt:
             text_color: my_green
         - globals.set:
             id: var_evcharging
-            value: true
+            value: "true"
             
   on_json_message:
     - topic: sonoff/sauna
