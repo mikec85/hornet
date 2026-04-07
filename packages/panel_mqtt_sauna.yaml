@@ -75,7 +75,7 @@ globals:
     type: int
     restore_value: no
   - id: var_evcharging
-    type: boolean
+    type: bool
     restore_value: no
     initial_value: 'false'
     
