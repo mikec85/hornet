@@ -74,7 +74,7 @@ lvgl:
                     condition:
                       and:
                         lambda: 'return id(var_state) == 0;'
-                        lambda: 'return id(var_evcharging) == "false";'
+                        #lambda: 'return id(var_evcharging) == "false";'
                     then:
                       - mqtt.publish:
                           topic: sonoff/sauna/set
