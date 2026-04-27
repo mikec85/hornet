@@ -1,3 +1,4 @@
+
 script:
   - id: return_to_main_timer
     mode: restart  # Ensures the timer resets if you navigate away and come back
