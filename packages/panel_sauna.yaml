@@ -1,10 +1,10 @@
 
 script:
-  id: return_to_main_timer
-  mode: restart  # Ensures the timer resets if you navigate away and come back
-  then:
-    - delay: 60s
-    - lvgl.page.show: main_page
+  - id: return_to_main_timer
+    mode: restart  # Ensures the timer resets if you navigate away and come back
+    then:
+      - delay: 60s
+      - lvgl.page.show: main_page
 
 font:
   - file: "fonts/materialdesignicons-webfont.ttf"
