@@ -1,0 +1,33 @@
+globals:
+  - id: salt_level_alert
+    type: bool
+    restore_value: no
+    initial_value: 'false'
+    
+mqtt:
+  id: mqtt_client
+  broker: mqtt.coffeys.net
+  on_message:
+    - topic: salt/status
+      qos: 0
+      payload: "LOW"
+      then:
+        - globals.set: 
+            id: salt_level_alert
+            value: "true"
+        - logger.log: "Salt Level Low"
+        - lvgl.widget.update:
+            id: main_page
+            bg_color: 0xFFFF00
+    - topic: salt/status
+      qos: 0
+      payload: "OK"
+      then:
+        - globals.set: 
+            id: salt_level_alert
+            value: "false"
+        - logger.log: "Salt Level Low"
+        - lvgl.widget.update:
+            id: main_page
+            bg_color: bgblue
+            
