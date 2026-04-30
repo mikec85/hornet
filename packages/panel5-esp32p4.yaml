@@ -35,15 +35,15 @@ touchscreen:
             - lvgl.widget.redraw:
             - light.turn_on: back_light
      
-              
+
 display:
   - platform: mipi_rgb
+    model: custom
     id: main_display
-    color_order: RGB
-    invert_colors: True
     update_interval: never
-    auto_clear_enabled: false # takes 2.8 seconds to clear the display
-        pclk_frequency: 16MHz
+    auto_clear_enabled: false
+    color_order: RGB
+    pclk_frequency: 16MHz
     dimensions:
       width: 800
       height: 480
