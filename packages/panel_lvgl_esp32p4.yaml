@@ -1,16 +1,4 @@
-number:
-  - platform: template
-    name: LVGL Screen timeout
-    optimistic: true
-    id: display_timeout
-    unit_of_measurement: "s"
-    initial_value: 45
-    restore_value: true
-    min_value: 10
-    max_value: 180
-    step: 5
-    mode: box
- 
+
 globals:
  - id: my_code_int
    type: std::string
@@ -263,38 +251,7 @@ lvgl:
                     payload: "arm_night"
               on_click:
                 - logger.log: "On Click"
-
-        - button:
-              id: sauna_pg
-              x: 735
-              y: 405
-              width: 60
-              height: 70
-              bg_color: my_blue
-              shadow_color: 0
-              shadow_opa: 50%
-              shadow_width: 10
-              shadow_spread: 3
-              #checkable: true
-              widgets:
-                - label:
-                    align: CENTER
-                    text: 'Sauna'
-                    styles: my_button_style 
-              on_click:
-                - logger.log: "Suana Page"
-                - lvgl.page.show: sauna_page
-                
-        #- button:
-              #id: restart_button_lvgl
-              #x: 780
-              #y: 460
-              #width: 20
-              #height: 20
-              #bg_color: bgblue
-              #checkable: true
-              #on_click:
-                #- button.press: restart_button        
+    
         - obj:
              width: 320
              height: 50
