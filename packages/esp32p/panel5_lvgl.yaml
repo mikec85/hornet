@@ -62,7 +62,7 @@ color:
     
 lvgl:
   log_level: INFO
-  buffer_size: 50%
+  #buffer_size: 50%
   color_depth: 16
   disp_bg_color: my_black
   style_definitions:
