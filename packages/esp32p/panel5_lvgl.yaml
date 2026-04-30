@@ -266,7 +266,7 @@ lvgl:
               id: door_bg
               x: 698
               y: 80
-              width: 102
+              width: 100
               height: 90
               bg_color: my_blue
               shadow_color: 0
@@ -288,7 +288,7 @@ lvgl:
               id: door_sm
               x: 698
               y: 185
-              width: 102
+              width: 100
               height: 90
               bg_color: my_blue
               shadow_color: 0
@@ -311,7 +311,7 @@ lvgl:
               id: sauna_pg
               x: 698
               y: 290
-              width: 102
+              width: 100
               height: 90
               bg_color: my_blue
               shadow_color: 0
@@ -328,16 +328,6 @@ lvgl:
                 - logger.log: "Suana Page"
                 - lvgl.page.show: sauna_page
                     
-        - button:
-              id: restart_button_lvgl
-              x: 780
-              y: 460
-              width: 20
-              height: 20
-              bg_color: bgblue
-              #checkable: true
-              on_click:
-                - button.press: restart_button        
         - obj:
              width: 320
              height: 50
