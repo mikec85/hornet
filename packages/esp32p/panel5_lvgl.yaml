@@ -80,7 +80,7 @@ lvgl:
     timeout: !lambda "return (id(display_timeout).state * 1000);"
     then:
       - logger.log: "LVGL is idle"
-      - light.turn_off: back_light
+      #- light.turn_off: back_light
       - lvgl.pause:    
       
   pages:
