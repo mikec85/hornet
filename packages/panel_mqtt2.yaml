@@ -1,0 +1,140 @@
+globals:
+  - id: last_zone_global
+    type: std::string
+    restore_value: no
+    initial_value: ''
+  - id: bigdoor_loop
+    type: bool
+    restore_value: no
+    initial_value: 'false'
+  - id: smalldoor_loop
+    type: bool
+    restore_value: no
+    initial_value: 'false'
+  - id: glb_system_ready
+    type: bool
+    restore_value: no
+    initial_value: 'false'
+    
+# MQTT
+mqtt:
+  id: mqtt_client
+  broker: mqtt.coffeys.net
+  on_message:
+    - topic: hornet-nest-3cc06c/binary_sensor/21_garagedoorbg/state
+      qos: 0
+      payload: "ON"
+      then:
+        - globals.set: 
+            id: bigdoor_loop 
+            value: "true"
+        #- script.execute: flash_led
+    - topic: hornet-nest-3cc06c/binary_sensor/21_garagedoorbg/state
+      qos: 0
+      payload: "OFF"
+      then:
+        - globals.set: 
+            id: bigdoor_loop 
+            value: "false"
+    - topic: hornet-nest-3cc06c/binary_sensor/22_garagedoorsm/state
+      qos: 0
+      payload: "ON"
+      then:
+        - globals.set: 
+            id: smalldoor_loop 
+            value: "true"
+        #- script.execute: flash_led
+    - topic: hornet-nest-3cc06c/binary_sensor/22_garagedoorsm/state
+      qos: 0
+      payload: "OFF"
+      then:
+        - globals.set: 
+            id: smalldoor_loop 
+            value: "false"
+          
+    - topic: hornet-nest-3cc06c/alarm_control_panel/acp1/state
+      qos: 0
+      payload: "armed_home"
+      then:
+        - lvgl.led.update:
+            id: lvgl_led
+            color: 0xFF0000
+        #- button.press: red_led
+        - logger.log: "MQTT armed_home"
+    - topic: hornet-nest-3cc06c/alarm_control_panel/acp1/state
+      qos: 0
+      payload: "armed_night"
+      then:
+        - lvgl.led.update:
+            id: lvgl_led
+            color: 0xFF0000
+        #- button.press: red_led
+        - logger.log: "MQTT armed_night"
+    - topic: hornet-nest-3cc06c/alarm_control_panel/acp1/state
+      qos: 0
+      payload: "disarmed"
+      then:
+        - lvgl.led.update:
+            id: lvgl_led
+            color: 0x00FF00
+        #- button.press: green_led
+        - logger.log: "MQTT disarmed"
+    - topic: hornet-nest-3cc06c/alarm_control_panel/acp1/state
+      qos: 0
+      then:
+        - logger.log: "MQTT EVENT"
+    - topic: hornet-nest-3cc06c/chime
+      qos: 0
+      payload: "Chime"
+      then:
+        - logger.log: "MQTT EVENT"
+        - switch.turn_on: beeper
+        - delay: 100ms  #was 50
+        - switch.turn_off: beeper
+    - topic: hornet-nest-3cc06c/on_ready
+      qos: 0
+      payload: "true"
+      then:
+        - lvgl.label.update:
+            id: lvgl_label3
+            text: "System Ready"
+        - globals.set: 
+            id: glb_system_ready 
+            value: "true"    
+    - topic: hornet-nest-3cc06c/on_ready
+      qos: 0
+      payload: "false"
+      then:
+        - lvgl.label.update:
+            id: lvgl_label3
+            text: "System Not Ready"
+        - globals.set: 
+            id: glb_system_ready 
+            value: "false" 
+    - topic: hornet-nest-3cc06c/alarm_control_panel/acp1/state
+      qos: 0
+      then:
+        - lambda: |-
+            ESP_LOGD("mqtt_on_message", "Received payload: %s", x);
+        - lvgl.label.update:
+            id: lvgl_label2
+            text: !lambda |-
+              return ("Status: " + x);
+    #- topic: hornet-nest-3cc06c/lastzone
+    #  qos: 0
+    #  then:
+    #    - lambda: |-
+    #        ESP_LOGD("mqtt_on_message", "Received payload: %s", x);
+    #    - lvgl.label.update:
+    #        id: lvgl_label3
+    #        text: !lambda |-
+    #          return ("Last Zone Change: " + x);
+    - topic: hornet-nest-3cc06c/lastzone
+      qos: 0
+      then:
+        - lambda: |-
+            ESP_LOGD("mqtt_on_message", "Received payload: %s", x);
+        - globals.set:
+            id: last_zone_global
+            value: !lambda |-
+              return ("" + x);
