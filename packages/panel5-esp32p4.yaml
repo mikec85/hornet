@@ -9,6 +9,10 @@ touchscreen:
   reset_pin: 36
   interrupt_pin: 42
   update_interval: 50ms
+  transform:
+      swap_xy: false
+      mirror_x: false
+      mirror_y: false
   on_release:
       - if:
           condition: lvgl.is_paused
@@ -16,7 +20,7 @@ touchscreen:
             - logger.log: "LVGL resuming"
             - lvgl.resume:
             - lvgl.widget.redraw:
-            - light.turn_on: back_light
+            #- light.turn_on: back_light
      
 
 display:
