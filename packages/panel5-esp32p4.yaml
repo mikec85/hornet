@@ -1,0 +1,87 @@
+# Define a PWM output on the ESP32
+output:
+  - platform: ledc
+    pin: 2
+    frequency: 1220
+    id: gpio_backlight_pwm
+
+#udp:
+#  addresses: 192.168.1.239
+
+#syslog:
+  
+light:
+  - platform: monochromatic # Define a monochromatic, dimmable light for the backlight
+    output: gpio_backlight_pwm
+    name: Display Backlight
+    id: back_light
+    restore_mode: ALWAYS_ON
+
+touchscreen:
+  platform: gt911
+  id: my_touchscreen
+  display: main_display
+  #interrupt_pin: 19
+  i2c_id: bus_a
+  reset_pin: 36
+  interrupt_pin: 42
+  update_interval: 50ms
+  on_release:
+      - if:
+          condition: lvgl.is_paused
+          then:
+            - logger.log: "LVGL resuming"
+            - lvgl.resume:
+            - lvgl.widget.redraw:
+            - light.turn_on: back_light
+     
+              
+display:
+  - platform: mipi_rgb
+    id: main_display
+    color_order: RGB
+    invert_colors: True
+    update_interval: never
+    auto_clear_enabled: false # takes 2.8 seconds to clear the display
+        pclk_frequency: 16MHz
+    dimensions:
+      width: 800
+      height: 480
+    de_pin:
+      number: 2
+    hsync_pin:
+      number: 40
+    vsync_pin:
+      number: 41
+    pclk_pin: 3
+    pclk_inverted: true
+    hsync_back_porch: 4
+    hsync_front_porch: 8
+    hsync_pulse_width: 8
+    vsync_back_porch: 4
+    vsync_front_porch: 8
+    vsync_pulse_width: 8
+    data_pins:
+      red:
+        - 19         #r3
+        - 18         #r4
+        - 17        #r5
+        - 16        #r6
+        - 15        #r7
+      blue:
+        - 8        #b3
+        - 7        #b4
+        - 6        #b5
+        - 5        #b6
+        - 4        #b7
+      green:
+        - 14        #g2
+        - 13         #g3
+        - 12        #g4
+        - 11        #g5
+        - 10        #g6
+        - 9        #g7
+
+    init_sequence:
+      - [0x01]
+      - [0x3A, 0x66]
