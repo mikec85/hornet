@@ -1,10 +1,4 @@
- 
-light:
-  - platform: monochromatic # Define a monochromatic, dimmable light for the backlight
-    output: backlight_switch
-    name: Display Backlight
-    id: back_light
-    restore_mode: ALWAYS_ON
+
 
 touchscreen:
   platform: gt911
