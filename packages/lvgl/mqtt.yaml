@@ -1,0 +1,16 @@
+
+# MQTT
+mqtt:
+  id: mqtt_client2
+  broker: mqtt.coffeys.net
+  on_message:
+    - topic: hornet-nest-3cc06c/alarm_control_panel/acp1/state
+      qos: 0
+      then:
+        - lambda: |-
+            ESP_LOGD("mqtt_on_message", "Received payload: %s", x);
+        - lvgl.label.update:
+            id: sp_lbl_mode
+            text: !lambda |-
+              return ("Status: " + x);
+              
