@@ -18,7 +18,9 @@ script:
           } else {
             ESP_LOGW("keypad", "Maximum code length reached!");
           }
-
+      - lvgl.label.update:
+           id: sp_lbl_code
+           text: !lambda "return id(entered_code).c_str();"
   # Script to clear the input
   - id: clear_code
     then:
