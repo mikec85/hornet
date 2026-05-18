@@ -158,8 +158,8 @@ lvgl:
                         text_color: 0xFFFFFF
                   on_press:
                     - script.execute:
-                      id: append_digit
-                      digit: "1"
+                        id: append_digit
+                        digit: "1"
               - button:
                   id: sp_key_2
                   x: 173
@@ -180,8 +180,8 @@ lvgl:
                         text_color: 0xFFFFFF
                   on_press:
                     - script.execute:
-                      id: append_digit
-                      digit: "2"
+                        id: append_digit
+                        digit: "2"
               - button:
                   id: sp_key_3
                   x: 331
@@ -202,8 +202,8 @@ lvgl:
                         text_color: 0xFFFFFF
                   on_press:
                     - script.execute:
-                      id: append_digit
-                      digit: "3"
+                        id: append_digit
+                        digit: "3"
               - button:
                   id: sp_key_4
                   x: 16
