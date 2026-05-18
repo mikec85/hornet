@@ -11,7 +11,7 @@ mqtt:
             ESP_LOGD("mqtt_on_message", "Received payload2: %s", x);
         - lvgl.label.update:
             id: sp_lbl_mode
-            text: !lambda "return to_string(x) ;"
+            text: !lambda "return x ;"
               
        #       return ("Status: " + x);
        # - lvgl.textarea.update:
