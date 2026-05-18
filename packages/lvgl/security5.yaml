@@ -27,6 +27,9 @@ script:
       - lambda: |-
           id(entered_code) = "";
           ESP_LOGI("keypad", "Code cleared");
+      - lvgl.label.update:
+           id: sp_lbl_code
+           text: !lambda "return id(entered_code).c_str();"
           
 # External icon fonts - auto-generated for icons used in this design
 # ESPHome downloads fonts automatically on first compile
