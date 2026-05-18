@@ -1,3 +1,31 @@
+globals:
+  - id: entered_code
+    type: std::string
+    # The single quotes wrapped around double quotes are required for an empty C++ string
+    initial_value: '""'
+
+script:
+  # Script to append a digit to the global variable
+  - id: append_digit
+    parameters:
+      digit: std::string
+    then:
+      - lambda: |-
+          // Optional: Cap the max length (e.g., 10 digits) to prevent memory issues
+          if (id(entered_code).length() < 10) {
+            id(entered_code) += digit;
+            ESP_LOGI("keypad", "Code is now: %s", id(entered_code).c_str());
+          } else {
+            ESP_LOGW("keypad", "Maximum code length reached!");
+          }
+
+  # Script to clear the input
+  - id: clear_code
+    then:
+      - lambda: |-
+          id(entered_code) = "";
+          ESP_LOGI("keypad", "Code cleared");
+          
 # External icon fonts - auto-generated for icons used in this design
 # ESPHome downloads fonts automatically on first compile
 font:
@@ -128,6 +156,10 @@ lvgl:
                         align: CENTER
                         text: "1"
                         text_color: 0xFFFFFF
+                  on_press:
+                    - script.execute:
+                      id: append_digit
+                      digit: "1"
               - button:
                   id: sp_key_2
                   x: 173
@@ -146,6 +178,10 @@ lvgl:
                         align: CENTER
                         text: "2"
                         text_color: 0xFFFFFF
+                  on_press:
+                    - script.execute:
+                      id: append_digit
+                      digit: "2"
               - button:
                   id: sp_key_3
                   x: 331
@@ -164,6 +200,10 @@ lvgl:
                         align: CENTER
                         text: "3"
                         text_color: 0xFFFFFF
+                  on_press:
+                    - script.execute:
+                      id: append_digit
+                      digit: "3"
               - button:
                   id: sp_key_4
                   x: 16
