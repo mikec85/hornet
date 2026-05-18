@@ -246,7 +246,7 @@ lvgl:
                         align: CENTER
                         text: "5"
                         text_color: 0xFFFFFF
-                    on_press:
+                  on_press:
                     - script.execute:
                         id: append_digit
                         digit: "5"
@@ -268,7 +268,7 @@ lvgl:
                         align: CENTER
                         text: "6"
                         text_color: 0xFFFFFF
-                    on_press:
+                  on_press:
                     - script.execute:
                         id: append_digit
                         digit: "6"
@@ -290,7 +290,7 @@ lvgl:
                         align: CENTER
                         text: "7"
                         text_color: 0xFFFFFF
-                    on_press:
+                  on_press:
                     - script.execute:
                         id: append_digit
                         digit: "7"
@@ -312,7 +312,7 @@ lvgl:
                         align: CENTER
                         text: "8"
                         text_color: 0xFFFFFF
-                    on_press:
+                  on_press:
                     - script.execute:
                         id: append_digit
                         digit: "8"
@@ -356,7 +356,7 @@ lvgl:
                         align: CENTER
                         text: "Clr"
                         text_color: 0xFFFFFF
-                    on_press:
+                  on_press:
                     - script.execute:
                         id: clear_code
                         
