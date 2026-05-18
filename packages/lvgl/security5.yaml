@@ -224,6 +224,10 @@ lvgl:
                         align: CENTER
                         text: "4"
                         text_color: 0xFFFFFF
+                  on_press:
+                    - script.execute:
+                        id: append_digit
+                        digit: "4"
               - button:
                   id: sp_key_5
                   x: 173
@@ -242,6 +246,10 @@ lvgl:
                         align: CENTER
                         text: "5"
                         text_color: 0xFFFFFF
+                    on_press:
+                    - script.execute:
+                        id: append_digit
+                        digit: "5"
               - button:
                   id: sp_key_6
                   x: 331
@@ -260,6 +268,10 @@ lvgl:
                         align: CENTER
                         text: "6"
                         text_color: 0xFFFFFF
+                    on_press:
+                    - script.execute:
+                        id: append_digit
+                        digit: "6"
               - button:
                   id: sp_key_7
                   x: 16
@@ -278,6 +290,10 @@ lvgl:
                         align: CENTER
                         text: "7"
                         text_color: 0xFFFFFF
+                    on_press:
+                    - script.execute:
+                        id: append_digit
+                        digit: "7"
               - button:
                   id: sp_key_8
                   x: 173
@@ -296,6 +312,10 @@ lvgl:
                         align: CENTER
                         text: "8"
                         text_color: 0xFFFFFF
+                    on_press:
+                    - script.execute:
+                        id: append_digit
+                        digit: "8"
               - button:
                   id: sp_key_9
                   x: 331
@@ -314,6 +334,10 @@ lvgl:
                         align: CENTER
                         text: "9"
                         text_color: 0xFFFFFF
+                  on_press:
+                    - script.execute:
+                        id: append_digit
+                        digit: "9"
               - button:
                   id: sp_key_star
                   x: 16
@@ -330,8 +354,12 @@ lvgl:
                   widgets:
                     - label:
                         align: CENTER
-                        text: "*"
+                        text: "Clr"
                         text_color: 0xFFFFFF
+                    on_press:
+                    - script.execute:
+                        id: clear_code
+                        
               - button:
                   id: sp_key_0
                   x: 173
@@ -350,6 +378,10 @@ lvgl:
                         align: CENTER
                         text: "0"
                         text_color: 0xFFFFFF
+                  on_press:
+                    - script.execute:
+                        id: append_digit
+                        digit: "0"
               - button:
                   id: sp_key_hash
                   x: 331
@@ -386,6 +418,10 @@ lvgl:
                         align: CENTER
                         text: "ARM"
                         text_color: 0xFFFFFF
+                  on_press:
+                    - mqtt.publish:
+                        topic: !lambda 'return id(mqtt_panel_global_string);'
+                        payload: "arm_night"
               - button:
                   id: sp_btn_disarm
                   x: 253
@@ -404,6 +440,12 @@ lvgl:
                         align: CENTER
                         text: "DISARM"
                         text_color: 0xFFFFFF
+                  on_press:
+                    - mqtt.publish_json:
+                        topic: !lambda |-
+                          return id(disarm_mqtt_global_string);
+                        payload: |-
+                          root["data"] = id(entered_code);  
 
         - obj:
             id: widget_1779057290448_zx59zrmhx
