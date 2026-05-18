@@ -11,6 +11,10 @@ mqtt:
             ESP_LOGD("mqtt_on_message", "Received payload2: %s", x);
         - lvgl.label.update:
             id: sp_lbl_mode
-            text: !lambda |-
-              return ("Status: " + x);
+            text: !lambda "return to_string(x) ;"
+              
+       #       return ("Status: " + x);
+       # - lvgl.textarea.update:
+       #   id: sauna_txt_fahrenheit
+       #   text: !lambda "return to_string((int)round(x)) + \" °F\";"
               
