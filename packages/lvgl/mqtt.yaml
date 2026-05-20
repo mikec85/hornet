@@ -22,18 +22,18 @@ mqtt:
 #            id: widget_1779057290448_6amcc2dfg
 #            text: !lambda "return x.c_str() ;"
             
-#    - topic: hornet-nest-3cc06c/binary_sensor/19_frontdoor/state
-#      qos: 0
+    - topic: hornet-nest-3cc06c/binary_sensor/19_frontdoor/state
+      qos: 0
       #payload: "OFF"
-#      then:
-#        - if:
-#            condition:
-#              lambda: 'return x == "OFF";' 
-#            then:  
+      then:
+        - if:
+            condition:
+              lambda: 'return x == "OFF";' 
+            then:  
         # Check if the payload is OFF
-#        - lvgl.label.update:
-#            id: widget_1779057290448_6amcc2dfg
-#            text: "Closed"
+              - lvgl.label.update:
+                  id: widget_1779057290448_6amcc2dfg
+                  text: "Closed"
 #        - lvgl.widget.update:
 #            id: widget_1779057290448_6amcc2dfg
 #            text_color: "0x00FF00" # Green
