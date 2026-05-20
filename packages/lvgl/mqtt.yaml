@@ -23,6 +23,7 @@ mqtt:
             text: !lambda "return x.c_str() ;"
             
     - topic: "hornet-nest-3cc06c/binary_sensor/19_frontdoor/state"
+      qos: 0
       then:
         # Check if the payload is OFF
         - if:
