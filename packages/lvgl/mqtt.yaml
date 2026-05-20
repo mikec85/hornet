@@ -30,7 +30,7 @@ mqtt:
             ESP_LOGD("mqtt_on_message", "Received payload: %s", x.c_str());
         - if:
             condition:
-              lambda: 'return x.c_str() == "OFF";' 
+              lambda: 'return strcmp(x.c_str(), "OFF") == 0;' 
             then:  
         # Check if the payload is OFF
               - logger.log: "Executing OFF"
