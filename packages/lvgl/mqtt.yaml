@@ -33,15 +33,15 @@ mqtt:
               - lvgl.label.update:
                   id: widget_1779057290448_6amcc2dfg
                   text: "Closed"
-              - lvgl.widget.update:
-                  id: widget_1779057290448_6amcc2dfg
-                  text_color: "0x00FF00" # Green
-              - lvgl.label.update:
-                  id: widget_1779057290448_rni0x55z7
-                  text: "\U000F033E"
-              - lvgl.widget.update:
-                  id: widget_1779057290448_rni0x55z7
-                  text_color: "0x00FF00" # Green
+#              - lvgl.widget.update:
+#                  id: widget_1779057290448_6amcc2dfg
+#                  text_color: "0x00FF00" # Green
+#              - lvgl.label.update:
+#                  id: widget_1779057290448_rni0x55z7
+#                  text: "\U000F033E"
+#              - lvgl.widget.update:
+#                  id: widget_1779057290448_rni0x55z7
+#                  text_color: "0x00FF00" # Green
         # Check if the payload is ON
 #        - if:
 #            condition:
