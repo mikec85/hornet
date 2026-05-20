@@ -13,14 +13,14 @@ mqtt:
             id: sp_lbl_mode
             text: !lambda "return x.c_str() ;"
 
-    - topic: hornet-nest-3cc06c/binary_sensor/19_frontdoor
-      qos: 0
-      then:
-        - lambda: |-
-            ESP_LOGD("mqtt_on_message", "Received frontdoor: %s", x.c_str());
-        - lvgl.label.update:
-            id: widget_1779057290448_6amcc2dfg
-            text: !lambda "return x.c_str() ;"
+#    - topic: hornet-nest-3cc06c/binary_sensor/19_frontdoor
+#      qos: 0
+#      then:
+#        - lambda: |-
+#            ESP_LOGD("mqtt_on_message", "Received frontdoor: %s", x.c_str());
+#        - lvgl.label.update:
+#            id: widget_1779057290448_6amcc2dfg
+#            text: !lambda "return x.c_str() ;"
             
 #    - topic: hornet-nest-3cc06c/binary_sensor/19_frontdoor/state
 #      qos: 0
