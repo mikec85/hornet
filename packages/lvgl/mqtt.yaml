@@ -33,6 +33,7 @@ mqtt:
               lambda: 'return x.c_str() == "OFF";' 
             then:  
         # Check if the payload is OFF
+              - logger.log: "Executing OFF"
               - lvgl.label.update:
                   id: widget_1779057290448_6amcc2dfg
                   text: "Closed"
@@ -50,6 +51,7 @@ mqtt:
             condition:
               lambda: 'return x.c_str() == "ON";'
             then:
+              - logger.log: "Executing ON"
               - lvgl.label.update:
                   id: widget_1779057290448_6amcc2dfg
                   text: "Open"
