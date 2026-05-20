@@ -26,9 +26,11 @@ mqtt:
       qos: 0
       #payload: "OFF"
       then:
+        - lambda: |-
+            ESP_LOGD("mqtt_on_message", "Received payload: %s", x.c_str());
         - if:
             condition:
-              lambda: 'return x == "OFF";' 
+              lambda: 'return x.c_str() == "OFF";' 
             then:  
         # Check if the payload is OFF
               - lvgl.label.update:
@@ -46,7 +48,7 @@ mqtt:
         # Check if the payload is ON
         - if:
             condition:
-              lambda: 'return x == "ON";'
+              lambda: 'return x.c_str() == "ON";'
             then:
               - lvgl.label.update:
                   id: widget_1779057290448_6amcc2dfg
