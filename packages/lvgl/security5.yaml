@@ -41,6 +41,7 @@ font:
     size: 22
     glyphs: [
       "\U000F033E",  # Lock
+      "\U000F033F",  # UnLock
     ]
   - file:
       url: "https://cdn.jsdelivr.net/npm/@mdi/font@latest/fonts/materialdesignicons-webfont.ttf"
