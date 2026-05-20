@@ -8,10 +8,10 @@ mqtt:
       qos: 0
       then:
         - lambda: |-
-            ESP_LOGD("mqtt_on_message", "Received payload2: %s", x);
+            ESP_LOGD("mqtt_on_message", "Received payload2: %s", x.c_str());
         - lvgl.label.update:
             id: sp_lbl_mode
-            text: !lambda "return x ;"
+            text: !lambda "return x.c_str() ;"
               
        #       return ("Status: " + x);
        # - lvgl.textarea.update:
