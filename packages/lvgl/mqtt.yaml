@@ -12,7 +12,52 @@ mqtt:
         - lvgl.label.update:
             id: sp_lbl_mode
             text: !lambda "return x.c_str() ;"
-              
+
+    - topic: hornet-nest-3cc06c/binary_sensor/19_frontdoor
+      qos: 0
+      then:
+        - lambda: |-
+            ESP_LOGD("mqtt_on_message", "Received frontdoor: %s", x.c_str());
+        - lvgl.label.update:
+            id: widget_1779057290448_6amcc2dfg
+            text: !lambda "return x.c_str() ;"
+            
+    - topic: "hornet-nest-3cc06c/binary_sensor/19_frontdoor/state"
+      then:
+        # Check if the payload is OFF
+        - if:
+            condition:
+              lambda: 'return payload == "OFF";'
+            then:
+              - lvgl.label.update:
+                  id: widget_1779057290448_6amcc2dfg
+                  text: "Closed"
+              - lvgl.widget.update:
+                  id: widget_1779057290448_6amcc2dfg
+                  text_color: 0x00FF00 # Green
+              - lvgl.label.update:
+                  id: widget_1779057290448_rni0x55z7
+                  text: "\U000F033E"
+              - lvgl.widget.update:
+                  id: widget_1779057290448_rni0x55z7
+                  text_color: 0x00FF00 # Green
+        # Check if the payload is ON
+        - if:
+            condition:
+              lambda: 'return payload == "ON";'
+            then:
+              - lvgl.label.update:
+                  id: widget_1779057290448_6amcc2dfg
+                  text: "Open"
+              - lvgl.widget.update:
+                  id: widget_1779057290448_6amcc2dfg
+                  text_color: 0xFF0000 # Red   
+              - lvgl.label.update:
+                  id: widget_1779057290448_rni0x55z7
+                  text: "\U000F033F"
+              - lvgl.widget.update:
+                  id: widget_1779057290448_rni0x55z7
+                  text_color: 0xFF0000 # Red
        #       return ("Status: " + x);
        # - lvgl.textarea.update:
        #   id: sauna_txt_fahrenheit
