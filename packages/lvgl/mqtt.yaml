@@ -49,7 +49,7 @@ mqtt:
         # Check if the payload is ON
         - if:
             condition:
-              lambda: 'return x.c_str() == "ON";'
+              lambda: 'return strcmp(x.c_str(), "ON") == 0;'
             then:
               - logger.log: "Executing ON"
               - lvgl.label.update:
