@@ -27,7 +27,7 @@ mqtt:
         # Check if the payload is OFF
         - if:
             condition:
-              lambda: 'return payload == "OFF";'
+              lambda: 'return x == "OFF";'
             then:
               - lvgl.label.update:
                   id: widget_1779057290448_6amcc2dfg
@@ -44,7 +44,7 @@ mqtt:
         # Check if the payload is ON
         - if:
             condition:
-              lambda: 'return payload == "ON";'
+              lambda: 'return x == "ON";'
             then:
               - lvgl.label.update:
                   id: widget_1779057290448_6amcc2dfg
