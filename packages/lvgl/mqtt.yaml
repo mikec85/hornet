@@ -1,4 +1,5 @@
 
+
 # MQTT
 mqtt:
   id: mqtt_client2
@@ -65,4 +66,46 @@ mqtt:
                   id: widget_1779057290448_rni0x55z7
                   text_color: "0xFF0000" # Red
 
+    - topic: hornet-nest-3cc06c/binary_sensor/21_garagedoorbg/state
+      qos: 0
+      #payload: "OFF"
+      then:
+        - lambda: |-
+            ESP_LOGD("mqtt_on_message", "Received payload: %s", x.c_str());
+        - if:
+            condition:
+              lambda: 'return strcmp(x.c_str(), "OFF") == 0;' 
+            then:  
+        # Check if the payload is OFF
+              - logger.log: "Executing OFF"
+              - lvgl.label.update:
+                  id: widget_1779067252375_3rxu4e41g
+                  text: "Closed"
+              - lvgl.widget.update:
+                  id: widget_1779067252375_3rxu4e41g
+                  text_color: "0x10B981" # Green
+              - lvgl.label.update:
+                  id: widget_1779067252375_hh9lcyap1
+                  text: "\U000F12D3"
+              - lvgl.widget.update:
+                  id: widget_1779067252375_hh9lcyap1
+                  text_color: "0x10B981" # Green
+        # Check if the payload is ON
+        - if:
+            condition:
+              lambda: 'return strcmp(x.c_str(), "ON") == 0;'
+            then:
+              - logger.log: "Executing ON"
+              - lvgl.label.update:
+                  id: widget_1779067252375_3rxu4e41g
+                  text: "Open"
+              - lvgl.widget.update:
+                  id: widget_1779067252375_3rxu4e41g
+                  text_color: "0xFF0000" # Red   
+              - lvgl.label.update:
+                  id: widget_1779067252375_hh9lcyap1
+                  text: "\U000F12D4"
+              - lvgl.widget.update:
+                  id: widget_1779067252375_hh9lcyap1
+                  text_color: "0xFF0000" # Red
               
