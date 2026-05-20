@@ -115,11 +115,11 @@ mqtt:
       qos: 0
       then:
         - lambda: |-
-            ESP_LOGD("mqtt_on_message", "Received payload: %s", x.c_str());
+            ESP_LOGD("mqtt_on_message", "Received payload: %s", x);
         - lvgl.label.update:
             id: lvgl_label2
             text: !lambda |-
-              return ("Status: " + x.c_str());
+              return ("Status: " + x);
     #- topic: hornet-nest-3cc06c/lastzone
     #  qos: 0
     #  then:
