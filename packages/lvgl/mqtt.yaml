@@ -28,7 +28,7 @@ mqtt:
         # Check if the payload is OFF
         - if:
             condition:
-              lambda: 'return std::string(x) == "OFF";'
+              lambda: 'return strcmp(x.c_str(), "OFF") == 0 # 'return std::string(x) == "OFF";'
             then:
               - lvgl.label.update:
                   id: widget_1779057290448_6amcc2dfg
