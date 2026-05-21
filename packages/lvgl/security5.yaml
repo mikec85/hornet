@@ -42,6 +42,8 @@ font:
     glyphs: [
       "\U000F033E",  # Lock
       "\U000F033F",  # UnLock
+      "\U000F12D3",
+      "\U000F12D4",
     ]
   - file:
       url: "https://cdn.jsdelivr.net/npm/@mdi/font@latest/fonts/materialdesignicons-webfont.ttf"
