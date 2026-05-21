@@ -54,6 +54,10 @@ font:
     size: 40
     glyphs: [
       "\U000F0498",  # Shield
+      "\U000F12D3",
+      "\U000F12D4",
+      "\U000F06D9",
+      "\U000F06DA",      
     ]
   - file:
       url: "https://cdn.jsdelivr.net/npm/@mdi/font@latest/fonts/materialdesignicons-webfont.ttf"
@@ -64,6 +68,10 @@ font:
       "\U000F0498",  # Shield
       "\U000F07AE",  # CCTV Camera
       "\U000F18D6",  # Sun Thermometer
+      "\U000F12D3",
+      "\U000F12D4",
+      "\U000F06D9",
+      "\U000F06DA",      
     ]
 
 lvgl:
