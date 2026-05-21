@@ -44,6 +44,8 @@ font:
       "\U000F033F",  # UnLock
       "\U000F12D3",
       "\U000F12D4",
+      "\U000F06D9",
+      "\U000F06DA",
     ]
   - file:
       url: "https://cdn.jsdelivr.net/npm/@mdi/font@latest/fonts/materialdesignicons-webfont.ttf"
