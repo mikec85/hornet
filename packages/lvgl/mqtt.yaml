@@ -86,7 +86,7 @@ mqtt:
                   text_color: "0x10B981" # Green
               - lvgl.label.update:
                   id: widget_1779067252375_hh9lcyap1
-                  text: "\U000F12D3"
+                  text: "\U000F06D9"
               - lvgl.widget.update:
                   id: widget_1779067252375_hh9lcyap1
                   text_color: "0x10B981" # Green
