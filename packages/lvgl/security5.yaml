@@ -498,7 +498,7 @@ lvgl:
                   y: 15
                   width: 40
                   height: 40
-                  text: "\U000F06D9"
+                  text: "\U000F081B"
                   text_font: mdi_icons_28
                   text_align: CENTER
                   text_color: 0x10B981
@@ -560,7 +560,7 @@ lvgl:
                   y: 15
                   width: 40
                   height: 40
-                  text: "\U000F06D9"
+                  text: "\U000F081B"
                   text_font: mdi_icons_28
                   text_align: CENTER
                   text_color: 0x10B981
@@ -622,7 +622,7 @@ lvgl:
                   y: 15
                   width: 40
                   height: 40
-                  text: "\U000F06D9"
+                  text: "\U000F081B"
                   text_font: mdi_icons_28
                   text_align: CENTER
                   text_color: 0x10B981
