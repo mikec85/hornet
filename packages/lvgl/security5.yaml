@@ -34,9 +34,7 @@ script:
 # External icon fonts - auto-generated for icons used in this design
 # ESPHome downloads fonts automatically on first compile
 font:
-  - file:
-      url: "fonts/materialdesignicons-webfont.ttf"
-      type: web
+  - file: "fonts/materialdesignicons-webfont.ttf"
     id: mdi_icons_22
     size: 22
     glyphs: [
@@ -47,10 +45,7 @@ font:
       "\U000F06D9",
       "\U000F06DA",
     ]
-  - file:
-      #url: "https://cdn.jsdelivr.net/npm/@mdi/font@latest/fonts/materialdesignicons-webfont.ttf"
-      url: "fonts/materialdesignicons-webfont.ttf"
-      type: web
+  - file: "fonts/materialdesignicons-webfont.ttf"
     id: mdi_icons_40
     size: 40
     glyphs: [
@@ -60,9 +55,7 @@ font:
       "\U000F06D9",
       "\U000F06DA",      
     ]
-  - file:
-      url: "fonts/materialdesignicons-webfont.ttf"
-      type: web
+  - file: "fonts/materialdesignicons-webfont.ttf"
     id: mdi_icons_48
     size: 48
     glyphs: [
