@@ -783,7 +783,12 @@ lvgl:
                   text_align: CENTER
                   long_mode: CLIP
                   text_font: montserrat_10
-
+            on_click:
+                - logger.log: "Open"
+                - mqtt.publish:
+                    topic: hornet-nest-3cc06c/button/operate_garage_door_big/command
+                    payload: "PRESS"
+                    
         - obj:
             id: lv_obj_1
             x: 0
