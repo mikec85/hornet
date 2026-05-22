@@ -741,6 +741,8 @@ lvgl:
                   text_font: montserrat_48
                   text_align: CENTER
                   text_color: 0x8E9FB8
+                  on_press:
+                    - lvgl.page.show: canvas_3
               - label:
                   id: lv_security_btn
                   x: 0
@@ -761,6 +763,9 @@ lvgl:
                   text_font: mdi_icons_48
                   text_align: CENTER
                   text_color: 0x8E9FB8
+                  on_click:
+                    - component.update: frontdoor_image
+                    - lvgl.page.show: frontdoor_page
               - label:
                   id: lv_setting_btn
                   x: 0
@@ -781,3 +786,5 @@ lvgl:
                   text_font: mdi_icons_48
                   text_align: CENTER
                   text_color: 0x8E9FB8
+                  on_press:
+                    - lvgl.page.show: sauna_page
