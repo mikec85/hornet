@@ -759,6 +759,8 @@ lvgl:
                   text_font: mdi_icons_48
                   text_align: CENTER
                   text_color: 0x8E9FB8
+                  on_click:
+                    - logger.log: "Security"
               - label:
                   id: lv_camera_btn
                   x: 0
@@ -770,6 +772,7 @@ lvgl:
                   text_align: CENTER
                   text_color: 0x8E9FB8
                   on_click:
+                    - logger.log: "Camera"
                     #- component.update: frontdoor_image
                     #- lvgl.page.show: frontdoor_page
               - label:
@@ -782,6 +785,8 @@ lvgl:
                   text_font: montserrat_48
                   text_align: CENTER
                   text_color: 0x8E9FB8
+                  on_click:
+                    - logger.log: "Settings"
               - label:
                   id: lv_sauna_btn
                   x: 0
