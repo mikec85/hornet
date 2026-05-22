@@ -35,7 +35,7 @@ script:
 # ESPHome downloads fonts automatically on first compile
 font:
   - file:
-      url: "https://cdn.jsdelivr.net/npm/@mdi/font@latest/fonts/materialdesignicons-webfont.ttf"
+      url: "fonts/materialdesignicons-webfont.ttf"
       type: web
     id: mdi_icons_22
     size: 22
@@ -48,7 +48,8 @@ font:
       "\U000F06DA",
     ]
   - file:
-      url: "https://cdn.jsdelivr.net/npm/@mdi/font@latest/fonts/materialdesignicons-webfont.ttf"
+      #url: "https://cdn.jsdelivr.net/npm/@mdi/font@latest/fonts/materialdesignicons-webfont.ttf"
+      url: "fonts/materialdesignicons-webfont.ttf"
       type: web
     id: mdi_icons_40
     size: 40
@@ -60,7 +61,7 @@ font:
       "\U000F06DA",      
     ]
   - file:
-      url: "https://cdn.jsdelivr.net/npm/@mdi/font@latest/fonts/materialdesignicons-webfont.ttf"
+      url: "fonts/materialdesignicons-webfont.ttf"
       type: web
     id: mdi_icons_48
     size: 48
