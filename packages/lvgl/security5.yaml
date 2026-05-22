@@ -82,7 +82,8 @@ font:
       "\U000F12D3",
       "\U000F12D4",
       "\U000F06D9",
-      "\U000F06DA",      
+      "\U000F06DA",   
+      "\U000F05F1",  # EV Station
     ]
 
 lvgl:
