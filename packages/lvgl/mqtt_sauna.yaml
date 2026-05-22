@@ -1,0 +1,161 @@
+number:
+  - platform: template
+    name: "fahrenheit"
+    id: var_fahrenheit
+    optimistic: true
+    min_value: 0
+    max_value: 200
+    step: 1
+    # This trigger fires ANY time the value changes!
+    on_value:
+      - logger.log:
+          format: "The new variable value is %.1f"
+          args: [ 'x' ]
+      - lvgl.textarea.update:
+          id: widget_1779065211001_tpklnuh4n
+          text: !lambda "return to_string((int)round(x)) + \" °F\";"
+
+  - platform: template
+    name: "Setpoint"
+    id: var_setpoint
+    optimistic: true
+    min_value: 0
+    max_value: 100
+    step: 1
+    # This trigger fires ANY time the value changes!
+    on_value:
+      - logger.log:
+          format: "The new variable value is %.1f"
+          args: [ 'x' ]
+      - lvgl.textarea.update:
+          id: lv_label_12
+          text: !lambda "return to_string((int)round(x)) + \" °C     \" + to_string((int)round(x) * 9/5 + 32) + \" °F\";"
+      - lvgl.textarea.update:
+          id: sauna_txt_setpoint_f
+          text: !lambda "return to_string((int)round(x) * 9/5 + 32) + \" °F\";" 
+          #(0°C × 9/5) + 32
+          
+  - platform: template
+    name: "AutoOff"
+    id: var_autooff
+    optimistic: true
+    min_value: 0
+    max_value: 100
+    step: 1
+    # This trigger fires ANY time the value changes!
+    on_value:
+      - logger.log:
+          format: "The new variable value is %.1f"
+          args: [ 'x' ]
+      - lvgl.textarea.update:
+          id: widget_1779065211002_58arwa7fg
+          text: !lambda "return to_string((int)round(x)) + \" Minutes\";"
+      #- lvgl.widget.show: sauna_txt_autooff
+      
+globals:
+  - id: var_celcius
+    type: float
+    restore_value: yes
+  - id: var_fahrenheit2
+    type: float
+    restore_value: no
+  - id: var_state
+    type: int
+    restore_value: no
+  - id: var_active
+    type: int
+    restore_value: no
+  - id: var_setpoint2
+    type: int
+    restore_value: no
+  - id: var_autooff2
+    type: int
+    restore_value: no
+  - id: var_evcharging
+    type: bool
+    restore_value: no
+    initial_value: 'false'
+    
+# MQTT
+mqtt:
+  id: mqtt_client
+  broker: mqtt.coffeys.net
+  on_message:
+    - topic: evCharger/status
+      qos: 0
+      payload: "Standby"
+      then:
+        - logger.log: "MQTT evCharger Standby"
+        - lvgl.label.update:
+            id: on_off_charger
+            text: "\U000F05F1"
+            text_color: my_black
+        - globals.set:
+            id: var_evcharging
+            value: "false"
+    - topic: evCharger/status
+      qos: 0
+      payload: "Charging"
+      then:
+        - logger.log: "MQTT evCharger Standby"
+        - lvgl.label.update:
+            id: on_off_charger
+            text: "\U000F05F1"
+            text_color: my_green
+        - globals.set:
+            id: var_evcharging
+            value: "true"
+            
+  on_json_message:
+    - topic: sonoff/sauna
+      #qos: 0
+      #payload: "ON"
+      then:
+        - lambda: |-
+            // Safely check if the key exists before assigning to prevent crashes
+            if (x["celcius"].is<float>()) {
+              id(var_celcius) = x["celcius"];
+            }
+            if (x["fahrenheit"].is<float>()) {
+              id(var_fahrenheit2) = x["fahrenheit"];
+              id(var_fahrenheit).make_call().set_value(x["fahrenheit"]).perform();
+            }
+            if (x["state"].is<int>()) {
+              id(var_state) = x["state"];
+            }
+            if (x["active"].is<int>()) {
+              id(var_active) = x["active"];
+            }
+            if (x["setpoint"].is<int>()) {
+              id(var_setpoint2) = x["setpoint"];
+              id(var_setpoint).make_call().set_value(x["setpoint"]).perform();
+            }
+            if (x["autooff"].is<int>()) {
+              id(var_autooff2) = x["autooff"];
+              id(var_autooff).make_call().set_value(x["autooff"]).perform();
+            }
+        - if:
+            condition:
+              lambda: 'return id(var_state) == 1;'
+            then:    
+              #- lvgl.image.update:
+              #    id: on_off_img
+              #    src: mdi_fire
+              #    image_recolor: my_red
+              - lvgl.label.update:
+                  id: on_off_label
+                  text: "\U000F0238"
+                  text_color: my_red
+        - if:
+            condition:
+              lambda: 'return id(var_state) == 0;'
+            then:    
+              #- lvgl.image.update:
+              #    id: on_off_img
+              #    src: mdi_fireoff
+              #    image_recolor: my_red
+              - lvgl.label.update:
+                  id: on_off_label
+                  text: "\U000F1722"
+                  text_color: my_black
+                  
