@@ -489,10 +489,10 @@ lvgl:
             widgets:
               - label:
                   id: widget_1779057290448_rni0x55z7
-                  x: 37
-                  y: 19
-                  width: 26
-                  height: 26
+                  x: 30
+                  y: 15
+                  width: 40
+                  height: 40
                   text: "\U000F033E"
                   text_font: mdi_icons_22
                   text_align: CENTER
@@ -551,10 +551,10 @@ lvgl:
             widgets:
               - label:
                   id: widget_1779057326279_b74venisc
-                  x: 37
-                  y: 19
-                  width: 26
-                  height: 26
+                  x: 30
+                  y: 15
+                  width: 40
+                  height: 40
                   text: "\U000F033E"
                   text_font: mdi_icons_22
                   text_align: CENTER
