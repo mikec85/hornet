@@ -11,7 +11,7 @@ number:
       - logger.log:
           format: "The new variable value is %.1f"
           args: [ 'x' ]
-      - lvgl.textarea.update:
+      - lvgl.label.update:
           id: widget_1779065211001_tpklnuh4n
           text: !lambda "return to_string((int)round(x)) + \" °F\";"
 
@@ -27,7 +27,7 @@ number:
       - logger.log:
           format: "The new variable value is %.1f"
           args: [ 'x' ]
-      - lvgl.textarea.update:
+      - lvgl.label.update:
           id: lv_label_12
           text: !lambda "return to_string((int)round(x)) + \" °C     \" + to_string((int)round(x) * 9/5 + 32) + \" °F\";"
       - lvgl.textarea.update:
@@ -47,7 +47,7 @@ number:
       - logger.log:
           format: "The new variable value is %.1f"
           args: [ 'x' ]
-      - lvgl.textarea.update:
+      - lvgl.label.update:
           id: widget_1779065211002_58arwa7fg
           text: !lambda "return to_string((int)round(x)) + \" Minutes\";"
       #- lvgl.widget.show: sauna_txt_autooff
