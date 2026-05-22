@@ -45,7 +45,6 @@ font:
       "\U000F06D9",
       "\U000F06DA",
     ]
-font:
   - file: "fonts/materialdesignicons-webfont.ttf"
     id: mdi_icons_28
     size: 32
