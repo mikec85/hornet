@@ -770,8 +770,8 @@ lvgl:
                   text_align: CENTER
                   text_color: 0x8E9FB8
                   on_click:
-                    - component.update: frontdoor_image
-                    - lvgl.page.show: frontdoor_page
+                    #- component.update: frontdoor_image
+                    #- lvgl.page.show: frontdoor_page
               - label:
                   id: lv_setting_btn
                   x: 0
