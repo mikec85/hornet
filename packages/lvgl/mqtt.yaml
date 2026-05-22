@@ -128,10 +128,10 @@ mqtt:
                   id: widget_1779057326279_9xhtm6113
                   text_color: "0x10B981" # Green
               - lvgl.label.update:
-                  id: widget_1779057326279_b74venisc
+                  id: widget_1779067217033_1kqustdct
                   text: "\U000F06D9"
               - lvgl.widget.update:
-                  id: widget_1779057326279_b74venisc
+                  id: widget_1779067217033_1kqustdct
                   text_color: "0x10B981" # Green
         # Check if the payload is ON
         - if:
@@ -146,10 +146,10 @@ mqtt:
                   id: widget_1779057326279_9xhtm6113
                   text_color: "0xFF0000" # Red   
               - lvgl.label.update:
-                  id: widget_1779057326279_b74venisc
+                  id: widget_1779067217033_1kqustdct
                   text: "\U000F06DA"
               - lvgl.widget.update:
-                  id: widget_1779057326279_b74venisc
+                  id: widget_1779067217033_1kqustdct
                   text_color: "0xFF0000" # Red
               
           
