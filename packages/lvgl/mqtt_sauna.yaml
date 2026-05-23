@@ -17,9 +17,6 @@ number:
       - lvgl.arc.update:
           id: widget_1779065211001_7mx7k9yro
           value: !lambda "return round(x);"
-      - lvgl.arc.update:
-          id: widget_1779065211001_upzmpn99m
-          value: !lambda "return round(x);"
 
   - platform: template
     name: "Setpoint"
@@ -40,6 +37,9 @@ number:
           id: sauna_txt_setpoint_f
           text: !lambda "return to_string((int)round(x) * 9/5 + 32) + \" °F\";" 
           #(0°C × 9/5) + 32
+      - lvgl.arc.update:
+          id: widget_1779065211001_upzmpn99m
+          value: !lambda "return round(x * 9/5 + 32);"
           
   - platform: template
     name: "AutoOff"
