@@ -17,6 +17,9 @@ number:
       - lvgl.arc.update:
           id: widget_1779065211001_7mx7k9yro
           value: !lambda "return round(x);"
+      - lvgl.arc.update:
+          id: widget_1779065211001_upzmpn99m
+          value: !lambda "return round(x);"
 
   - platform: template
     name: "Setpoint"
