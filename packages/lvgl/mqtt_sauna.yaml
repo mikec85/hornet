@@ -87,8 +87,7 @@ mqtt:
       then:
         - logger.log: "MQTT evCharger Standby"
         - lvgl.label.update:
-            id: on_off_charger
-            text: "\U000F05F1"
+            id: widget_1779066184529_ow4vm2449
             text_color: my_black
         - globals.set:
             id: var_evcharging
@@ -99,8 +98,7 @@ mqtt:
       then:
         - logger.log: "MQTT evCharger Standby"
         - lvgl.label.update:
-            id: on_off_charger
-            text: "\U000F05F1"
+            id: widget_1779066184529_ow4vm2449
             text_color: my_green
         - globals.set:
             id: var_evcharging
