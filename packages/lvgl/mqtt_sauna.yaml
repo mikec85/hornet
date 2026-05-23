@@ -94,7 +94,7 @@ mqtt:
         - logger.log: "MQTT evCharger Standby"
         - lvgl.label.update:
             id: widget_1779066184529_ow4vm2449
-            text_color: my_black
+            text_color: 0x425c53
         - globals.set:
             id: var_evcharging
             value: "false"
