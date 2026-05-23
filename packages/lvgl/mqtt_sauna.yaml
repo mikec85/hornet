@@ -14,6 +14,9 @@ number:
       - lvgl.label.update:
           id: widget_1779065211001_tpklnuh4n
           text: !lambda "return to_string((int)round(x)) + \" °F\";"
+      - lvgl.arc.update:
+          id: widget_1779065211001_7mx7k9yro
+          value: !lambda "return round(x);"
 
   - platform: template
     name: "Setpoint"
