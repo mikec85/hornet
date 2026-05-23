@@ -149,7 +149,7 @@ mqtt:
               - lvgl.label.update:
                   id: widget_1779065211001_vcspt9b2h
                   text: "HEATING"
-                  text_color: my_red
+                  #text_color: my_red
               - lvgl.button.update:
                   id: widget_1779065211002_o2gewvq4r
                   bg_color: 0x000A1A
@@ -164,8 +164,8 @@ mqtt:
                   text_color: my_black
               - lvgl.label.update:
                   id: widget_1779065211001_vcspt9b2h
-                  text: ""
-                  text_color: my_black
+                  text: "OFF"
+                  #text_color: my_black
               - lvgl.button.update:
                   id: widget_1779065211002_o2gewvq4r
                   bg_color: 0xD14B00    
