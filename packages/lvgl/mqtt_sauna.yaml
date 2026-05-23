@@ -56,6 +56,9 @@ number:
       - lvgl.label.update:
           id: widget_1779065211002_58arwa7fg
           text: !lambda "return to_string((int)round(x)) + \" Minutes\";"
+      - lvgl.bar.update:
+          id: widget_1779065211002_eysjduyfj
+          value: !lambda "return round(x);"
       #- lvgl.widget.show: sauna_txt_autooff
       
 globals:
