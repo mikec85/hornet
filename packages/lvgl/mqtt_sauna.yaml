@@ -33,9 +33,9 @@ number:
       - lvgl.label.update:
           id: lv_label_12
           text: !lambda "return to_string((int)round(x)) + \" °C     \" + to_string((int)round(x) * 9/5 + 32) + \" °F\";"
-      - lvgl.textarea.update:
-          id: sauna_txt_setpoint_f
-          text: !lambda "return to_string((int)round(x) * 9/5 + 32) + \" °F\";" 
+      #- lvgl.textarea.update:
+      #    id: sauna_txt_setpoint_f
+      #    text: !lambda "return to_string((int)round(x) * 9/5 + 32) + \" °F\";" 
           #(0°C × 9/5) + 32
       - lvgl.arc.update:
           id: widget_1779065211001_upzmpn99m
