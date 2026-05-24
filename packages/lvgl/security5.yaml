@@ -866,4 +866,4 @@ lvgl:
                   text_align: CENTER
                   text_color: 0x8E9FB8
                   on_press:
-                    - lvgl.page.show: sauna_page
+                    - lvgl.page.show: canvas_sauna
