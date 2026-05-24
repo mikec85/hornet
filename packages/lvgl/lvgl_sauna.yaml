@@ -370,7 +370,7 @@ lvgl:
             outline_opa: 100%
             pad_all: 0
             widgets:
-              - label:
+              - label: #Home
                   id: widget_1779065037698_1iqqprvvw
                   x: 0
                   y: 10
@@ -380,7 +380,9 @@ lvgl:
                   text_font: montserrat_48
                   text_align: CENTER
                   text_color: 0x8E9FB8
-              - label:
+                  on_press:
+                    - lvgl.page.show: canvas_security
+              - label:  #Security
                   id: widget_1779065037698_7e7qfa0nh
                   x: 0
                   y: 118
@@ -390,7 +392,9 @@ lvgl:
                   text_font: mdi_icons_48
                   text_align: CENTER
                   text_color: 0x8E9FB8
-              - label:
+                  on_press:
+                    - lvgl.page.show: canvas_security
+              - label: #Camera
                   id: widget_1779065037698_3yd849m7v
                   x: 0
                   y: 208
@@ -400,7 +404,7 @@ lvgl:
                   text_font: mdi_icons_48
                   text_align: CENTER
                   text_color: 0x8E9FB8
-              - label:
+              - label: #Setting
                   id: widget_1779065037698_h7fbcz30t
                   x: 0
                   y: 388
@@ -410,7 +414,7 @@ lvgl:
                   text_font: montserrat_48
                   text_align: CENTER
                   text_color: 0x8E9FB8
-              - label:
+              - label:  #Sauan
                   id: widget_1779065037698_3iu0ngbnu
                   x: 0
                   y: 298
@@ -420,6 +424,8 @@ lvgl:
                   text_font: mdi_icons_48
                   text_align: CENTER
                   text_color: 0x8E9FB8
+                  on_press:
+                    - lvgl.page.show: canvas_sauna
 
         - obj:
             id: lv_obj_11
