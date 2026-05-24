@@ -74,7 +74,7 @@ font:
     ]
   - file: "fonts/materialdesignicons-webfont.ttf"
     id: mdi_icons_48
-    size: 48
+    size: 52
     glyphs: [
       "\U000F0498",  # Shield
       "\U000F07AE",  # CCTV Camera
