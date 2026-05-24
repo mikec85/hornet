@@ -1,6 +1,6 @@
 lvgl:
   pages:
-    - id: canvas_7
+    - id: canvas_sauna
       bg_color: 0x111827
       pad_all: 0
       widgets:
