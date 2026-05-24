@@ -145,10 +145,10 @@ mqtt:
             condition:
               lambda: 'return id(var_state) == 1;'
             then:    
-              - lvgl.label.update:
-                  id: on_off_label
-                  text: "\U000F0238"
-                  text_color: my_red
+              #- lvgl.label.update:
+              #    id: on_off_label
+              #    text: "\U000F0238"
+              #    text_color: my_red
               - lvgl.label.update:
                   id: widget_1779065211001_vcspt9b2h
                   text: "HEATING"
@@ -161,10 +161,10 @@ mqtt:
             condition:
               lambda: 'return id(var_state) == 0;'
             then:    
-              - lvgl.label.update:
-                  id: on_off_label
-                  text: "\U000F1722"
-                  text_color: my_black
+              #- lvgl.label.update:
+              #    id: on_off_label
+              #    text: "\U000F1722"
+              #    text_color: my_black
               - lvgl.label.update:
                   id: widget_1779065211001_vcspt9b2h
                   text: "OFF"
