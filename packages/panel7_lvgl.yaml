@@ -76,7 +76,8 @@ color:
 lvgl:
   log_level: INFO
   color_depth: 16
-  disp_bg_color: my_black
+  #disp_bg_color: 
+  bottom_layer: my_black
   style_definitions:
     - id: my_button_style
       text_font: roboto40  # Apply the custom font defined in step 1
