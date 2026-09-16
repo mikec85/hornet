@@ -26,8 +26,10 @@ button:
     on_press:
       - lvgl.page.show: main_page
       
-online_image:
-  - url: http://192.168.1.220/cgi-bin/api.cgi?cmd=Snap&user=admin&password=Paxton911&channel=0&rs=adf234j0jkdf&width=640&height=360 # Dynamic picture 
+#online_image:
+image:
+  - platform: online_image
+    url: http://192.168.1.220/cgi-bin/api.cgi?cmd=Snap&user=admin&password=Paxton911&channel=0&rs=adf234j0jkdf&width=640&height=360 # Dynamic picture 
     id: driveway_image
     type: RGB565
     format: JPEG
@@ -40,7 +42,8 @@ online_image:
           id: driveway_img
           src: driveway_image
 
-  - url: http://192.168.1.222/cgi-bin/api.cgi?cmd=Snap&user=admin&password=Paxton911&channel=0&rs=adf234j0jkdf&width=640&height=480 # Dynamic picture 
+  - platform: online_image
+    url: http://192.168.1.222/cgi-bin/api.cgi?cmd=Snap&user=admin&password=Paxton911&channel=0&rs=adf234j0jkdf&width=640&height=480 # Dynamic picture 
     id: frontdoor_image
     type: RGB565
     format: JPEG
