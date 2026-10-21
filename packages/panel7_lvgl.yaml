@@ -12,10 +12,10 @@ number:
     mode: box
  
 globals:
- - id: my_code_int
-   type: std::string
-   #restore_value: no
-   initial_value: '"0"'
+  - id: my_code_int
+    type: std::string
+    #restore_value: no
+    initial_value: '"0"'
 
 font:
   - file: "gfonts://Roboto"  # Example using Google Fonts
