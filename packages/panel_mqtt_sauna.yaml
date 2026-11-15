@@ -10,9 +10,9 @@ number:
     step: 1
     # This trigger fires ANY time the value changes!
     on_value:
-      - logger.log:
-          format: "The new variable value is %.1f"
-          args: [ 'x' ]
+      #- logger.log:
+      #    format: "The new variable value is %.1f"
+      #    args: [ 'x' ]
       - lvgl.textarea.update:
           id: sauna_txt_fahrenheit
           text: !lambda "return to_string((int)round(x)) + \" °F\";"
@@ -26,9 +26,9 @@ number:
     step: 1
     # This trigger fires ANY time the value changes!
     on_value:
-      - logger.log:
-          format: "The new variable value is %.1f"
-          args: [ 'x' ]
+      #- logger.log:
+      #    format: "The new variable value is %.1f"
+      #    args: [ 'x' ]
       - lvgl.textarea.update:
           id: sauna_txt_setpoint
           text: !lambda "return to_string((int)round(x)) + \" °C\";"
@@ -46,9 +46,9 @@ number:
     step: 1
     # This trigger fires ANY time the value changes!
     on_value:
-      - logger.log:
-          format: "The new variable value is %.1f"
-          args: [ 'x' ]
+      #- logger.log:
+      #    format: "The new variable value is %.1f"
+      #    args: [ 'x' ]
       - lvgl.textarea.update:
           id: sauna_txt_autooff
           text: !lambda "return to_string((int)round(x)) + \" Minutes\";"
