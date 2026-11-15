@@ -115,7 +115,7 @@ mqtt:
       qos: 0
       then:
         - lambda: |-
-            ESP_LOGD("mqtt_on_message", "Received payload: %s", x);
+            ESP_LOGD("mqtt_on_message", "Received payload: %s", x.c_str());
         - lvgl.label.update:
             id: lvgl_label2
             text: !lambda |-
@@ -133,7 +133,7 @@ mqtt:
       qos: 0
       then:
         - lambda: |-
-            ESP_LOGD("mqtt_on_message", "Received payload: %s", x);
+            ESP_LOGD("mqtt_on_message", "Received payload: %s", x.c_str());
         - globals.set:
             id: last_zone_global
             value: !lambda |-
