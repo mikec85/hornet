@@ -1,5 +1,6 @@
 display:
-  - platform: rpi_dpi_rgb
+  - platform: mipi_rgb
+    model: RPI
     id: my_display
     data_pins:
       red: [14, 21, 47, 48, 45]
