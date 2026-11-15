@@ -36,6 +36,7 @@ touchscreen:
 display:
   #- platform: rpi_dpi_rgb
   - platform: mipi_rgb
+    model: RPI
     id: main_display
     color_order: RGB
     invert_colors: True
