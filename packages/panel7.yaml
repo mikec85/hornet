@@ -34,7 +34,9 @@ touchscreen:
             - light.turn_on: back_light
             
 display:
-  - platform: rpi_dpi_rgb
+  #- platform: rpi_dpi_rgb
+  - platform: mipi_rgb
+    model: RPI
     id: main_display
     data_pins:
       red: [14, 21, 47, 48, 45]
