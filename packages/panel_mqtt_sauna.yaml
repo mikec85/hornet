@@ -4,7 +4,7 @@ number:
   - platform: template
     name: "fahrenheit"
     id: var_fahrenheit
-    #optimistic: true
+    optimistic: true
     internal: true
     min_value: 0
     max_value: 200
@@ -21,7 +21,7 @@ number:
   - platform: template
     name: "Setpoint"
     id: var_setpoint
-    #optimistic: true
+    optimistic: true
     internal: true
     min_value: 0
     max_value: 100
@@ -42,7 +42,7 @@ number:
   - platform: template
     name: "AutoOff"
     id: var_autooff
-    #optimistic: true
+    optimistic: true
     internal: true
     min_value: 0
     max_value: 100
