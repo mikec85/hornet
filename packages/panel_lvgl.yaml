@@ -77,7 +77,10 @@ color:
 lvgl:
   log_level: INFO
   color_depth: 16
-  disp_bg_color: my_black
+  #disp_bg_color: my_black
+  bottom_layer:
+    bg_color: my_black
+    bg_opa: COVER
   touchscreens:
     - touchscreen_id: my_touchscreen
       long_press_time: 1s
